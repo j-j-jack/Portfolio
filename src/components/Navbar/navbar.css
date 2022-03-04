@@ -1,0 +1,8 @@
+.nav-container {
+    display: flex;
+}
+
+.nav-container > div {
+    flex: 1;
+    border: 1px solid black;
+}
