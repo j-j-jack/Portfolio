@@ -26,7 +26,7 @@ class Navbar extends Component {
 
     render() {
         return (
-        <nav className="Navbar">
+        <nav className="navbar">
             {this.props.activeTab}
             <ul className="nav-container">
                 {this.renderList()}
