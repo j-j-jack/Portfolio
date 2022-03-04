@@ -21,10 +21,6 @@ const App = (props) => {
         return box.top + window.pageYOffset;
     }
 
-    const scrollRead = (elem) => {
-        console.log(getDistanceFromTop(elem));
-    }
-
     window.addEventListener('scroll', () => {
         let scrollPosition = window.pageYOffset;
         const firstNavRef = [...navRefs].pop();
@@ -33,7 +29,8 @@ const App = (props) => {
         }
         else {
             for (var ref in navRefs) {
-            if (scrollPosition >= getDistanceFromTop(navRefs[ref].current)) {
+            if (scrollPosition >= getDistanceFromTop(navRefs[ref].current)-64) {
+                // 64 is 4rem
                 props.changeActiveNavTab(navRefs.length-ref);
                 return
             }
@@ -44,15 +41,10 @@ const App = (props) => {
     return <div>
         <Navbar />
         <div className="content">
-        <div 
-            ref={navRefOne} onClick={() => scrollRead(navRefOne.current)}
-            data-link="1"
-        >
-                <Lorem />
-                </div>
-        <div ref={navRefTwo} onClick={() => scrollRead(navRefTwo.current)}><Lorem /></div>
-        <div ref={navRefThree} onClick={() => scrollRead(navRefThree.current)}><Lorem /></div>
-        <div ref={navRefFour} onClick={() => scrollRead(navRefFour.current)}><Lorem /></div>
+        <div ref={navRefOne} className="standard-margin"><Lorem /></div>
+        <div ref={navRefTwo} className="standard-margin"><Lorem /></div>
+        <div ref={navRefThree} className="standard-margin"><Lorem /></div>
+        <div ref={navRefFour} className="standard-margin"><Lorem /></div>
         </div>
     </div>;
 };

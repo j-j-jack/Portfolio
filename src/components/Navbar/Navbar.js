@@ -27,7 +27,6 @@ class Navbar extends Component {
     render() {
         return (
         <nav className="navbar">
-            {this.props.activeTab}
             <ul className="nav-container">
                 {this.renderList()}
             </ul>
@@ -37,7 +36,6 @@ class Navbar extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return { activeTab: state.nav.activeTab }
 }
 
