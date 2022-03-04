@@ -2,7 +2,11 @@
     display: flex;
 }
 
-.nav-container > div {
+.nav-container > li {
     flex: 1;
     border: 1px solid black;
+}
+
+.active {
+    background-color: magenta;
 }
