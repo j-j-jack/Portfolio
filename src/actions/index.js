@@ -1,4 +1,4 @@
-import { CHANGE_ACTIVE_NAV_TAB } from './types';
+import { CHANGE_ACTIVE_NAV_TAB, OPEN_MOBILE_NAV } from './types';
 
 export const changeActiveNavTab = (tabNumber) => {
     return {
@@ -6,3 +6,10 @@ export const changeActiveNavTab = (tabNumber) => {
         payload: tabNumber
     };
 };
+
+export const openMobileNav = (open) => {
+    return {
+        type: OPEN_MOBILE_NAV,
+        payload: open
+    }
+}

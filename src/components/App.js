@@ -29,8 +29,7 @@ const App = (props) => {
         }
         else {
             for (var ref in navRefs) {
-            if (scrollPosition >= getDistanceFromTop(navRefs[ref].current)-64) {
-                // 64 is 4rem
+            if (scrollPosition >= getDistanceFromTop(navRefs[ref].current)-128) {
                 props.changeActiveNavTab(navRefs.length-ref);
                 return
             }
@@ -41,10 +40,22 @@ const App = (props) => {
     return <div>
         <Navbar />
         <div className="content">
-        <div ref={navRefOne} className="standard-margin"><Lorem /></div>
-        <div ref={navRefTwo} className="standard-margin"><Lorem /></div>
-        <div ref={navRefThree} className="standard-margin"><Lorem /></div>
-        <div ref={navRefFour} className="standard-margin"><Lorem /></div>
+        <section ref={navRefOne} className="standard-margin">
+            <h2 id="1">Section One</h2>
+            <Lorem />
+        </section>
+        <section ref={navRefTwo} className="standard-margin">
+            <h2 id="2">Section Two</h2>
+            <Lorem />
+        </section>
+        <section ref={navRefThree} className="standard-margin">
+            <h2 id="3">Section Three</h2>
+            <Lorem />
+        </section>
+        <section ref={navRefFour} className="standard-margin">
+            <h2 id="4">Section Four</h2>
+            <Lorem />
+        </section>
         </div>
     </div>;
 };
