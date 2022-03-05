@@ -1,0 +1,32 @@
+:root {
+    --glitch-white: rgb(238,247,247);
+    --glitch-red: rgb(248,9,16);
+    --glitch-yellow: rgb(249,251,15);
+    --glitch-green: rgb(4,254,0);
+    --glitch-black: rgb(23,26,23);
+    --glitch-blue: rgb(4,4,242);
+    --glitch-aqua: rgb(19,253,243);
+    --glitch-pink: rgb(245,29,245);
+}
+
+.top-animation {
+    position: fixed;
+    height: 50%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: navy;
+    opacity: 0.5;;
+    z-index: 2000;
+}
+
+.bottom-animation {
+    position: fixed;
+    height: 50%;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    background: black;
+    opacity: 0.5;
+    z-index: 2000;
+}

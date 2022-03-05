@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { changeActiveNavTab } from '../actions';
 
 import Navbar from './Navbar/Navbar'
+import ScrollAnimation from './ScrollAnimation/ScrollAnimation';
 import Lorem from './Lorem';
 
 const App = (props) => {
@@ -37,27 +38,32 @@ const App = (props) => {
         }
     });
 
-    return <div>
-        <Navbar />
-        <div className="content">
-        <section ref={navRefOne} className="standard-margin">
-            <h2 id="1">Section One</h2>
-            <Lorem />
-        </section>
-        <section ref={navRefTwo} className="standard-margin">
-            <h2 id="2">Section Two</h2>
-            <Lorem />
-        </section>
-        <section ref={navRefThree} className="standard-margin">
-            <h2 id="3">Section Three</h2>
-            <Lorem />
-        </section>
-        <section ref={navRefFour} className="standard-margin">
-            <h2 id="4">Section Four</h2>
-            <Lorem />
-        </section>
-        </div>
-    </div>;
+    return (
+        <React.Fragment>
+            <ScrollAnimation />
+            <div>
+                <Navbar />
+                <div className="content">
+                <section ref={navRefOne} className="standard-margin">
+                    <h2 id="1">Section One</h2>
+                    <Lorem />
+                </section>
+                <section ref={navRefTwo} className="standard-margin">
+                    <h2 id="2">Section Two</h2>
+                    <Lorem />
+                </section>
+                <section ref={navRefThree} className="standard-margin">
+                    <h2 id="3">Section Three</h2>
+                    <Lorem />
+                </section>
+                <section ref={navRefFour} className="standard-margin">
+                    <h2 id="4">Section Four</h2>
+                    <Lorem />
+                </section>
+                </div>
+            </div>
+        </React.Fragment>
+    );
 };
 
 export default connect(null, { changeActiveNavTab })(App);
