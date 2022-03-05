@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { navbarItems  } from './navbarItems';
 import { connect } from 'react-redux';
 import { changeActiveNavTab, openMobileNav } from '../../actions';
-import './navbar.css';
+import '../css/navbar.css';
 
 class Navbar extends Component {
      constructor (props) {
