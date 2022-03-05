@@ -49,26 +49,31 @@ const ScrollAnimation = () => {
             speed = .0065;
         }
 
-        const numberOfLines = parseInt(gaussian(speed + 3, (speed*180)+8));
+        const numberOfLines = parseInt(gaussian(speed + 3, (speed*250)+8));
         const colors = ['glitch-white', 'glitch-red', 'glitch-yellow',
             'glitch-blue', 'glitch-pink', 'glitch-black', 'glitch-aqua', 'glitch-green'];
-        let randomColor = colors[Math.floor(Math.random() * 8)];
-        if (top) {
+        if (!top) {
             for (let i=0; i<numberOfLines; i++) {
                 let x = Math.random() * 100;
                 x = x.toString() + '%';
+                let length = gaussian(0, speed * 80);
+                length = length.toString() + '%';
+                let randomColor = colors[Math.floor(Math.random() * 8)];
                 d3.select(topSvg.current).append('line')
                     .attr("class", randomColor).style("stroke-width", 2).attr("x1", x)
-                        .attr("y1", '0%').attr("x2", x).attr("y2", '50%')
+                        .attr("y1", '0%').attr("x2", x).attr("y2", length)
                             .transition().duration(500).remove();
             }
         } else {
             for (let i=0; i<numberOfLines; i++) {
                 let x = Math.random() * 100;
                 x = x.toString() + '%';
+                let length = 100 - (gaussian(0, speed * 80));
+                length = length.toString() + '%';
+                let randomColor = colors[Math.floor(Math.random() * 8)];
                 d3.select(bottomSvg.current).append('line')
                     .attr("class", randomColor).style("stroke-width", 2).attr("x1", x)
-                        .attr("y1", '0%').attr("x2", x).attr("y2", '50%')
+                        .attr("y1", '100%').attr("x2", x).attr("y2", length)
                             .transition().duration(500).remove();
             }
         }
