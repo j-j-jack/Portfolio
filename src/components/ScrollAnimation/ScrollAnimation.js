@@ -7,22 +7,20 @@ const ScrollAnimation = () => {
     const topSvg = useRef();
     const bottomSvg = useRef();
 
-    let body = document.body;
-    // let max = 0;
-    // let min = null;
-    let htmlHeight = null;
+    const body = document.body;
+    let htmlHeight;
+    let speedRelativeToBody;
+    let isPositive;
     
     const calculateHtmlHeight = () => {
         htmlHeight = window.getComputedStyle(body).getPropertyValue('height');
         htmlHeight = parseInt(htmlHeight, 10);
-        console.log(htmlHeight); 
+        console.log(htmlHeight);
     }
-
-    useEffect( () => {
-        calculateHtmlHeight();
-    }, []);
-
-    window.addEventListener('resize', calculateHtmlHeight);
+    
+    useEffect(() => {
+    calculateHtmlHeight()
+    });
 
     const gaussian = (min, max) => {
         // https://stackoverflow.com/questions/25582882/javascript-math-random-normal-distribution-gaussian-bell-curve
@@ -46,13 +44,60 @@ const ScrollAnimation = () => {
         w = w + min;
         return w;
     }
-    
-    const append = () => {
-        d3.select(topSvg.current).append('circle').attr('cx', '20%' ).attr('cy', '20%').attr('r', 20).style('fill', 'gold').transition().duration(500).remove();
+
+    const animation = (speed, top) => {
+        const colors = ['glitch-white', 'glitch-red', 'glitch-yellow',
+            'glitch-blue', 'glitch-pink', 'glitch-black', 'glitch-aqua', 'glitch-green'];
+
+        if (top) {
+            let x = parseInt(Math.random() * 100);
+            x = x.toString() + '%';
+            console.log('x', x);
+            d3.select(topSvg.current).append('line')
+                .style("stroke", "lightgreen").style("stroke-width", 10).attr("x1", x)
+                    .attr("y1", '0%').attr("x2", x).attr("y2", '50%')
+                        .transition().duration(500).remove();
+        } else {
+            let x = parseInt(Math.random() * 100);
+            x = x.toString() + '%';
+            console.log('x', x);
+            d3.select(bottomSvg.current).append('line')
+                .style("stroke", "lightgreen").style("stroke-width", 10).attr("x1", x)
+                    .attr("y1", '0%').attr("x2", x).attr("y2", '50%')
+                        .transition().duration(500).remove();
+        }
     }
-    const appendTwo = () => {
-        d3.select(bottomSvg.current).append('circle').attr('cx', '20%' ).attr('cy', '20%').attr('r', 20).style('fill', 'gold').transition().duration(500).remove();
-    }
+
+        // min = 0 max = 0.65 approx
+        let lastPosition = window.pageYOffset;
+        let timeBetweenMeasures = 20;
+        let measure = true;
+        document.addEventListener('scroll', (e) => {
+            if (measure) {
+            measure = false;
+            setTimeout(reMeasure, timeBetweenMeasures);
+            let newPosition = window.pageYOffset;
+            let speed = lastPosition - newPosition;
+            if (speed >= 0) {
+                isPositive = true
+            }
+            else {
+                isPositive = false;
+            }
+            speed = Math.abs(speed);
+            lastPosition = newPosition;
+            speedRelativeToBody = speed/htmlHeight;
+            }
+            console.log('is positive:', isPositive);
+            console.log('speed', speedRelativeToBody);
+            animation(speedRelativeToBody, isPositive);
+        });
+
+        const reMeasure = () => {
+                measure = true;
+            }
+
+    window.addEventListener('resize', calculateHtmlHeight);
 
     return (
         <React.Fragment>
@@ -60,7 +105,6 @@ const ScrollAnimation = () => {
             <svg
                 ref={topSvg}
                 className="top-svg"
-                onClick={() => append()}
             >
             </svg>    
         </div>
@@ -68,7 +112,6 @@ const ScrollAnimation = () => {
             <svg
                 ref={bottomSvg}
                 className="bottom-svg"
-                onClick={() => appendTwo()}
             >
             </svg>  
         </div>
