@@ -58,11 +58,12 @@ const ScrollAnimation = () => {
                 x = x.toString() + '%';
                 let length = gaussian(0, speed * 80);
                 length = length.toString() + '%';
+                let duration = gaussian(speed + 100, (speed*1500) + 100);
                 let randomColor = colors[Math.floor(Math.random() * 8)];
                 d3.select(topSvg.current).append('line')
                     .attr("class", randomColor).style("stroke-width", 2).attr("x1", x)
                         .attr("y1", '0%').attr("x2", x).attr("y2", length)
-                            .transition().duration(500).remove();
+                            .transition().duration(duration).remove();
             }
         } else {
             for (let i=0; i<numberOfLines; i++) {
@@ -70,11 +71,12 @@ const ScrollAnimation = () => {
                 x = x.toString() + '%';
                 let length = 100 - (gaussian(0, speed * 80));
                 length = length.toString() + '%';
+                let duration = gaussian(speed + 100, (speed*1500) + 100);
                 let randomColor = colors[Math.floor(Math.random() * 8)];
                 d3.select(bottomSvg.current).append('line')
                     .attr("class", randomColor).style("stroke-width", 2).attr("x1", x)
                         .attr("y1", '100%').attr("x2", x).attr("y2", length)
-                            .transition().duration(500).remove();
+                            .transition().duration(duration).remove();
             }
         }
     }
