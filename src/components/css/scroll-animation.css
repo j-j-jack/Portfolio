@@ -9,6 +9,38 @@
     --glitch-pink: rgb(245,29,245);
 }
 
+.glitch-white {
+    stroke: var(--glitch-white);
+}
+
+.glitch-red {
+    stroke: var(--glitch-red);
+}
+
+.glitch-yellow {
+    stroke: var(--glitch-yellow);
+}
+
+.glitch-green {
+    stroke: var(--glitch-green);
+}
+
+.glitch-black {
+    stroke: var(--glitch-black);
+}
+
+.glitch-blue {
+    stroke: var(--glitch-blue);
+}
+
+.glitch-aqua {
+    stroke: var(--glitch-aqua);
+}
+
+.glitch-pink {
+    stroke: var(--glitch-pink);
+}
+
 .top-animation {
     position: fixed;
     height: 50%;

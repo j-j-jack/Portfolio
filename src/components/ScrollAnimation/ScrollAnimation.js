@@ -15,7 +15,6 @@ const ScrollAnimation = () => {
     const calculateHtmlHeight = () => {
         htmlHeight = window.getComputedStyle(body).getPropertyValue('height');
         htmlHeight = parseInt(htmlHeight, 10);
-        console.log(htmlHeight);
     }
     
     useEffect(() => {
@@ -46,25 +45,32 @@ const ScrollAnimation = () => {
     }
 
     const animation = (speed, top) => {
+        if (speed < .0065) {
+            speed = .0065;
+        }
+
+        const numberOfLines = parseInt(gaussian(speed + 3, (speed*180)+8));
         const colors = ['glitch-white', 'glitch-red', 'glitch-yellow',
             'glitch-blue', 'glitch-pink', 'glitch-black', 'glitch-aqua', 'glitch-green'];
-
+        let randomColor = colors[Math.floor(Math.random() * 8)];
         if (top) {
-            let x = parseInt(Math.random() * 100);
-            x = x.toString() + '%';
-            console.log('x', x);
-            d3.select(topSvg.current).append('line')
-                .style("stroke", "lightgreen").style("stroke-width", 10).attr("x1", x)
-                    .attr("y1", '0%').attr("x2", x).attr("y2", '50%')
-                        .transition().duration(500).remove();
+            for (let i=0; i<numberOfLines; i++) {
+                let x = Math.random() * 100;
+                x = x.toString() + '%';
+                d3.select(topSvg.current).append('line')
+                    .attr("class", randomColor).style("stroke-width", 2).attr("x1", x)
+                        .attr("y1", '0%').attr("x2", x).attr("y2", '50%')
+                            .transition().duration(500).remove();
+            }
         } else {
-            let x = parseInt(Math.random() * 100);
-            x = x.toString() + '%';
-            console.log('x', x);
-            d3.select(bottomSvg.current).append('line')
-                .style("stroke", "lightgreen").style("stroke-width", 10).attr("x1", x)
-                    .attr("y1", '0%').attr("x2", x).attr("y2", '50%')
-                        .transition().duration(500).remove();
+            for (let i=0; i<numberOfLines; i++) {
+                let x = Math.random() * 100;
+                x = x.toString() + '%';
+                d3.select(bottomSvg.current).append('line')
+                    .attr("class", randomColor).style("stroke-width", 2).attr("x1", x)
+                        .attr("y1", '0%').attr("x2", x).attr("y2", '50%')
+                            .transition().duration(500).remove();
+            }
         }
     }
 
@@ -88,8 +94,6 @@ const ScrollAnimation = () => {
             lastPosition = newPosition;
             speedRelativeToBody = speed/htmlHeight;
             }
-            console.log('is positive:', isPositive);
-            console.log('speed', speedRelativeToBody);
             animation(speedRelativeToBody, isPositive);
         });
 
