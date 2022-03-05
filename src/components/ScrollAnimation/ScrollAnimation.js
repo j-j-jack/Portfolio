@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
 import "../css/scroll-animation.css";
@@ -6,6 +6,23 @@ import "../css/scroll-animation.css";
 const ScrollAnimation = () => {
     const topSvg = useRef();
     const bottomSvg = useRef();
+
+    let body = document.body;
+    // let max = 0;
+    // let min = null;
+    let htmlHeight = null;
+    
+    const calculateHtmlHeight = () => {
+        htmlHeight = window.getComputedStyle(body).getPropertyValue('height');
+        htmlHeight = parseInt(htmlHeight, 10);
+        console.log(htmlHeight); 
+    }
+
+    useEffect( () => {
+        calculateHtmlHeight();
+    }, []);
+
+    window.addEventListener('resize', calculateHtmlHeight);
 
     const gaussian = (min, max) => {
         // https://stackoverflow.com/questions/25582882/javascript-math-random-normal-distribution-gaussian-bell-curve
