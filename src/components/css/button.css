@@ -1,0 +1,35 @@
+button {
+    border: 1px solid green;
+    border-radius: 5%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+button > a {
+    width: 100%;
+    height: 90%;
+    display: block;
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 50%;
+}
+
+.button-image {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 25%;
+    height: 80%;
+    transform: translateY(-50%);
+}
+.button-svg {
+    position: absolute;
+    border: 1px solid blue;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

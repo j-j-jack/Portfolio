@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { changeActiveNavTab } from '../actions';
 
 import Navbar from './Navbar/Navbar'
-import ScrollAnimation from './ScrollAnimation/ScrollAnimation';
+import ScrollAnimation from './ScrollAnimation';
 import Lorem from './Lorem';
 import ProjectCard from './ProjectCard';
 
@@ -41,7 +41,7 @@ const App = (props) => {
 
     return (
         <React.Fragment>
-            // Scroll animation here
+            {/* Scroll animation here */}
             <div>
                 <Navbar />
                 <div className="content">
@@ -52,10 +52,10 @@ const App = (props) => {
                 <section ref={navRefTwo} className="standard-margin">
                     <h2 id="2">Section Two</h2>
                     <div className="project-cards-container">
-                        <ProjectCard />
-                        <ProjectCard />
-                        <ProjectCard />
-                        <ProjectCard />
+                        <ProjectCard uniqueKey="1"/>
+                        <ProjectCard uniqueKey="2"/>
+                        <ProjectCard uniqueKey="3"/>
+                        <ProjectCard uniqueKey="4"/>
                     </div>
                 </section>
                 <section ref={navRefThree} className="standard-margin">

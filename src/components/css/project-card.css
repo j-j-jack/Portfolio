@@ -56,35 +56,97 @@
   animation: back 5s linear infinite;
 }
 
-      #title-outer {
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: 2%;
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(rgba(5, 5, 5, 0.6), rgba(0, 0, 0, 0)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px);
-        background-size: cover;
-        background-position: center;
-        z-index: 1;
-      }
-      #title-inner {
-        text-align: center;
-      }
-      .glitch {
-        padding: 0;
-        margin: 0;
-        font-family: 'Montserrat', sans-serif;
-        max-width: 50%;
-        text-align: center;
-        position: relative;
-        color: white;
-        font-size: 4em;
-        letter-spacing: .4em;
-        animation: glitch-skew 0.5s infinite linear alternate-reverse;
-      }
+.project-description {
+  color: white;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 65%;
+  margin-left: 5%;
+  height: 50%;
+  font-size: 1.2rem;
+}
+
+.technologies-used {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  color: white;
+  position: absolute;
+  top: 30%;
+  left: 70%;
+  width: 25%;
+  margin-left: 5%;
+  height: 50%;
+  font-size: 1.2rem;
+  text-decoration: underline yellow dashed;
+}
+
+.project-card-buttons {
+  position: absolute;
+  top: 80%;
+  left: 0;
+  width: 90%;
+  margin-left: 5%;
+  height: 20%;
+  font-size: 1.2rem;
+  z-index: 3000;
+  display: flex;
+}
+
+.project-card-buttons > div {
+  flex: 1;
+  gap: 20%;
+}
+
+.technologies-used > div {
+  flex: 1;
+}
+
+.project-github-button {
+  width: 80%;
+  height: 50%;
+}
+.project-github-button-image {
+  background: url(../../assets/images/github.svg);
+  background-repeat: no-repeat;
+}
+.project-live-button {
+  width: 90%;
+  height: 50%;
+}
+
+#title-outer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 2%;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(rgba(5, 5, 5, 0.6), rgba(0, 0, 0, 0)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px);
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+#title-inner {
+  text-align: center;
+}
+
+.glitch {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 50%;
+  text-align: center;
+  position: relative;
+  color: white;
+  font-size: 4em;
+  letter-spacing: .4em;
+  animation: glitch-skew 0.5s infinite linear alternate-reverse;
+}
       .glitch::after {
         content: attr(data-text);
         position: absolute;
