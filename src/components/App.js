@@ -5,6 +5,7 @@ import { changeActiveNavTab } from '../actions';
 import Navbar from './Navbar/Navbar'
 import ScrollAnimation from './ScrollAnimation/ScrollAnimation';
 import Lorem from './Lorem';
+import ProjectCard from './ProjectCard';
 
 const App = (props) => {
 
@@ -40,7 +41,7 @@ const App = (props) => {
 
     return (
         <React.Fragment>
-            <ScrollAnimation />
+            // Scroll animation here
             <div>
                 <Navbar />
                 <div className="content">
@@ -50,7 +51,12 @@ const App = (props) => {
                 </section>
                 <section ref={navRefTwo} className="standard-margin">
                     <h2 id="2">Section Two</h2>
-                    <Lorem />
+                    <div className="project-cards-container">
+                        <ProjectCard />
+                        <ProjectCard />
+                        <ProjectCard />
+                        <ProjectCard />
+                    </div>
                 </section>
                 <section ref={navRefThree} className="standard-margin">
                     <h2 id="3">Section Three</h2>

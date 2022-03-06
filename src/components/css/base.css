@@ -14,3 +14,18 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.project-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project-cards-container > div {
+    flex: 40%;
+    margin-bottom: 3%;
+    margin-left: 2%;
+    margin-right: 2%;
+    align-items: center;
+    justify-content: center;
+}
+
