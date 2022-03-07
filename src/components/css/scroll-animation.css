@@ -11,34 +11,42 @@
 
 .glitch-white {
     stroke: var(--glitch-white);
+    fill: var(--glitch-white);
 }
 
 .glitch-red {
     stroke: var(--glitch-red);
+    fill: var(--glitch-red);
 }
 
 .glitch-yellow {
     stroke: var(--glitch-yellow);
+    fill: var(--glitch-yellow);
 }
 
 .glitch-green {
     stroke: var(--glitch-green);
+    fill: var(--glitch-green);
 }
 
 .glitch-black {
     stroke: var(--glitch-black);
+    fill: var(--glitch-black);
 }
 
 .glitch-blue {
     stroke: var(--glitch-blue);
+    fill: var(--glitch-blue);
 }
 
 .glitch-aqua {
     stroke: var(--glitch-aqua);
+    fill: var(--glitch-aqua);
 }
 
 .glitch-pink {
     stroke: var(--glitch-pink);
+    fill: var(--glitch-pink);
 }
 
 .top-animation {
