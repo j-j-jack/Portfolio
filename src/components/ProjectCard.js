@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import * as d3 from "d3";
 import "./css/project-card.css";
 import projectImage from '../assets/images/e-book-club.PNG';
 import Button from './Button';
+
 
 const ProjectCard = (props) => {
 
     const technologies = ["Django", "Stripe Api", "S3", "jQuery", "Javascript"]
     const [hover, setHover] = useState(false);
+    const detailsRef = useRef();
     const technologiesUsed = () => {
         return (
             <div className="technologies-used">
@@ -17,32 +20,43 @@ const ProjectCard = (props) => {
             </div>
         )
     };
+
+    useEffect(() => {
+        if (detailsRef.current !== null) {
+        if (hover) {
+            d3.select(detailsRef.current).style("opacity", 0) 
+                .transition().duration(600).ease(d3.easeLinear)
+                    .style("opacity", 1);
+        }
+    }
+    }, [hover]);
+
     const renderContent = () => {
         if (hover) {
             return (
-                <div className="project-details-container">
+                <div ref={detailsRef} data-visible="false" className="project-details-container">
                     <div id="title-outer">
                         <div id="title-inner">
-                            <h1 className="glitch" data-text="Project">Project</h1>
+                            <h1 className="glitch" data-text={props.projectTitle}>{props.projectTitle}</h1>
                         </div>
                     </div>
                     <div className="project-description">
-                        This is a short description of the project the project is a very good project
+                        {props.projectDescription}
                     </div>
                         {technologiesUsed()}
                     <div className="project-card-buttons">
                         <div>
                             <Button 
                                 buttonClass="project-github-button" 
-                                link="https://github.com"
+                                link={props.githubLink}
                                 buttonText="View on Github"
                             />
                         </div>
                         <div>
                             <Button 
-                                buttonClass="project-github-button" 
-                                link="https://github.com"
-                                buttonText="View on Github"
+                                buttonClass="project-site-button" 
+                                link={props.liveLink}
+                                buttonText="View Live Site"
                             />
                         </div>
                     </div>
@@ -53,7 +67,7 @@ const ProjectCard = (props) => {
                 <div className="project-poster-container">
                     <div id="title-outer">
                         <div id="title-inner">
-                            <h1 className="glitch" data-text="Project">Project</h1>
+                            <h2 className="glitch" data-text={props.projectTitle}>{props.projectTitle}</h2>
                         </div>
                     </div>
                     <div className="project-image-container">
@@ -66,14 +80,7 @@ const ProjectCard = (props) => {
         
         }
     return (
-    <React.Fragment>
-         <div style={{'width': '70px', 'height': '50px'}}>
-            <Button 
-                buttonClass="project-github-button" 
-                link="https://github.com"
-                buttonText="View on Github"
-            />
-        </div>   
+    <React.Fragment>  
         <div 
             className="project-card-container"
             onMouseEnter={() => setHover(true)}

@@ -53,10 +53,34 @@ const App = (props) => {
                 <section ref={navRefTwo} className="standard-margin">
                     <h2 id="2">Section Two</h2>
                     <div className="project-cards-container">
-                        <ProjectCard uniqueKey="1"/>
-                        <ProjectCard uniqueKey="2"/>
-                        <ProjectCard uniqueKey="3"/>
-                        <ProjectCard uniqueKey="4"/>
+                        <ProjectCard 
+                            uniqueKey="1"
+                            githubLink="https://github.com"
+                            liveLink="https://www.youtube.com"
+                            projectTitle="E-book Club"
+                            projectDescription="This is the project description. It is a very good project"
+                        />
+                        <ProjectCard 
+                            uniqueKey="2"
+                            githubLink="https://github.com"
+                            liveLink="https://www.youtube.com"
+                            projectTitle="Ebook"
+                            projectDescription="This is the project description. It is a very good project"
+                        />
+                        <ProjectCard 
+                            uniqueKey="3"
+                            githubLink="https://github.com"
+                            liveLink="https://www.youtube.com"
+                            projectTitle="E-book Club"
+                            projectDescription="This is the project description. It is a very good project"
+                        />
+                        <ProjectCard 
+                            uniqueKey="4"
+                            githubLink="https://github.com"
+                            liveLink="https://www.youtube.com"
+                            projectTitle="E-book Club"
+                            projectDescription="This is the project description. It is a very good project"
+                        />
                     </div>
                 </section>
                 <section ref={navRefThree} className="standard-margin">

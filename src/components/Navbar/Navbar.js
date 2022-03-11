@@ -21,10 +21,8 @@ class Navbar extends Component {
         }
         else if (visibility==="true") {
             this.navRef.current.setAttribute('data-visible', 'false');
-            this.toggleRef.current.setAttribute('aria-expanded', 'false');
-
-        }
-        console.log(this.navRef.current.getAttribute('data-visible'));        
+            this.toggleRef.current.setAttribute('aria-expanded', 'false')
+        }   
     }
 
     renderList () {

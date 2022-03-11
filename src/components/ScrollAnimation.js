@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
 import "./css/scroll-animation.css";
+import "./css/glitch-colors.css";
 
 const ScrollAnimation = () => {
     const topSvg = useRef();
