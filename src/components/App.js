@@ -6,6 +6,7 @@ import Navbar from './Navbar/Navbar'
 import ScrollAnimation from './ScrollAnimation';
 import Lorem from './Lorem';
 import ProjectCard from './ProjectCard';
+import Button from './Button';
 
 const App = (props) => {
 

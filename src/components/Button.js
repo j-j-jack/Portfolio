@@ -13,17 +13,24 @@ const Button = (props) => {
     
     
     const hoverEffect = () => {
-            console.log('jhjshjhdj')
-            if(hover && lineCount.current<150) {
+            if(hover && lineCount.current<50) {
             const colors = ['glitch-white', 'glitch-red', 'glitch-yellow',
                 'glitch-blue', 'glitch-pink', 'glitch-black', 'glitch-aqua', 'glitch-green'];
                 let x = Math.random() * 100;
-                x = x.toString() + '%'
                 let y = Math.random() * 100;
+                if (x > 10 && x < 90)
+                {
+                if (y <= 50) {
+                    y = y/5;
+                } else {
+                    y = ((y - 50)/5) + 90;
+                }
+                }
+                x = x.toString() + '%'
                 y = y.toString() + '%';;
-                let width = Math.random() * 5;
+                let width = Math.random() * 2.5;
                 width = width.toString() + '%';
-                let height = Math.random() * 35;
+                let height = Math.random() * 20;
                 height = height.toString() + '%';
                 let randomColor = colors[Math.floor(Math.random() * 8)];
                 d3.select(buttonRef.current).append('rect')
@@ -31,7 +38,8 @@ const Button = (props) => {
                         .attr('width', width).attr('height', height)
                             .attr('class', randomColor).attr('fill', '#69a3b2');
                 lineCount.current+=1;
-                timeouts.current.push(setTimeout(hoverEffectTwo, 20));
+                let randomInterval = Math.random()/100 + .001;
+                timeouts.current.push(setTimeout(hoverEffectTwo, randomInterval));
             }
             else if (!hover) {
             for (var i=0; i<timeouts.current.length; i++) {
@@ -43,20 +51,33 @@ const Button = (props) => {
         }
 
         const hoverEffectTwo = () => {
-            console.log(hover)
-            if(hover && lineCount.current<150) {
-                console.log('hello');
+            if(hover && lineCount.current<50) {
             const colors = ['glitch-white', 'glitch-red', 'glitch-yellow',
                 'glitch-blue', 'glitch-pink', 'glitch-black', 'glitch-aqua', 'glitch-green'];
                 let x = Math.random() * 100;
-                x = x.toString() + '%';
+                let y = Math.random() * 100;
+                if (x > 10 && x < 90)
+                {
+                if (y <= 50) {
+                    console.log('xy');
+                    y = y/5;
+                } else {
+                    y = ((y - 50)/5) + 90;
+                }
+                }
+                x = x.toString() + '%'
+                y = y.toString() + '%';;
+                let width = Math.random() * 2;
+                width = width.toString() + '%';
+                let height = Math.random() * 20;
+                height = height.toString() + '%';
                 let randomColor = colors[Math.floor(Math.random() * 8)];
                 d3.select(buttonRef.current).append('rect')
                     .attr("class", randomColor).style("stroke-width", 2).attr("x", x)
-                        .attr("y", 0).attr("wdith", '5%').attr("height", '50%').attr('fill', '#69a3b2');
+                        .attr("y", 0).attr("wdith", width).attr("height", height).attr('fill', '#69a3b2');
                 lineCount.current+=1;
-                console.log(lineCount.current);
-                timeouts.current.push(setTimeout(hoverEffect, 20));
+                let randomInterval = Math.random()/100 + .001;
+                timeouts.current.push(setTimeout(hoverEffect, randomInterval));
         }
         else if (!hover) {
             for (var i=0; i<timeouts.current.length; i++) {
@@ -66,24 +87,29 @@ const Button = (props) => {
         }
         
         const handleMouseOut = () => {
-            console.log('mouseout'); setHover(false);
             for (var i=0; i<timeouts.current.length; i++) {
                 clearTimeout(timeouts.current[i]);
         }
+        setHover(false);
         }
     
     hoverEffect();
 
     return (
         <button
+            onMouseEnter={() => {setHover(true)}}
+            onMouseLeave={()=> {handleMouseOut()}}
             className={props.buttonClass}
         >
-            <div className={`${props.buttonClass}-image button-image`}></div>
-            <a href={props.link} target="_blank" rel="noreferrer">{props.buttonText}</a>
+            <div className="button-content">
+            <a href={props.link} target="_blank" rel="noreferrer">
+            <div className="button-link-content">
+                <div className={`${props.buttonClass}-image button-image`}></div>
+                <div className="button-text">{props.buttonText}</div>
+            </div>
+            </a>
+            </div>
             <svg
-                onMouseOver={() => {setHover(true)}}
-                onChange={() =>{ setHover(true)}}
-                onMouseOut={()=> {handleMouseOut()}}
                 className="button-svg"
                 ref={buttonRef}>
             </svg>

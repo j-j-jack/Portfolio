@@ -35,14 +35,14 @@ const ProjectCard = (props) => {
                             <Button 
                                 buttonClass="project-github-button" 
                                 link="https://github.com"
-                                buttonText="view on Github"
+                                buttonText="View on Github"
                             />
                         </div>
                         <div>
                             <Button 
                                 buttonClass="project-github-button" 
                                 link="https://github.com"
-                                buttonText="view on Github"
+                                buttonText="View on Github"
                             />
                         </div>
                     </div>
@@ -67,7 +67,7 @@ const ProjectCard = (props) => {
         }
     return (
     <React.Fragment>
-         <div style={{'width': '100px', 'height': '50px'}}>
+         <div style={{'width': '70px', 'height': '50px'}}>
             <Button 
                 buttonClass="project-github-button" 
                 link="https://github.com"
@@ -76,8 +76,8 @@ const ProjectCard = (props) => {
         </div>   
         <div 
             className="project-card-container"
-            onMouseOver={() => setHover(true)}
-            onMouseOut={() => setHover(false)}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
         >
             {renderContent()}
         </div>
