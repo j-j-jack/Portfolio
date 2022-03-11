@@ -59,6 +59,7 @@ const App = (props) => {
                             liveLink="https://www.youtube.com"
                             projectTitle="E-book Club"
                             projectDescription="This is the project description. It is a very good project"
+                            technologies = {["Django", "Stripe Api", "S3", "jQuery", "Javascript"]}
                         />
                         <ProjectCard 
                             uniqueKey="2"
@@ -66,6 +67,7 @@ const App = (props) => {
                             liveLink="https://www.youtube.com"
                             projectTitle="Ebook"
                             projectDescription="This is the project description. It is a very good project"
+                            technologies = {["Django", "Stripe Api", "S3", "jQuery", "Javascript"]}
                         />
                         <ProjectCard 
                             uniqueKey="3"
@@ -73,6 +75,7 @@ const App = (props) => {
                             liveLink="https://www.youtube.com"
                             projectTitle="E-book Club"
                             projectDescription="This is the project description. It is a very good project"
+                            technologies = {["Django", "Stripe Api", "S3", "jQuery", "Javascript"]}
                         />
                         <ProjectCard 
                             uniqueKey="4"
@@ -80,6 +83,7 @@ const App = (props) => {
                             liveLink="https://www.youtube.com"
                             projectTitle="E-book Club"
                             projectDescription="This is the project description. It is a very good project"
+                            technologies = {["Django", "Stripe Api", "S3", "jQuery", "Javascript"]}
                         />
                     </div>
                 </section>

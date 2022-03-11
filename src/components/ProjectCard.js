@@ -6,14 +6,14 @@ import Button from './Button';
 
 
 const ProjectCard = (props) => {
-
-    const technologies = ["Django", "Stripe Api", "S3", "jQuery", "Javascript"]
+    // component takes props of a project title and description, live and githublinks
+    // as well as an array of technologies used
     const [hover, setHover] = useState(false);
     const detailsRef = useRef();
     const technologiesUsed = () => {
         return (
             <div className="technologies-used">
-                {technologies.map(
+                {props.technologies.map(
                     (technology)=> {return (
                         <div key={`${technology}${props.uniqueKey}`}>{technology}</div>
                     )})}   
@@ -25,8 +25,15 @@ const ProjectCard = (props) => {
         if (detailsRef.current !== null) {
         if (hover) {
             d3.select(detailsRef.current).style("opacity", 0) 
-                .transition().duration(600).ease(d3.easeLinear)
-                    .style("opacity", 1);
+            .transition().duration(parseInt(Math.random()*50)).ease(d3.easeLinear).style("opacity", 1)
+            .transition().duration(parseInt(Math.random()*50)).ease(d3.easeLinear).style("opacity", 0)
+            .transition().duration(parseInt(Math.random()*50)).ease(d3.easeLinear).style("opacity", 1)
+            .transition().duration(parseInt(Math.random()*50)).ease(d3.easeLinear).style("opacity", 0)
+            .transition().duration(parseInt(Math.random()*50)).ease(d3.easeLinear).style("opacity", 1)
+            .transition().duration(parseInt(Math.random()*50)).ease(d3.easeLinear).style("opacity", 0)
+            .transition().duration(parseInt(Math.random()*50)).ease(d3.easeLinear).style("opacity", 1)
+            .transition().duration(parseInt(Math.random()*50)).ease(d3.easeLinear).style("opacity", 0)
+            .transition().duration(parseInt(Math.random()*50)).ease(d3.easeLinear).style("opacity", 1);
         }
     }
     }, [hover]);
