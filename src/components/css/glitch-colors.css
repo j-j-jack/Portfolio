@@ -1,12 +1,37 @@
 :root {
-    --glitch-white: rgb(238,247,247);
-    --glitch-red: rgb(248,9,16);
-    --glitch-yellow: rgb(249,251,15);
-    --glitch-green: rgb(4,254,0);
-    --glitch-black: rgb(23,26,23);
-    --glitch-blue: rgb(4,4,242);
-    --glitch-aqua: rgb(19,253,243);
-    --glitch-pink: rgb(245,29,245);
+    --glitch-x-one: hsl(4, 57%, 49%);
+    --glitch-x-two: hsl(21, 57%, 49%);
+    --glitch-x-three: hsl(38, 57%, 49%);
+    --glitch-x-four: hsl(55, 57%, 49%);
+    --glitch-x-five: hsl(72, 57%, 49%);
+    --glitch-x-six: hsl(89, 57%, 49%);
+    --glitch-x-seven: hsl(106, 57%, 49%);
+    --glitch-x-eight: hsl(123, 57%, 49%);
+    --glitch-x-nine: hsl(140, 57%, 49%);
+    --glitch-x-ten: hsl(157, 57%, 49%);
+    --glitch-x-eleven: hsl(174, 57%, 49%);
+    --glitch-x-twelve: hsl(191, 57%, 49%);
+    --glitch-x-thirteen: #3682c4;
+    --glitch-x-fourteen: #3659c4;
+    --glitch-x-fifteen: hsl(242, 57%, 49%);
+    --glitch-x-sixteen: hsl(259, 57%, 49%);
+    --glitch-x-seventeen: hsl(276, 57%, 49%);
+    --glitch-x-nineteen: hsl(303, 57%, 49%);
+    --glitch-x-twenty: hsl(320, 57%, 49%);
+    --glitch-x-twenty-one: hsl(337, 57%, 49%);
+    --glitch-x-twenty-two: hsl(354, 57%, 49%);
+
+
+    --glitch-yellow: hsl(55, 57%, 49%);
+    --glitch-green: hsl(157, 57%, 49%);
+    --glitch-aqua: hsl(191, 57%, 49%);
+    --glitch-blue: hsl(242, 57%, 49%);
+    --glitch-pink: hsl(320, 57%, 49%);
+    --glitch-red: hsl(4, 57%, 49%);
+
+    --glitch-black: hsl(242, 57%, 9%);
+    --glitch-white: hsl(242, 57%, 89%);
+
 }
 
 .glitch-white {
