@@ -27,10 +27,16 @@ button {
     left: 0;
 }
 
+.form-button-content {
+    height: 100%;
+    z-index: 200;
+}
+
 .button-link-content {
     display: flex;
     height: 100%;
     justify-content: center;
+    align-items: center;
 }
 
 .button-image {

@@ -1,0 +1,8 @@
+.form-submission-button {
+  width: 15em;
+  height: 2em;
+}
+.form-submission-button-image {
+  background: url(../../assets/images/website.svg);
+  background-repeat: no-repeat;
+}
