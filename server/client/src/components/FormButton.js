@@ -81,7 +81,6 @@ const FormButton = (props) => {
             onMouseEnter={() => {setHover(true)}}
             onMouseLeave={()=> {handleMouseLeave()}}
             className={props.buttonClass}
-            onSubmit={(event) => props.onSubmit(event)}
         >
             <div className="form-button-content">
             <div className="button-link-content">

@@ -11,7 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.2",
     "concurrently": "^7.0.0",
-    "express": "^4.17.3"
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "sib-api-v3-sdk": "^8.3.0"
   }
 }

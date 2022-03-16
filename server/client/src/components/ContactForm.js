@@ -2,21 +2,30 @@ import React, { useState } from 'react';
 import FormButton from './FormButton';
 
 import "./css/contact-form.css";
-import { eventWrapper } from '@testing-library/user-event/dist/utils';
+import axios from 'axios';
 
 const ContactForm = () => {
+    const api = axios.create(
+        {baseURL: "http://localhost:3000/api"}
+    )
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
     const [body, setBody] = useState('')
-    const onSubmit = (event) => {
-        event.preventdefault();
-        console.log('Submit');
+    const handleSubmit =  async(event) => {
+        event.preventDefault();
+        const res = await api.post('/send_email', {
+            senderName: name,
+            senderEmail: email,
+            subject: subject,
+            body, body
+        });
+        console.log('Submitted');
     }
 
     return (
         <div className="form-container">
-            <form>
+            <form  onSubmit={handleSubmit}>
                 <label>Name: </label>
                 <input
                     type="text"
@@ -46,7 +55,6 @@ const ContactForm = () => {
                 >
                 </textarea>
                 <FormButton
-                    onSubmit={onSubmit}
                     buttonClass="form-submission-button" 
                     buttonText="Submit"
                 />

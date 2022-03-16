@@ -1,13 +1,13 @@
 import React, { useRef } from 'react';
 import { connect } from 'react-redux';
-import { changeActiveNavTab } from '../actions';
 
+import { changeActiveNavTab } from '../actions';
 import Navbar from './Navbar/Navbar'
 import ScrollAnimation from './ScrollAnimation';
 import Lorem from './Lorem';
 import ProjectCard from './ProjectCard';
-import Button from './Button';
 import ContactForm from './ContactForm';
+
 
 const App = (props) => {
 
