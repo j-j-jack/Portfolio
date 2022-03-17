@@ -13,6 +13,7 @@ app.get('/api', (req, res)=> {
 app.post('/api/send_email', async (req, res) => {
     const { senderName, senderEmail, subject, body } = req.body;
     const response = await sendEmail(senderName, senderEmail, subject, body);
+    console.log("hello", response);
     res.send(response);
 });
 

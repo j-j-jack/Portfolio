@@ -1,4 +1,7 @@
-import { CHANGE_ACTIVE_NAV_TAB, OPEN_MOBILE_NAV } from "../actions/types";
+import { CHANGE_ACTIVE_NAV_TAB, 
+            OPEN_MOBILE_NAV, 
+                CHANGE_CONTACTED_STATUS } 
+                    from "../actions/types";
 
 const INITIAL_STATE = {
     activeTab: 1, 
