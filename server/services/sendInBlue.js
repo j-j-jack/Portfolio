@@ -1,7 +1,7 @@
 //project_directory/emailBuilder.js
 module.exports = async (senderName, senderEmail, subject, body) => {
   var SibApiV3Sdk = require('sib-api-v3-sdk');
-  SibApiV3Sdk.ApiClient.instance.authentications['api-key'].apiKey = process.env.SIB_API_KEY;
+  SibApiV3Sdk.ApiClient.instance.authentications['api-key'].apiKey = 'a';//process.env.SIB_API_KEY;
 
   const emailBuilder = new SibApiV3Sdk.TransactionalEmailsApi().sendTransacEmail(
     {

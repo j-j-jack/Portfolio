@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import * as d3 from 'd3';
 
 import FormButton from './FormButton';
 import { connect } from 'react-redux';
@@ -14,7 +15,8 @@ const ContactForm = (props) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
-    const [body, setBody] = useState('')
+    const [body, setBody] = useState('');
+    const formContainer = useRef();
     const handleSubmit =  async(event) => {
         props.changeContactedStatus('loading');
         event.preventDefault();
@@ -28,22 +30,13 @@ const ContactForm = (props) => {
         if (response.data.messageId) {
             props.changeContactedStatus('contacted');
         } else {
-            props.changeContactedStatus('not_contacted');
+            props.changeContactedStatus('failed');
         }
     }
 
     const renderHelper = () => {
         if (props.contacted==='not_contacted') {
-            return <div>Not contacted</div>;
-        } else if (props.contacted==='loading') {
-            return <div>Loading</div>;
-        } else if (props.contacted==='contacted') {
-            return <div>Contacted</div>;
-        }
-    }
-    return (
-        <div className="form-container">
-            {renderHelper()}
+            return (
             <form  onSubmit={handleSubmit}>
                 <label htmlFor="name-input">Name </label>
                 <input
@@ -84,7 +77,42 @@ const ContactForm = (props) => {
                     />
                 </div>
             </form>
+            );
+        } else if (props.contacted==='loading') {
+            const formHeight = formContainer.current.clientHeight;
+            d3.select(formContainer.current).style('height', `${formHeight}px`);
+            const t = d3.transition()
+                .duration(200)
+                    .ease(d3.easeLinear);
+            d3.select(formContainer.current).transition(t).style('height', '25em');
+            return (
+                <div>
+                    <div>Loading-Spinner</div>
+                    <div>Loading</div>
+                </div>
+            );
+        } else if (props.contacted==='contacted') {
+            return (
+                <div>
+                    <h3>Thank You!</h3>
+                    <p>Jack will read your message and get back to you as soon as possible</p>
+                </div>
+            );
+        } else if (props.contacted==='failed') {
+            return (
+                <div>
+                    <h3>Sorry</h3>
+                    <p>That didn't work. You can try contacting Jack at jackosullivan541@gmail.com</p>
+                </div>
+            );
+        }
+    }
+    return (
+        <React.Fragment>
+        <div ref={formContainer} className="form-container">
+            {renderHelper()}
         </div>
+        </React.Fragment>
     )
 };
 

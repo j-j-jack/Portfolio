@@ -6,6 +6,9 @@ button {
     box-sizing: border-box;
     position: relative;
     z-index: 1000;
+    height: 2em;
+    width: 15em;
+    margin-bottom: 2em;
 }
 
 .button-svg {

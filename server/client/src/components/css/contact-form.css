@@ -1,27 +1,38 @@
-.form-submission-button {
-  width: 15em;
-  height: 2em;
-}
 .form-submission-button-image {
   background: url(../../assets/images/website.svg);
   background-repeat: no-repeat;
 }
 
 .form-container {
+  padding-top: 1.5em;
+  border: 1px solid black;
+  border-radius: 1em;
   text-align: center;
   padding-left: 20%;
   padding-right: 20%;
+  margin-bottom: 2em;
 }
 
 input {
   display: block;
+  height: 1.5em;
+  margin-top: .5em;
+  margin-bottom: 1.5em;
   width: 100%;
   border-radius: 1em;
 }
+label {
+  display: block;
+  height: 1.5em;
+}
 
 textarea {
+  min-height: 15em;
+  margin-top: .5em;
+  margin-bottom: 2em;
   display: block;
   width: 100%;
   border-radius: 1em; 
-  resize: none;
+  resize: vertical;
+  max-height: 30em;
 }
