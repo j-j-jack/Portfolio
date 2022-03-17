@@ -1,0 +1,10 @@
+.loading-spinner-container {
+    aspect-ratio: 1;
+    width: 100%;
+    overflow: hidden;
+}
+
+.loading-spinner-svg {
+    height: 100%;
+    width: 100%;
+}

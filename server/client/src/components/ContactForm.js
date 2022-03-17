@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { changeContactedStatus } from '../actions';
 import "./css/contact-form.css";
 import axios from 'axios';
+import LoadingSpinner from './LoadingSpinner';
 
 
 const ContactForm = (props) => {
@@ -110,7 +111,7 @@ const ContactForm = (props) => {
     return (
         <React.Fragment>
         <div ref={formContainer} className="form-container">
-            {renderHelper()}
+            <LoadingSpinner />
         </div>
         </React.Fragment>
     )

@@ -4,6 +4,7 @@
 }
 
 .form-container {
+  height: 30em;
   padding-top: 1.5em;
   border: 1px solid black;
   border-radius: 1em;
