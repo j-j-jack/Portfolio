@@ -1,10 +1,70 @@
+:root {
+    --animation-time-one: 25s;
+    --animation-time-two: 2s;
+    --animation-time-three: 2s;
+}
+
 .loading-spinner-container {
+    position: relative;
+    box-sizing: border-box;
+    background-color: var(--glitch-black);
+    border: 1px solid black; 
+    border-radius: 2em;
     aspect-ratio: 1;
     width: 100%;
     overflow: hidden;
 }
 
-.loading-spinner-svg {
-    height: 100%;
-    width: 100%;
+.loading-spinner-svg-one {
+    background-color: var(--background-color);
+    height: 120%;
+    width: 120%;
+    top: -10%;
+    left: -10%;
+    position: absolute;
+    -webkit-animation:spin var(--animation-time-one) linear infinite;
+    -moz-animation:spin var(--animation-time-one) linear infinite;
+    animation:spin var(--animation-time-one) linear infinite;
+}
+
+.loading-spinner-svg-two {
+    height: 120%;
+    width: 120%;
+    top: -10%;
+    left: -10%;
+    position: absolute;
+    -webkit-animation:spin var(--animation-time-two) linear infinite;
+    -moz-animation:spin var(--animation-time-two) linear infinite;
+    animation:spin var(--animation-time-two) linear infinite;
+}
+
+.loading-spinner-svg-three {
+    height: 120%;
+    width: 120%;
+    top: -10%;
+    left: -10%;
+    position: absolute;
+    -webkit-animation:spin var(--animation-time-three) linear infinite;
+    -moz-animation:spin var(--animation-time-three) linear infinite;
+    animation:spin var(--animation-time-three) linear infinite;
+}
+
+.circle-class {
+    cursor:crosshair; 
+  -webkit-filter: drop-shadow( 4px 4px 3px var(--glitch-light-shadow));
+        filter: drop-shadow( 4px 4px 3px var(--glitch-light-shadow));
+
+}
+
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
 }

@@ -32,6 +32,8 @@
     --glitch-black: hsl(242, 57%, 9%);
     --glitch-white: hsl(242, 57%, 89%);
 
+    --glitch-light-shadow: hsla(242, 57%, 89%, 0.692);
+
 }
 
 .glitch-white {

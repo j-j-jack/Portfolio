@@ -1,20 +1,116 @@
 import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
 import "./css/loading-spinner.css";
+import "./css/glitch-colors.css";
 
 const LoadingSpinner = () => {
-    const svgRef = useRef();
+    const svgRefOne = useRef();
+    const svgRefTwo = useRef();
+    const svgRefThree = useRef();
+
+
+    let glitchColors = ["glitch-red", "glitch-black", "glitch-white", "glitch-pink", "glitch-blue", "glitch-green", "glitch-yellow", "glitch-aqua"];
     useEffect(() => {
-        for (let i=0; i<24; i++){
-        console.log(svgRef.current.clientWidth);
-        let angleInRadians = (i*15) * Math.PI/180;
+        let rotateSpeed = 1000 + parseInt(Math.random()*5000);
+        svgRefOne.current.style.setProperty('-webkit-animation' , `spin ${rotateSpeed}ms linear infinite`);
+        svgRefOne.current.style.setProperty('-moz-animation' , `spin ${rotateSpeed}ms linear infinite`);
+        svgRefOne.current.style.setProperty('animation' , `spin ${rotateSpeed}ms linear infinite`);
+        rotateSpeed = 1000 + parseInt(Math.random()*5000);
+        svgRefTwo.current.style.setProperty('-webkit-animation' , `spin ${rotateSpeed}ms linear infinite`);
+        svgRefTwo.current.style.setProperty('-moz-animation' , `spin ${rotateSpeed}ms linear infinite`);
+        svgRefTwo.current.style.setProperty('animation' , `spin ${rotateSpeed}ms linear infinite`);
+        rotateSpeed = 1000 + parseInt(Math.random()*5000);
+        svgRefThree.current.style.setProperty('-webkit-animation' , `spin ${rotateSpeed}ms linear infinite`);
+        svgRefThree.current.style.setProperty('-moz-animation' , `spin ${rotateSpeed}ms linear infinite`);
+        svgRefThree.current.style.setProperty('animation' , `spin ${rotateSpeed}ms linear infinite`);
+
+        let durationOne = 1000 + parseInt(Math.random()*1000);
+        let durationTwo = 1000 + parseInt(Math.random()*1000);
+        let durationThree = 1000 + parseInt(Math.random()*1000);
+        const tOne = d3.transition()
+                .duration(durationOne)
+                    .ease(d3.easeLinear);
+        const tTwo = d3.transition()
+                .duration(durationTwo)
+                    .ease(d3.easeLinear);
+        const tThree = d3.transition()
+                .duration(durationThree)
+                    .ease(d3.easeLinear);
+
+        
+        const transitionLoopOne = (node, cx, cy) => {
+            let color= glitchColors[parseInt(Math.random()*8)];
+            d3.select(node).transition()
+                .duration(durationOne)
+                    .ease(d3.easeLinear).attr("r", `${Math.random()*2}%`).attr('cx', `${cx}%`).attr('cy', `${cy}%`).on('end', () => transitionLoopTwo(node, cx, cy));
+        }
+        const transitionLoopTwo = (node, cx, cy) => {
+            d3.select(node).transition()
+                .duration(durationOne)
+                    .ease(d3.easeLinear).attr("r", `${Math.random()*2}%`).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopOne(node, cx, cy));
+        }
+
+        const transitionLoopThree = (node, cx, cy) => {
+            let color= glitchColors[parseInt(Math.random()*8)];
+            d3.select(node).transition()
+                .duration(durationTwo)
+                    .ease(d3.easeLinear).attr("r", `${Math.random()*2}%`).attr('cx', `${cx}%`).attr('cy', `${cy}%`).on('end', () => transitionLoopFour(node, cx, cy));
+        }
+        const transitionLoopFour = (node, cx, cy) => {
+            d3.select(node).transition()
+                .duration(durationTwo)
+                    .ease(d3.easeLinear).attr("r", `${Math.random()*2}%`).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopThree(node, cx, cy));
+        }
+
+        const transitionLoopFive = (node, cx, cy) => {
+            let color= glitchColors[parseInt(Math.random()*8)];
+            d3.select(node).transition()
+                .duration(durationThree)
+                    .ease(d3.easeLinear).attr("r", `${Math.random()*2}%`).attr('cx', `${cx}%`).attr('cy', `${cy}%`).on('end', () => transitionLoopSix(node, cx, cy));
+        }
+        const transitionLoopSix = (node, cx, cy) => {
+            d3.select(node).transition()
+                .duration(1200)
+                    .ease(d3.easeLinear).attr("r", `${Math.random()*2}%`).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopFive(node, cx, cy));
+        }
+        for (let i=0; i<48; i++){
+        let angleInRadians = (i*7.5) * Math.PI/180;
         let cx = 50 + (40 * (Math.cos(angleInRadians)));
         let cy = 50 + (40 * (Math.sin(angleInRadians)));
-        d3.select(svgRef.current).append('circle').attr('class', i).style("stroke", "black").attr("r", "1%").attr('cx', `${cx}%`).attr('cy', `${cy}%`)
+        let circleOne = d3.select(svgRefOne.current).append('circle').attr('z-index', parseInt(1 + Math.random()* 288)).attr('class', `glitch-blue circle-class`)
+            .attr("r", `${Math.random()*2}%`).attr('cx', `${cx}%`).attr('cy', `${cy}%`).transition(tOne).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopOne(circleOne._groups[0][0], cx, cy));
+        }
+        for (let i=0; i<48; i++){
+        let angleInRadians = (i*7.5) * Math.PI/180;
+        let cx = 50 + (35 * (Math.cos(angleInRadians)));
+        let cy = 50 + (40 * (Math.sin(angleInRadians)));
+        let circleTwo = d3.select(svgRefTwo.current).append('circle').attr('z-index', parseInt(1 + Math.random()* 288)).attr('class', `glitch-green circle-class`)
+            .attr("r", `${Math.random()*2}%`).attr('cx', `${cx}%`).attr('cy', `${cy}%`).transition(tTwo).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopThree(circleTwo._groups[0][0], cx, cy) );
+        }
+        for (let i=0; i<48; i++){
+        let angleInRadians = (i*7.5) * Math.PI/180;
+        let cx = 50 + (30 * (Math.cos(angleInRadians)));
+        let cy = 50 + (40 * (Math.sin(angleInRadians)));
+        let circleThree = d3.select(svgRefThree.current).append('circle').attr('z-index', parseInt(1 + Math.random()* 288)).attr('class', `glitch-pink circle-class`)
+            .attr("r", `${Math.random()*2}%`).attr('cx', `${cx}%`).attr('cy', `${cy}%`).transition(tThree).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopFive(circleThree._groups[0][0], cx, cy));
+        // cx = 50 + (25 * (Math.cos(angleInRadians)));
+        // cy = 50 + (40 * (Math.sin(angleInRadians)));
+        // let circleFour = select(svgRef.current).append('circle').attr('z-index', parseInt(1 + Math.random()* 288)).attr('class', `glitch-yellow ${i} circle-class`).style("stroke", "black")
+        //     .attr("r", "1%").attr('cx', `${cx}%`).attr('cy', `${cy}%`).transition(tFour).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopOne(circleFour._groups[0][0], cx, cy) );
+        // cx = 50 + (20 * (Math.cos(angleInRadians)));
+        // cy = 50 + (40 * (Math.sin(angleInRadians)));
+        // let circleFive = select(svgRef.current).append('circle').attr('z-index', parseInt(1 + Math.random()* 288)).attr('class', `glitch-red ${i} circle-class`).style("stroke", "black")
+        //     .attr("r", "1%").attr('cx', `${cx}%`).attr('cy', `${cy}%`).transition(tFive).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopOne(circleFive._groups[0][0], cx, cy) );
+        // cx = 50 + (15 * (Math.cos(angleInRadians)));
+        // cy = 50 + (40 * (Math.sin(angleInRadians)));
+        // let circleSix = select(svgRef.current).append('circle').attr('z-index', parseInt(1 + Math.random()* 288)).attr('class', `glitch-aqua ${i} circle-class`).style("stroke", "black")
+        //     .attr("r", "1%").attr('cx', `${cx}%`).attr('cy', `${cy}%`).transition(tSix).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopOne(circleSix._groups[0][0], cx, cy) );
         }
     }, []);
     return (<div className="loading-spinner-container">
-                <svg ref={svgRef} className='loading-spinner-svg'></svg>
+                <svg ref={svgRefOne} className='loading-spinner-svg-one'></svg>
+                <svg ref={svgRefTwo} className='loading-spinner-svg-two'></svg>
+                <svg ref={svgRefThree} className='loading-spinner-svg-three'></svg>
             </div>
             );
 
