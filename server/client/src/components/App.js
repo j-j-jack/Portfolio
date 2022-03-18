@@ -7,6 +7,7 @@ import ScrollAnimation from './ScrollAnimation';
 import Lorem from './Lorem';
 import ProjectCard from './ProjectCard';
 import ContactForm from './ContactForm';
+import Landing from './Landing';
 
 
 const App = (props) => {
@@ -48,8 +49,7 @@ const App = (props) => {
                 <Navbar />
                 <div className="content">
                 <section ref={navRefOne} className="standard-margin">
-                    <h2 id="1">Section One</h2>
-                    <Lorem />
+                    <Landing />
                 </section>
                 <section ref={navRefTwo} className="standard-margin">
                     <h2 id="2">Section Two</h2>

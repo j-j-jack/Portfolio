@@ -7,9 +7,10 @@ const LoadingSpinner = (props) => {
     const svgRefOne = useRef();
     const svgRefTwo = useRef();
     const svgRefThree = useRef();
+    const textRef = useRef();
 
 
-    let glitchColors = ["glitch-red", "glitch-black", "glitch-white", "glitch-pink", "glitch-blue", "glitch-green", "glitch-yellow", "glitch-aqua"];
+    
     useEffect(() => {
 
         // set random rotation for svgs
@@ -42,7 +43,7 @@ const LoadingSpinner = (props) => {
 
         
         const transitionLoopOne = (node, cx, cy) => {
-            let color= glitchColors[parseInt(Math.random()*8)];
+            d3.select(textRef.current).attr('class', 'loading-text glitch-blue');
             d3.select(node).transition()
                 .duration(durationOne)
                     .ease(d3.easeLinear).style('opacity', '0').attr("r", `${Math.random()*2}%`).attr('cx', `${cx}%`).attr('cy', `${cy}%`).on('end', () => transitionLoopTwo(node, cx, cy));
@@ -54,7 +55,7 @@ const LoadingSpinner = (props) => {
         }
 
         const transitionLoopThree = (node, cx, cy) => {
-            let color= glitchColors[parseInt(Math.random()*8)];
+            d3.select(textRef.current).attr('class', 'loading-text glitch-green');
             d3.select(node).transition()
                 .duration(durationTwo)
                     .ease(d3.easeLinear).style('opacity', '0').attr("r", `${Math.random()*2}%`).attr('cx', `${cx}%`).attr('cy', `${cy}%`).on('end', () => transitionLoopFour(node, cx, cy));
@@ -66,7 +67,7 @@ const LoadingSpinner = (props) => {
         }
 
         const transitionLoopFive = (node, cx, cy) => {
-            let color= glitchColors[parseInt(Math.random()*8)];
+            d3.select(textRef.current).attr('class', 'loading-text glitch-pink');
             d3.select(node).transition()
                 .duration(durationThree)
                     .ease(d3.easeLinear).style('opacity', '0').attr("r", `${Math.random()*2}%`).attr('cx', `${cx}%`).attr('cy', `${cy}%`).on('end', () => transitionLoopSix(node, cx, cy));
@@ -96,22 +97,10 @@ const LoadingSpinner = (props) => {
         let cy = 50 + (40 * (Math.sin(angleInRadians)));
         let circleThree = d3.select(svgRefThree.current).append('circle').attr('z-index', parseInt(1 + Math.random()* 288)).attr('class', `glitch-pink circle-class`)
             .attr("r", `${Math.random()*2}%`).attr('cx', `${cx}%`).attr('cy', `${cy}%`).transition(tThree).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopFive(circleThree._groups[0][0], cx, cy));
-        // cx = 50 + (25 * (Math.cos(angleInRadians)));
-        // cy = 50 + (40 * (Math.sin(angleInRadians)));
-        // let circleFour = select(svgRef.current).append('circle').attr('z-index', parseInt(1 + Math.random()* 288)).attr('class', `glitch-yellow ${i} circle-class`).style("stroke", "black")
-        //     .attr("r", "1%").attr('cx', `${cx}%`).attr('cy', `${cy}%`).transition(tFour).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopOne(circleFour._groups[0][0], cx, cy) );
-        // cx = 50 + (20 * (Math.cos(angleInRadians)));
-        // cy = 50 + (40 * (Math.sin(angleInRadians)));
-        // let circleFive = select(svgRef.current).append('circle').attr('z-index', parseInt(1 + Math.random()* 288)).attr('class', `glitch-red ${i} circle-class`).style("stroke", "black")
-        //     .attr("r", "1%").attr('cx', `${cx}%`).attr('cy', `${cy}%`).transition(tFive).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopOne(circleFive._groups[0][0], cx, cy) );
-        // cx = 50 + (15 * (Math.cos(angleInRadians)));
-        // cy = 50 + (40 * (Math.sin(angleInRadians)));
-        // let circleSix = select(svgRef.current).append('circle').attr('z-index', parseInt(1 + Math.random()* 288)).attr('class', `glitch-aqua ${i} circle-class`).style("stroke", "black")
-        //     .attr("r", "1%").attr('cx', `${cx}%`).attr('cy', `${cy}%`).transition(tSix).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopOne(circleSix._groups[0][0], cx, cy) );
         }
     }, []);
     return (<div className="loading-spinner-container">
-                <div className="loading-text">{props.text}</div>
+                <div ref={textRef} className="loading-text loading-text-color">{props.text}</div>
                 <svg ref={svgRefOne} className='loading-spinner-svg-one'></svg>
                 <svg ref={svgRefTwo} className='loading-spinner-svg-two'></svg>
                 <svg ref={svgRefThree} className='loading-spinner-svg-three'></svg>
