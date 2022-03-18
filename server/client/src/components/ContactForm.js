@@ -87,10 +87,7 @@ const ContactForm = (props) => {
                     .ease(d3.easeLinear);
             d3.select(formContainer.current).transition(t).style('height', '25em');
             return (
-                <div>
-                    <div>Loading-Spinner</div>
-                    <div>Loading</div>
-                </div>
+                <LoadingSpinner text="Loading..." />
             );
         } else if (props.contacted==='contacted') {
             return (
@@ -111,7 +108,7 @@ const ContactForm = (props) => {
     return (
         <React.Fragment>
         <div ref={formContainer} className="form-container">
-            <LoadingSpinner text="Loading" />
+            {renderHelper()}
         </div>
         </React.Fragment>
     )

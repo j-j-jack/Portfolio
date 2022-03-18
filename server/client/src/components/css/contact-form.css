@@ -4,6 +4,7 @@
 }
 
 .form-container {
+  color: var(--glitch-white);
   background-color: var(--glitch-black);
   height: 30em;
   padding-top: 1.5em;
