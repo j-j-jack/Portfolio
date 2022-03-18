@@ -111,7 +111,7 @@ const ContactForm = (props) => {
     return (
         <React.Fragment>
         <div ref={formContainer} className="form-container">
-            <LoadingSpinner />
+            <LoadingSpinner text="Loading" />
         </div>
         </React.Fragment>
     )

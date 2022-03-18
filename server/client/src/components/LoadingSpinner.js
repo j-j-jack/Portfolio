@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import "./css/loading-spinner.css";
 import "./css/glitch-colors.css";
 
-const LoadingSpinner = () => {
+const LoadingSpinner = (props) => {
     const svgRefOne = useRef();
     const svgRefTwo = useRef();
     const svgRefThree = useRef();
@@ -11,6 +11,9 @@ const LoadingSpinner = () => {
 
     let glitchColors = ["glitch-red", "glitch-black", "glitch-white", "glitch-pink", "glitch-blue", "glitch-green", "glitch-yellow", "glitch-aqua"];
     useEffect(() => {
+
+        // set random rotation for svgs
+
         let rotateSpeed = 1000 + parseInt(Math.random()*5000);
         svgRefOne.current.style.setProperty('-webkit-animation' , `spin ${rotateSpeed}ms linear infinite`);
         svgRefOne.current.style.setProperty('-moz-animation' , `spin ${rotateSpeed}ms linear infinite`);
@@ -42,36 +45,36 @@ const LoadingSpinner = () => {
             let color= glitchColors[parseInt(Math.random()*8)];
             d3.select(node).transition()
                 .duration(durationOne)
-                    .ease(d3.easeLinear).attr("r", `${Math.random()*2}%`).attr('cx', `${cx}%`).attr('cy', `${cy}%`).on('end', () => transitionLoopTwo(node, cx, cy));
+                    .ease(d3.easeLinear).style('opacity', '0').attr("r", `${Math.random()*2}%`).attr('cx', `${cx}%`).attr('cy', `${cy}%`).on('end', () => transitionLoopTwo(node, cx, cy));
         }
         const transitionLoopTwo = (node, cx, cy) => {
             d3.select(node).transition()
                 .duration(durationOne)
-                    .ease(d3.easeLinear).attr("r", `${Math.random()*2}%`).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopOne(node, cx, cy));
+                    .ease(d3.easeLinear).style('opacity', '1').attr("r", `${Math.random()*2}%`).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopOne(node, cx, cy));
         }
 
         const transitionLoopThree = (node, cx, cy) => {
             let color= glitchColors[parseInt(Math.random()*8)];
             d3.select(node).transition()
                 .duration(durationTwo)
-                    .ease(d3.easeLinear).attr("r", `${Math.random()*2}%`).attr('cx', `${cx}%`).attr('cy', `${cy}%`).on('end', () => transitionLoopFour(node, cx, cy));
+                    .ease(d3.easeLinear).style('opacity', '0').attr("r", `${Math.random()*2}%`).attr('cx', `${cx}%`).attr('cy', `${cy}%`).on('end', () => transitionLoopFour(node, cx, cy));
         }
         const transitionLoopFour = (node, cx, cy) => {
             d3.select(node).transition()
                 .duration(durationTwo)
-                    .ease(d3.easeLinear).attr("r", `${Math.random()*2}%`).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopThree(node, cx, cy));
+                    .ease(d3.easeLinear).style('opacity', '1').attr("r", `${Math.random()*2}%`).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopThree(node, cx, cy));
         }
 
         const transitionLoopFive = (node, cx, cy) => {
             let color= glitchColors[parseInt(Math.random()*8)];
             d3.select(node).transition()
                 .duration(durationThree)
-                    .ease(d3.easeLinear).attr("r", `${Math.random()*2}%`).attr('cx', `${cx}%`).attr('cy', `${cy}%`).on('end', () => transitionLoopSix(node, cx, cy));
+                    .ease(d3.easeLinear).style('opacity', '0').attr("r", `${Math.random()*2}%`).attr('cx', `${cx}%`).attr('cy', `${cy}%`).on('end', () => transitionLoopSix(node, cx, cy));
         }
         const transitionLoopSix = (node, cx, cy) => {
             d3.select(node).transition()
                 .duration(1200)
-                    .ease(d3.easeLinear).attr("r", `${Math.random()*2}%`).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopFive(node, cx, cy));
+                    .ease(d3.easeLinear).style('opacity', '1').attr("r", `${Math.random()*2}%`).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopFive(node, cx, cy));
         }
         for (let i=0; i<48; i++){
         let angleInRadians = (i*7.5) * Math.PI/180;
@@ -108,6 +111,7 @@ const LoadingSpinner = () => {
         }
     }, []);
     return (<div className="loading-spinner-container">
+                <div className="loading-text">{props.text}</div>
                 <svg ref={svgRefOne} className='loading-spinner-svg-one'></svg>
                 <svg ref={svgRefTwo} className='loading-spinner-svg-two'></svg>
                 <svg ref={svgRefThree} className='loading-spinner-svg-three'></svg>
