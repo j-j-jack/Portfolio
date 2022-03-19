@@ -1,14 +1,59 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import "./css/landing.css";
+import "./css/glitch-colors.css";
+import * as d3 from 'd3';
 
 // letters lighter on mouseover
 // https://www.google.com/search?q=inside+a+spaceship&rlz=1C1SQJL_enIE895IE895&sxsrf=APq-WBtI82L4Fk-6id-BPb9cfY7YaqwC9A:1647617572800&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiEz5vh_c_2AhVGh1wKHeAcCKIQ_AUoAXoECAEQAw&biw=1280&bih=919&dpr=1#imgrc=5RvfVup02zMKCM
 
 const Landing = () => {
+  
+  const mainSvgRef = useRef();
+    useEffect(() => {
+      let colors = ['red', 'white', 'pink', 'blue', 'green', 'aqua', 'yellow', 'black'];
+
+      const movePointOne = async (point) => {            
+        await d3.select(point).transition().delay(Math.random()*300).remove();
+        let color = colors[parseInt(Math.random()*8)];
+        let radius = 9.5 + (Math.random() * 6);
+        // let angleInRadians = (Math.random()*360) * Math.PI/180;
+        let angleInRadians = (Math.random()*360) * (Math.PI/180);
+        let cx = 55.95 + (radius * (Math.cos(angleInRadians)));
+        let cy =  60.25 + ((radius * (Math.sin(angleInRadians)))*1.54);
+        let circle = d3.select(mainSvgRef.current).append('circle').transition().attr('class', `point glitch-${color}`).attr('r', '0.3%').attr('cx', `${cx}%`).attr('cy', `${cy}%`)
+            .on('end', () => movePointTwo(circle._groups[0][0]));
+    }
+
+  const movePointTwo = async (point) => {
+        await d3.select(point).transition().delay(Math.random()*300).remove();
+        let color = colors[parseInt(Math.random()*8)];
+        let radius = 9.5 + (Math.random() * 6);
+        // let angleInRadians = (Math.random()*360) * Math.PI/180;
+        let angleInRadians = (Math.random()*360) * (Math.PI/180);
+        let cx = 55.95 + (radius * (Math.cos(angleInRadians)));
+        let cy =  60.25 + ((radius * (Math.sin(angleInRadians)))*1.54);
+        let circle = d3.select(mainSvgRef.current).append('circle').transition().attr('class', `point glitch-${color}`).attr('r', '0.3%').attr('cx', `${cx}%`).attr('cy', `${cy}%`)
+            .on('end', () => movePointTwo(circle._groups[0][0]));
+      
+    }
+        for (let i=0; i<100; i++){
+            let color = colors[parseInt(Math.random()*8)];
+            let radius = 9.5 + (Math.random() * 6);
+            // let angleInRadians = (Math.random()*360) * Math.PI/180;
+            let angleInRadians = (Math.random()*360) * (Math.PI/180);
+            let cx = 55.95 + (radius * (Math.cos(angleInRadians)));
+            let cy =  60.25 + ((radius * (Math.sin(angleInRadians)))*1.54);
+            // ^ factor in aspect ratio
+            let circle = d3.select(mainSvgRef.current).append('circle').transition().attr('class', `point glitch-${color}`).attr('z-index', parseInt(1 + Math.random()* 288))
+                .attr("r", '0.3%').attr('cx', `${cx}%`).attr('cy', `${cy}%`).on('end', () => movePointOne(circle._groups[0][0]));
+        }
+    }, []);
+
+
     return (
         <div className="landing-container">
-        <svg xmlns="http://www.w3.org/2000/svg" className="logo-svg" viewBox="0.0 -2.000000000000057 972.0 630.0" preserveAspectRatio="none">
-  <g>
+      <svg ref={mainSvgRef} xmlns="http://www.w3.org/2000/svg" className="logo-svg" viewBox="0.0 -2.000000000000057 972.0 630.0" preserveAspectRatio="none">
+      <g>
     <defs>
       <path id="s-Rect_2-d1224" d="M0.0 -2.000000000000057 L972.0000000000002 -2.000000000000057 L972.0000000000002 628.0 L0.0 628.0 Z "></path>
     </defs>
@@ -21,7 +66,7 @@ const Landing = () => {
       <path id="s-Path_2-d1224" d="M543.8000030517578 284.1499786376953 C596.5000152587891 284.1499786376953 632.1999969482422 325.37498474121094 632.1999969482422 379.34999084472656 C632.1999969482422 433.32498931884766 596.5000152587891 474.54998779296875 543.8000030517578 474.54998779296875 C491.1000061035156 474.54998779296875 455.40000915527344 433.32498931884766 455.40000915527344 379.34999084472656 C455.40000915527344 325.37498474121094 491.1000061035156 284.1499786376953 543.8000030517578 284.1499786376953 Z M543.8000030517578 231.0249786376953 C460.50000762939453 231.0249786376953 394.2000045776367 293.92498779296875 394.2000045776367 379.34999084472656 C394.2000045776367 464.7749900817871 460.50000762939453 527.6749908924103 543.8000030517578 527.6749908924103 C627.1000061035156 527.6749908924103 693.4000091552734 464.7749900817871 693.4000091552734 379.34999084472656 C693.4000091552734 293.92498779296875 627.1000061035156 231.0249786376953 543.8000030517578 231.0249786376953 Z "></path>
     </defs>
     <g style={{"mixBlendMode":"normal"}}>
-      <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#s-Path_2-d1224" fill="#0B0A24" fillOpacity="1.0"></use>
+      <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#s-Path_2-d1224" fill="#0B0A24" fillOpacity="0"></use>
     </g>
   </g>
   <g>
