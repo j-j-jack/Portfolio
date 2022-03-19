@@ -3,9 +3,25 @@
     aspect-ratio: 1.542857142857143;
 }
 
+.point {
+    -webkit-filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
+        filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
+}
+
 .point:hover
   {
-    height: 3%;
-    stroke: var(--glitch-white);
-    stroke-width: 2%;
+    r: 1.6%;
+    
   }
+.logo-letter {
+    -webkit-filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
+        filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
+}
+
+
+.s:hover {
+    -webkit-animation: translate-letter-s 550ms ease-out;
+    -moz-animation: translate-letter-s 550ms ease-out;
+    animation: translate-letter-s 550ms ease-out;
+}
+

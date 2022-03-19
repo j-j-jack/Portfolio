@@ -9,6 +9,7 @@ html {
 }
 
 body {
+    background-color: var(--glitch-white);
     height: 100%;
     overflow-x: hidden;
     margin: 0;

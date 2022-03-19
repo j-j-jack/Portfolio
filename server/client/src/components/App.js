@@ -8,6 +8,7 @@ import Lorem from './Lorem';
 import ProjectCard from './ProjectCard';
 import ContactForm from './ContactForm';
 import Landing from './Landing';
+import LoadingSpinner from './LoadingSpinner';
 
 
 const App = (props) => {
@@ -48,7 +49,7 @@ const App = (props) => {
             <div>
                 <Navbar />
                 <div className="content">
-                <section ref={navRefOne} className="standard-margin">
+                <section id="1" ref={navRefOne} className="standard-margin">
                     <Landing />
                 </section>
                 <section ref={navRefTwo} className="standard-margin">
@@ -90,7 +91,7 @@ const App = (props) => {
                 </section>
                 <section ref={navRefThree} className="standard-margin">
                     <h2 id="3">Section Three</h2>
-                    <Lorem />
+                    <LoadingSpinner />
                 </section>
                 <section ref={navRefFour} className="standard-margin">
                     <h2 id="4">Section Four</h2>
