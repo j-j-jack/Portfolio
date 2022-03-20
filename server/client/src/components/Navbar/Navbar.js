@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { navbarItems  } from './navbarItems';
 import { connect } from 'react-redux';
 import { changeActiveNavTab, openMobileNav } from '../../actions';
+import "../css/glitch-colors.css";
 import '../css/navbar.css';
 
 class Navbar extends Component {

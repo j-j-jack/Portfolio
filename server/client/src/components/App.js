@@ -9,6 +9,7 @@ import ProjectCard from './ProjectCard';
 import ContactForm from './ContactForm';
 import Landing from './Landing';
 import LoadingSpinner from './LoadingSpinner';
+import AboutSection from './AboutSection';
 
 
 const App = (props) => {
@@ -53,7 +54,8 @@ const App = (props) => {
                     <Landing />
                 </section>
                 <section ref={navRefTwo} className="standard-margin">
-                    <h2 id="2">Section Two</h2>
+                    <h2 id="2">My Work</h2>
+                    <p>Some of my work is displayed below...</p>
                     <div className="project-cards-container">
                         <ProjectCard 
                             uniqueKey="1"
@@ -90,8 +92,8 @@ const App = (props) => {
                     </div>
                 </section>
                 <section ref={navRefThree} className="standard-margin">
-                    <h2 id="3">Section Three</h2>
-                    <LoadingSpinner />
+                    <h2 id="3">About Me</h2>
+                    <AboutSection />
                 </section>
                 <section ref={navRefFour} className="standard-margin">
                     <h2 id="4">Section Four</h2>
