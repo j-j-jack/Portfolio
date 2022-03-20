@@ -10,6 +10,23 @@
 .about-section-technologies-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 3em;
+}
+
+.technology-container-outer {
+  position: relative;
+}
+
+.technology-container-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media (max-width: 767px) {
+    .about-section-technologies-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    } 
 }
 
 .animate__animated.animate__delay-500ms {

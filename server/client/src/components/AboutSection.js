@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from './Button';
 import TechnologyContainer from './TechnologyContainer';
+import "animate.css";
 import "./css/glitch-colors.css";
 import "./css/about-section.css";
 
@@ -26,63 +27,117 @@ const AboutSection = () => {
             <div>
             <div className='about-section-technologies-container'>
                 <div>
-                 <TechnologyContainer 
-                    containerClass=" 
+                 <TechnologyContainer
+                    technologyOne="HTML"
+                    technologyTwo="CSS"
+                    containerClassOne=" 
                         animate__animated
                         animate__infinite
-                        animate__flipInX
-                        animate__delay-500ms"
-                  />
-                  </div>
-                  <div>
-                 <TechnologyContainer 
-                    containerClass=" 
+                        animate__fadeInDown
+                        animate__slow"
+                    containerClassTwo=" 
                         animate__animated
                         animate__infinite
-                        animate__flipInX
+                        animate__fadeInDown
+                        animate__slow
                         animate__delay-1s"
                   />
                   </div>
+
                   <div>
-                 <TechnologyContainer 
-                    containerClass=" 
+                  <TechnologyContainer
+                    technologyOne="JavaScript"
+                    technologyTwo="ReactJS"
+                    containerClassOne=" 
                         animate__animated
                         animate__infinite
-                        animate__flipInX
-                        animate__delay-1500ms"
-                  />
-                  </div>
-                <div>
-                 <TechnologyContainer 
-                    containerClass=" 
+                        animate__fadeInDown
+                        animate__slow"
+                    containerClassTwo=" 
                         animate__animated
                         animate__infinite
-                        animate__flipInX
-                        animate__delay-2s"
+                        animate__fadeInDown
+                        animate__slow
+                        animate__delay-1s"
                   />
                   </div>
+
                   <div>
-                 <TechnologyContainer 
-                    containerClass=" 
+                  <TechnologyContainer
+                    technologyOne="Python"
+                    technologyTwo="Django"
+                    containerClassOne=" 
                         animate__animated
                         animate__infinite
-                        animate__flipInX
-                        animate__delay-2500ms"
+                        animate__fadeInDown
+                        animate__slow"
+                    containerClassTwo=" 
+                        animate__animated
+                        animate__infinite
+                        animate__fadeInDown
+                        animate__slow
+                        animate__delay-1s"
                   />
                   </div>
+
                   <div>
-                 <TechnologyContainer 
-                    containerClass=" 
+                  <TechnologyContainer
+                    technologyOne="MongoDB"
+                    technologyTwo="Flask"
+                    containerClassOne=" 
                         animate__animated
                         animate__infinite
-                        animate__flipInX
-                        animate__delay-3s"
+                        animate__fadeInDown
+                        animate__slow"
+                    containerClassTwo=" 
+                        animate__animated
+                        animate__infinite
+                        animate__fadeInDown
+                        animate__slow
+                        animate__delay-1s"
                   />
                   </div>
+
+                  <div>
+                  <TechnologyContainer
+                    technologyOne="NodeJS"
+                    technologyTwo="Express"
+                    containerClassOne=" 
+                        animate__animated
+                        animate__infinite
+                        animate__fadeInDown
+                        animate__slow"
+                    containerClassTwo=" 
+                        animate__animated
+                        animate__infinite
+                        animate__fadeInDown
+                        animate__slow
+                        animate__delay-1s"
+                  />
+                  </div>
+
+                  <div>
+                  <TechnologyContainer
+                    technologyOne="Heroku"
+                    technologyTwo="AWS"
+                    containerClassOne=" 
+                        animate__animated
+                        animate__infinite
+                        animate__fadeInDown
+                        animate__slow"
+                    containerClassTwo=" 
+                        animate__animated
+                        animate__infinite
+                        animate__fadeInDown
+                        animate__slow
+                        animate__delay-1s"
+                  />
+                  </div>
+
                   </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default AboutSection;
