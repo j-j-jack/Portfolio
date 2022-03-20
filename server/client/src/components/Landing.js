@@ -16,17 +16,20 @@ const Landing = () => {
 
   useEffect(() => {
     jRef.current.addEventListener('mouseover', () => {
+      console.log('mouse-over j');
       d3.select(jRef.current).attr('class', 'j animate__animated animate__bounce logo-letter');
     });
-    jContainerRef.current.addEventListener('mouseleave', () => {
-      d3.select(jRef.current).attr('class', 'j animate__animated animate__swing logo-letter');
+    jContainerRef.current.addEventListener('mouseout', () => {
+      console.log('mouse-out j-container');
+      d3.select(jRef.current).attr('class', 'j animate__animated logo-letter');
     });
     sRef.current.addEventListener('mouseover', () => {
+      console.log('mouse-over s');
       d3.select(sRef.current).attr('class', 'j animate__animated animate__bounce logo-letter');
     });
-    sContainerRef.current.addEventListener('mouseleave', () => {
-      console.log(sRef.current);
-      d3.select(sRef.current).attr('class', 's animate__animated animate__swing logo-letter');
+    sContainerRef.current.addEventListener('mouseout', () => {
+      console.log('mouse-out s-container');
+      d3.select(sRef.current).attr('class', 's animate__animated logo-letter');
     });
   }, []);
   

@@ -1,3 +1,5 @@
+@import url('http://fonts.cdnfonts.com/css/neutra-text-alt');
+
 .standard-margin {
     margin-top: 3rem;
 }
@@ -9,6 +11,8 @@ html {
 }
 
 body {
+    font-family: "Neutra Text Alt", sans-serif;
+    font-weight: 400;
     background-color: var(--glitch-white);
     height: 100%;
     overflow-x: hidden;
