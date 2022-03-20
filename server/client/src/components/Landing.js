@@ -100,15 +100,25 @@ const Landing = () => {
 
     return (
         <div className="landing-container">
+          <div className="animate__animated animate__fadeIn landing-text-one">
+              Hello,
+          </div>
+          <div className="landing-text-two animate__animated animate__fadeIn animate__delay-1s">
+            I'm Jack O'Sullivan,
+          </div>
+          <div className="landing-text-three animate__animated animate__fadeIn animate__delay-2s">
+            I'm a Web Developer
+          </div>
       <svg ref={mainSvgRef} xmlns="http://www.w3.org/2000/svg" className="logo-svg" viewBox="0.0 -2.000000000000057 972.0 630.0" preserveAspectRatio="none">
       <g>
     <defs>
       <path id="s-Rect_2-d1224" d="M0.0 -2.000000000000057 L972.0000000000002 -2.000000000000057 L972.0000000000002 628.0 L0.0 628.0 Z "></path>
     </defs>
     <g style={{"mixBlendMode":"normal"}}>
-      <use xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#s-Rect_2-d1224" fill="#3659C4" fillOpacity="1.0"></use>
+      <use className="logo-background" xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#s-Rect_2-d1224" fill="#3659C4" fillOpacity="1.0"></use>
     </g>
   </g>
+  <g className="animate__animated animate__fadeInUp animate__delay-3s">
   <g>
     <defs>
       <path id="s-Rect_2-d1225" d="M 150.0 220 L370 220 L370 550.0 L150.0 550.0 Z "></path>
@@ -148,6 +158,7 @@ const Landing = () => {
     <g style={{"mixBlendMode":"normal"}}>
       <use ref={sRef} className="animate__animated logo-letter" xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#s-Path_3-d1224" fill="#0B0A24" fillOpacity="1.0"></use>
     </g>
+  </g>
   </g>
 </svg>
 </div>
