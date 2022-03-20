@@ -13,24 +13,48 @@ const Landing = () => {
   const sContainerRef = useRef();
   const jContainerRef = useRef();
   const mainSvgRef = useRef();
+  let jAnimationEnabled = true;
+  let sAnimationEnabled = true;
 
   useEffect(() => {
+    const turnOnAnimation = (ref) => {
+        d3.select(ref.current).attr('class', 'j animate__animated animate__bounce logo-letter');
+    }
+
+    const turnOffAnimation = (ref) => {
+        d3.select(ref.current).attr('class', 'j animate__animated logo-letter');
+    }
+
     jRef.current.addEventListener('mouseover', () => {
-      console.log('mouse-over j');
-      d3.select(jRef.current).attr('class', 'j animate__animated animate__bounce logo-letter');
+      if (jAnimationEnabled) {
+        jAnimationEnabled = false;
+        turnOnAnimation(jRef);
+        console.log('mouse-over j');
+      
+      setTimeout(()=> {
+        console.log('reenabled');
+        turnOffAnimation(jRef);
+        jAnimationEnabled=true;
+        }, 
+        1000);
+      }
     });
-    jContainerRef.current.addEventListener('mouseout', () => {
-      console.log('mouse-out j-container');
-      d3.select(jRef.current).attr('class', 'j animate__animated logo-letter');
+
+      sRef.current.addEventListener('mouseover', () => {
+      if (sAnimationEnabled) {
+        sAnimationEnabled = false;
+        turnOnAnimation(sRef);
+        console.log('mouse-over j');
+      
+      setTimeout(()=> {
+        console.log('reenabled');
+        turnOffAnimation(sRef);
+        sAnimationEnabled=true;
+        }, 
+        1000);
+      }
     });
-    sRef.current.addEventListener('mouseover', () => {
-      console.log('mouse-over s');
-      d3.select(sRef.current).attr('class', 'j animate__animated animate__bounce logo-letter');
-    });
-    sContainerRef.current.addEventListener('mouseout', () => {
-      console.log('mouse-out s-container');
-      d3.select(sRef.current).attr('class', 's animate__animated logo-letter');
-    });
+
   }, []);
   
     useEffect(() => {
