@@ -15,25 +15,25 @@ const Button = (props) => {
     const buttonGlitch = () => {
         const colors = ['glitch-white', 'glitch-red', 'glitch-yellow',
                 'glitch-blue', 'glitch-pink', 'glitch-black', 'glitch-aqua', 'glitch-green'];
-        let x = Math.random() * 100;
-        let y = Math.random() * 100;
-            if (x > 10 && x < 90) {
-                if (y <= 50) {
-                    y = y/5;
+        let cx = Math.random() * 100;
+        let cy = Math.random() * 100;
+            if (cx > 10 && cx < 90) {
+                if (cy <= 50) {
+                    cy = cy/5;
                 } else {
-                    y = ((y - 50)/5) + 90;
+                    cy = ((cy - 50)/5) + 90;
                 }
             }
-        x = x.toString() + '%'
-        y = y.toString() + '%';;
+        cx = cx.toString() + '%'
+        cy = cy.toString() + '%';;
         let width = Math.random() * 2;
         width = width.toString() + '%';
         let height = Math.random() * 20;
         height = height.toString() + '%';
         let randomColor = colors[Math.floor(Math.random() * 8)];
-        d3.select(buttonRef.current).append('rect')
-            .attr("class", randomColor).style("stroke-width", 2).attr("x", x)
-                .attr("y", y).attr("width", width).attr("height", height);
+        d3.select(buttonRef.current).append('circle')
+            .attr("class", randomColor).attr('r', width).attr("cx", cx)
+                .attr("cy", cy);
         lineCount.current+=1;
     }
 
