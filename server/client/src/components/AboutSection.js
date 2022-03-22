@@ -33,12 +33,12 @@ const AboutSection = () => {
                     containerClassOne=" 
                         animate__animated
                         animate__infinite
-                        animate__fadeInDown
+                        animate__fadeInOutDown
                         animate__slow"
                     containerClassTwo=" 
                         animate__animated
                         animate__infinite
-                        animate__fadeInDown
+                        animate__fadeInOutDown
                         animate__slow
                         animate__delay-1s"
                   />
@@ -51,14 +51,15 @@ const AboutSection = () => {
                     containerClassOne=" 
                         animate__animated
                         animate__infinite
-                        animate__fadeInDown
-                        animate__slow"
+                        animate__fadeInOutDown
+                        animate__slow
+                        animate__delay-500ms"
                     containerClassTwo=" 
                         animate__animated
                         animate__infinite
-                        animate__fadeInDown
+                        animate__fadeInOutDown
                         animate__slow
-                        animate__delay-1s"
+                        animate__delay-1500ms"
                   />
                   </div>
 
@@ -69,12 +70,13 @@ const AboutSection = () => {
                     containerClassOne=" 
                         animate__animated
                         animate__infinite
-                        animate__fadeInDown
-                        animate__slow"
+                        animate__fadeInOutDown
+                        animate__slow
+                        animate__delay"
                     containerClassTwo=" 
                         animate__animated
                         animate__infinite
-                        animate__fadeInDown
+                        animate__fadeInOutDown
                         animate__slow
                         animate__delay-1s"
                   />
@@ -87,14 +89,15 @@ const AboutSection = () => {
                     containerClassOne=" 
                         animate__animated
                         animate__infinite
-                        animate__fadeInDown
-                        animate__slow"
+                        animate__fadeInOutDown
+                        animate__slow
+                        animate__delay-500ms"
                     containerClassTwo=" 
                         animate__animated
                         animate__infinite
-                        animate__fadeInDown
+                        animate__fadeInOutDown
                         animate__slow
-                        animate__delay-1s"
+                        animate__delay-1500ms"
                   />
                   </div>
 
@@ -105,12 +108,13 @@ const AboutSection = () => {
                     containerClassOne=" 
                         animate__animated
                         animate__infinite
-                        animate__fadeInDown
-                        animate__slow"
+                        animate__fadeInOutDown
+                        animate__slow
+                        animate-delay-s"
                     containerClassTwo=" 
                         animate__animated
                         animate__infinite
-                        animate__fadeInDown
+                        animate__fadeInOutDown
                         animate__slow
                         animate__delay-1s"
                   />
@@ -123,14 +127,15 @@ const AboutSection = () => {
                     containerClassOne=" 
                         animate__animated
                         animate__infinite
-                        animate__fadeInDown
-                        animate__slow"
+                        animate__fadeInOutDown
+                        animate__slow
+                        animate__delay-500ms"
                     containerClassTwo=" 
                         animate__animated
                         animate__infinite
-                        animate__fadeInDown
+                        animate__fadeInOutDown
                         animate__slow
-                        animate__delay-1s"
+                        animate__delay-1500ms"
                   />
                   </div>
 
