@@ -25,121 +25,18 @@ const AboutSection = () => {
             </div>
             <div><h4>Some of the technologies I've used recently</h4></div>
             <div>
-            <div className='about-section-technologies-container'>
-                <div>
-                 <TechnologyContainer
-                    technologyOne="HTML"
-                    technologyTwo="CSS"
-                    containerClassOne=" 
-                        animate__animated
+            <TechnologyContainer 
+                technologies={['HTML', 'CSS', 'Bootstrap', 'Git', 'VSCode', 'ReactJS', 
+                    'JavaScript', 'D3JS', 'Django', 'Python','Github', 'Heroku', 'REST', 
+                    'Balsamiq', 'JSON', 'GIMP', 'Materialize.css', 'NodeJS', 'JQuery', 'ES6',
+                    'Express', 'SQL', 'Redux', 'MongoDB', 'NPM'
+                ]}
+                containerClassOne="animate__animated
                         animate__infinite
                         animate__fadeInOutDown
                         animate__slow"
-                    containerClassTwo=" 
-                        animate__animated
-                        animate__infinite
-                        animate__fadeInOutDown
-                        animate__slow
-                        animate__delay-1s"
-                  />
-                  </div>
-
-                  <div>
-                  <TechnologyContainer
-                    technologyOne="JavaScript"
-                    technologyTwo="ReactJS"
-                    containerClassOne=" 
-                        animate__animated
-                        animate__infinite
-                        animate__fadeInOutDown
-                        animate__slow
-                        animate__delay-500ms"
-                    containerClassTwo=" 
-                        animate__animated
-                        animate__infinite
-                        animate__fadeInOutDown
-                        animate__slow
-                        animate__delay-1500ms"
-                  />
-                  </div>
-
-                  <div>
-                  <TechnologyContainer
-                    technologyOne="Python"
-                    technologyTwo="Django"
-                    containerClassOne=" 
-                        animate__animated
-                        animate__infinite
-                        animate__fadeInOutDown
-                        animate__slow
-                        animate__delay"
-                    containerClassTwo=" 
-                        animate__animated
-                        animate__infinite
-                        animate__fadeInOutDown
-                        animate__slow
-                        animate__delay-1s"
-                  />
-                  </div>
-
-                  <div>
-                  <TechnologyContainer
-                    technologyOne="MongoDB"
-                    technologyTwo="Flask"
-                    containerClassOne=" 
-                        animate__animated
-                        animate__infinite
-                        animate__fadeInOutDown
-                        animate__slow
-                        animate__delay-500ms"
-                    containerClassTwo=" 
-                        animate__animated
-                        animate__infinite
-                        animate__fadeInOutDown
-                        animate__slow
-                        animate__delay-1500ms"
-                  />
-                  </div>
-
-                  <div>
-                  <TechnologyContainer
-                    technologyOne="NodeJS"
-                    technologyTwo="Express"
-                    containerClassOne=" 
-                        animate__animated
-                        animate__infinite
-                        animate__fadeInOutDown
-                        animate__slow
-                        animate-delay-s"
-                    containerClassTwo=" 
-                        animate__animated
-                        animate__infinite
-                        animate__fadeInOutDown
-                        animate__slow
-                        animate__delay-1s"
-                  />
-                  </div>
-
-                  <div>
-                  <TechnologyContainer
-                    technologyOne="Heroku"
-                    technologyTwo="AWS"
-                    containerClassOne=" 
-                        animate__animated
-                        animate__infinite
-                        animate__fadeInOutDown
-                        animate__slow
-                        animate__delay-500ms"
-                    containerClassTwo=" 
-                        animate__animated
-                        animate__infinite
-                        animate__fadeInOutDown
-                        animate__slow
-                        animate__delay-1500ms"
-                  />
-                  </div>
-
-                  </div>
+            />
+            <div><h4>There's not millions. That's just an illusion hehe...</h4></div>
             </div>
         </div>
     );

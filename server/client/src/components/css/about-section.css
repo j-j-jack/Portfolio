@@ -9,7 +9,7 @@
 
 .about-section-technologies-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 3em;
 }
 
@@ -71,8 +71,18 @@
 
 @media (max-width: 767px) {
     .about-section-technologies-container {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     } 
+}
+
+
+@media (max-width: 576px) {
+    .about-section-technologies-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .fifteen-plus {
+      display: none;
+    }
 }
 
 .animate__animated.animate__delay-500ms {
@@ -109,8 +119,12 @@
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
   }
-
-  50% {
+  30% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  60% {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -128,7 +142,12 @@
     transform: translate3d(0, -100%, 0);
   }
 
-  50% {
+  30% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  60% {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
