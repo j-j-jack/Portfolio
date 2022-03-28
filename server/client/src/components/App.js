@@ -56,7 +56,7 @@ const App = (props) => {
                 <section ref={navRefTwo} className="standard-margin">
                     <h2 id="2">My Work</h2>
                     <p>Some of my work is displayed below...</p>
-                    <div className="project-cards-container">
+                    <div className="project-card-container-m-left">
                         <ProjectCard 
                             uniqueKey="1"
                             githubLink="https://github.com"
@@ -65,6 +65,8 @@ const App = (props) => {
                             projectDescription="This is the project description. It is a very good project"
                             technologies = {["Django", "Stripe Api", "S3", "jQuery", "Javascript"]}
                         />
+                    </div>
+                    <div className="project-card-container-m-right">
                         <ProjectCard 
                             uniqueKey="2"
                             githubLink="https://github.com"
@@ -73,6 +75,8 @@ const App = (props) => {
                             projectDescription="This is the project description. It is a very good project"
                             technologies = {["Django", "Stripe Api", "S3", "jQuery", "Javascript"]}
                         />
+                    </div>
+                    <div className="project-card-container-m-left">
                         <ProjectCard 
                             uniqueKey="3"
                             githubLink="https://github.com"
@@ -81,6 +85,8 @@ const App = (props) => {
                             projectDescription="This is the project description. It is a very good project"
                             technologies = {["Django", "Stripe Api", "S3", "jQuery", "Javascript"]}
                         />
+                        </div>
+                    <div className="project-card-container-m-right">
                         <ProjectCard 
                             uniqueKey="4"
                             githubLink="https://github.com"
