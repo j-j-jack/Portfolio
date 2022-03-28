@@ -1,10 +1,17 @@
+.about-section-container {
+  background: var(--glitch-black);
+  color: var(--glitch-white);
+  padding: 2em;
+  border-radius: 2em;
+}
+
 .about-section-button-container {
     text-align: center;
 }
 
 .about-section-contact-button-image {
     background: url(../../assets/images/email.svg);
-  background-repeat: no-repeat;
+    background-repeat: no-repeat;
 }
 
 .about-section-technologies-container {

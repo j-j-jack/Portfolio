@@ -28,7 +28,7 @@ const AboutSection = () => {
             <TechnologyContainer 
                 technologies={['HTML', 'CSS', 'Bootstrap', 'Git', 'VSCode', 'ReactJS', 
                     'JavaScript', 'D3JS', 'Django', 'Python','Github', 'Heroku', 'REST', 
-                    'Balsamiq', 'JSON', 'GIMP', 'Materialize.css', 'NodeJS', 'JQuery', 'ES6',
+                    'Balsamiq', 'JSON', 'GIMP', 'Materialize', 'NodeJS', 'JQuery', 'ES6',
                     'Express', 'SQL', 'Redux', 'MongoDB', 'NPM'
                 ]}
                 containerClassOne="animate__animated
