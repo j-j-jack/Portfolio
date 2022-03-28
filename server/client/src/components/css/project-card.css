@@ -5,7 +5,7 @@
     width: 100%;
     height: 300px;
     text-align: center;
-    background: #333;
+    background: var(--glitch-black);
     position: relative;
 }
 
@@ -46,7 +46,8 @@
   z-index: 200;
   border-radius: 5%;
   opacity: 0.15;
-  background-image: repeating-radial-gradient(circle at 17% 32%, white, black 0.00085px);
+  background-image: repeating-radial-gradient(circle at 17% 32%, var(--glitch-white), 
+      var(--glitch-black) 0.00085px);
   animation: back 5s linear infinite;
 }
 
@@ -84,7 +85,7 @@
   margin-left: 5%;
   height: 50%;
   font-size: 1.2rem;
-  text-decoration: underline yellow dashed;
+  text-decoration: underline var(--glitch-yellow) dashed;
 }
 
 .project-card-buttons {
@@ -146,7 +147,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(rgba(5, 5, 5, 0.6), rgba(0, 0, 0, 0)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px);
+        background: linear-gradient(var(--glitch-dark-shadow), rgba(0, 0, 0, 0)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px);
         background-size: cover;
         background-position: center;
         z-index: 1;
@@ -158,7 +159,7 @@
         margin: 0;
         padding: 0;
         position: relative;
-        color: white;
+        color: var(--glitch-white);
         font-size: 2.5em;
         letter-spacing: .25em;
         animation: glitch-skew 0.5s infinite linear alternate-reverse;
@@ -171,7 +172,7 @@
         width: 100%;
         height: 100%;
         left: -2px;
-        text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+        text-shadow: -2px 0 var(--glitch-aqua), 2px 2px var(--glitch-pink);
         animation: glitch-anim2 1s infinite linear alternate-reverse;
       }
       @keyframes glitch-anim {

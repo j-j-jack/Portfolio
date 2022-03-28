@@ -36,7 +36,7 @@ ul {
 }
 
 .active {
-    text-shadow: 2px 2px magenta;
+    text-shadow: 2px 2px var(--glitch-aqua);
 }
 
 a {

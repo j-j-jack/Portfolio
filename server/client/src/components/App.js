@@ -96,7 +96,7 @@ const App = (props) => {
                     <AboutSection />
                 </section>
                 <section ref={navRefFour} className="standard-margin">
-                    <h2 id="4">Section Four</h2>
+                    <h2 id="4">Why not contact me?...</h2>
                     <ContactForm />
                 </section>
                 </div>

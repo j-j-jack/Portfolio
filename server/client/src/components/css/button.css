@@ -1,5 +1,7 @@
 button {
     border: 2px solid black;
+    background-color: var(--glitch-pink);
+    color: var(--glitch-white);
     border-radius: .25rem;
     margin: 0;
     padding: 0;
