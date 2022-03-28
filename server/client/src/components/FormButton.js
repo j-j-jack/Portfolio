@@ -85,7 +85,7 @@ const FormButton = (props) => {
             <div className="form-button-content">
             <div className="button-link-content">
                 <div className={`${props.buttonClass}-image button-image`}></div>
-                <div className="button-text">{props.buttonText}</div>
+                <div className="button-text"><span>{props.buttonText}</span></div>
             </div>
             </div>
             <svg

@@ -56,7 +56,7 @@ const ProjectCard = (props) => {
                             <Button 
                                 buttonClass="project-github-button" 
                                 link={props.githubLink}
-                                buttonText="View on Github"
+                                buttonText="Github"
                                 target="_blank"
                             />
                         </div>
@@ -64,7 +64,7 @@ const ProjectCard = (props) => {
                             <Button 
                                 buttonClass="project-site-button" 
                                 link={props.liveLink}
-                                buttonText="View Live Site"
+                                buttonText="Live Site"
                                 target="_blank"
                             />
                         </div>

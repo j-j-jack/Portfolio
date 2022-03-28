@@ -85,7 +85,7 @@ const Button = (props) => {
             <a href={props.link} target={props.target} rel="noreferrer">
             <div className="button-link-content">
                 <div className={`${props.buttonClass}-image button-image`}></div>
-                <div className="button-text">{props.buttonText}</div>
+                <div className="button-text"><span>{props.buttonText}</span></div>
             </div>
             </a>
             </div>
