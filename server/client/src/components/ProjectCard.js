@@ -80,7 +80,7 @@ const ProjectCard = (props) => {
                         </div>
                     </div>
                     <div className="project-image-container">
-                        <img className="project-image" src={projectImage}></img>
+                        <img alt="screenshot of the project" className="project-image" src={projectImage}></img>
                     </div>
                     <div className="tv-static"></div>
                 </div>

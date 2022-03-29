@@ -1,6 +1,5 @@
 import { CHANGE_ACTIVE_NAV_TAB, 
-            OPEN_MOBILE_NAV, 
-                CHANGE_CONTACTED_STATUS } 
+            OPEN_MOBILE_NAV } 
                     from "../actions/types";
 
 const INITIAL_STATE = {

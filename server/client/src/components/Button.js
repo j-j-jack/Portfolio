@@ -28,8 +28,6 @@ const Button = (props) => {
         cy = cy.toString() + '%';;
         let width = Math.random() * 2;
         width = width.toString() + '%';
-        let height = Math.random() * 20;
-        height = height.toString() + '%';
         let randomColor = colors[Math.floor(Math.random() * 8)];
         d3.select(buttonRef.current).append('circle')
             .attr("class", randomColor).attr('r', width).attr("cx", cx)

@@ -1,25 +1,25 @@
 export const navbarItems = [
     {
         id: 1,
-        name: 'One',
+        name: 'Home',
         link: '#1',
         classNames: 'navbar-item'
     },
     {
         id: 2,
-        name: 'Two',
+        name: 'Work',
         link: '#2',
         classNames: 'navbar-item'
     },
     {    
         id: 3,
-        name: 'Three',
+        name: 'About',
         link: '#3',
         classNames: 'navbar-item'
     },
     {   
         id: 4,
-        name: 'Four',
+        name: 'Contact',
         link: '#4',
         classNames: 'navbar-item'
     }

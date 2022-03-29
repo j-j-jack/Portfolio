@@ -4,11 +4,9 @@ import { connect } from 'react-redux';
 import { changeActiveNavTab } from '../actions';
 import Navbar from './Navbar/Navbar'
 import ScrollAnimation from './ScrollAnimation';
-import Lorem from './Lorem';
 import ProjectCard from './ProjectCard';
 import ContactForm from './ContactForm';
 import Landing from './Landing';
-import LoadingSpinner from './LoadingSpinner';
 import AboutSection from './AboutSection';
 
 
