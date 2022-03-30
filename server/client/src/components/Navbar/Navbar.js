@@ -13,7 +13,7 @@ class Navbar extends Component {
         this.navLinkRefArray = React.createRef();
         this.hoverTabRef = React.createRef(null);
         this.previousHoverTabRef = React.createRef(null);
-        this.hoverFunctionQueue = React.createRef([]);
+        this.hoverTimeout = React.createRef(null);
      }
     
     componentDidMount () {
@@ -35,7 +35,6 @@ class Navbar extends Component {
     }
 
     mobileNavToggle () {
-        if (this.mouseOverEnabled.current === true) {
             this.props.openMobileNav(!this.props.mobileNavOpen);
             const visibility = this.navRef.current.getAttribute('data-visible');
             if (visibility==="false"){
@@ -46,12 +45,14 @@ class Navbar extends Component {
                 this.navRef.current.setAttribute('data-visible', 'false');
                 this.toggleRef.current.setAttribute('aria-expanded', 'false')
             }
-        }
     }
 
     
 
     mouseOverTab (id) {
+        if(this.hoverTimeout.current) {
+            clearTimeout(this.hoverTimeout.current);
+        }
         if (this.hoverTabRef.current === null) {
             this.animationAdder(id, "activate-down");
             this.hoverTabRef.current = id;
@@ -78,6 +79,14 @@ class Navbar extends Component {
         }
     }
 
+    mouseOutTab (id) {
+        this.hoverTimeout.current = setTimeout(() => {
+            this.hoverTabRef.current = null;
+            this.previousHoverTabRef.current = null;
+            this.animationAdder(id, "deactivate-up");
+        }, 500)
+    }
+
     renderList () {
         // very important className stays on one line
         return navbarItems.map(item => {
@@ -89,6 +98,9 @@ class Navbar extends Component {
                     <a 
                         onMouseOver={()=> {
                             this.mouseOverTab(item.id);
+                        }}
+                        onMouseOut={()=> {
+                            this.mouseOutTab(item.id);
                         }}
                         id = {`nav-link-${item.id}`}
                         className={`nav-link ${item.id === this.props.activeTab ? 'atab' : 'itab'}`}
