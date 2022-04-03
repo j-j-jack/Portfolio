@@ -14,6 +14,7 @@ class Navbar extends Component {
         this.hoverTabRef = React.createRef(null);
         this.previousHoverTabRef = React.createRef(null);
         this.hoverTimeout = React.createRef(null);
+        this.previousTab = React.createRef(null);
      }
     
     componentDidMount () {
@@ -22,6 +23,11 @@ class Navbar extends Component {
             this.navLinkRefArray.current.push(`nav-link-${item.id}`)
             return null;
         });
+        this.changeTabAnimation(this.props.activeTab);
+    }
+
+    componentDidUpdate () {
+        this.changeTabAnimation(this.props.activeTab);
     }
 
     animationAdder = (tabId, type) => {
@@ -30,7 +36,6 @@ class Navbar extends Component {
             let newTabClassName = 'nav-link';
             currentTabClassName.includes('atab') ? newTabClassName += ' atab' : newTabClassName += ' itab';
             newTabClassName += ' ' + type;
-            console.log('current>>>>', newTabClassName);
             tab.className = newTabClassName;
     }
 
@@ -87,14 +92,53 @@ class Navbar extends Component {
         }, 500)
     }
 
+    changeTabAnimation(id) {
+        console.log('change');
+        const activeTab = document.getElementById(`nav-span-${id}`)
+        console.log('active tab', activeTab);
+        console.log('previous tab', this.previousTab.current);
+        let previousActiveTab = null;
+        
+        if (this.previousTab.current !== null) {
+            previousActiveTab = document.getElementById(`nav-span-${this.previousTab.current}`);
+        }
+
+        if (id > this.previousTab.current) {
+            console.log('increase');
+            if (this.previousTab.current===null) {
+                activeTab.className="nav-li nav-li-initial";
+            }
+            if (previousActiveTab !== null) {
+                previousActiveTab.className = "nav-li nav-li-deactivate-left";
+                activeTab.className = "nav-li nav-li-activate-left"
+            }
+            this.previousTab.current = id;
+            return
+        }
+        
+        if (id < this.previousTab.current) {
+            console.log('decrease');
+            if (this.previousTab.current===null) {
+                activeTab.className="nav-li nav-li-initial";
+            }
+            if (previousActiveTab !== null) {
+                previousActiveTab.className = "nav-li nav-li-deactivate-right";
+                activeTab.className = "nav-li nav-li-activate-right"
+            }
+            this.previousTab.current = id;
+        }
+    }
+
     renderList () {
         // very important className stays on one line
         return navbarItems.map(item => {
             return (
                 <li 
-                    className="flex"
                     key={item.name}
                 >
+                    <span 
+                        id={`nav-span-${item.id}`}
+                        className="nav-li">
                     <a 
                         onMouseOver={()=> {
                             this.mouseOverTab(item.id);
@@ -103,9 +147,10 @@ class Navbar extends Component {
                             this.mouseOutTab(item.id);
                         }}
                         id = {`nav-link-${item.id}`}
-                        className={`nav-link ${item.id === this.props.activeTab ? 'atab' : 'itab'}`}
+                        className="nav-link"
                         href={item.link}>{item.name} 
                     </a>
+                    </span>
                 </li>
             );
         })

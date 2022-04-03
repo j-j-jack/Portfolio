@@ -46,12 +46,88 @@ ul {
 }
 
 .nav-link:hover {
-    color: var(--glitch-yellow);
+    color: var(--glitch-aqua);
 }
 
-.atab {
-    color: var(--glitch-yellow);
-    text-decoration: underline;
+.atab::after {
+    position: absolute;
+    content: "";
+    top: 1.25rem;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background-color: var(--glitch-aqua);
+    animation: navTabActivateUp ease-out var(--hover-animation-duration);
+}
+
+.nav-li {
+    position: relative;
+}
+
+.nav-li-initial::after {
+    position: absolute;
+    content: "";
+    top: 1.25rem;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background-color: var(--glitch-aqua);
+    animation: navTabActivateUp ease-out var(--hover-animation-duration);
+}
+
+.nav-li-activate-left::after {
+    position: absolute;
+    content: "";
+    top: 1.25rem;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background-color: var(--glitch-aqua);
+    animation: navTabActivate ease-out var(--hover-animation-duration);
+}
+
+.nav-li-deactivate-left::after {
+    position: absolute;
+    content: "";
+    top: 1.25rem;
+    right: 0;
+    width: 0%;
+    height: 20%;
+    background-color: var(--glitch-aqua);
+    animation: navTabDeactivate ease-out var(--hover-animation-duration);
+}
+
+.nav-li-activate-right::after {
+    position: absolute;
+    content: "";
+    top: 1.25rem;
+    right: 0;
+    width: 100%;
+    height: 20%;
+    background-color: var(--glitch-aqua);
+    animation: navTabActivate ease-out var(--hover-animation-duration);
+}
+
+.nav-li-deactivate-right::after {
+    position: absolute;
+    content: "";
+    top: 1.25rem;
+    left: 0;
+    width: 0%;
+    height: 20%;
+    background-color: var(--glitch-aqua);
+    animation: navTabDeactivate ease-out var(--hover-animation-duration);
+}
+
+.nav-li-slide-right::after {
+    position: absolute;
+    content: "";
+    top: 1.25rem;
+    right: 0;
+    width: 100%;
+    height: 20%;
+    background-color: var(--glitch-aqua);
+    animation: navTabActivate ease-out var(--hover-animation-duration);
 }
 
 
@@ -80,7 +156,7 @@ ul {
 .activate-down::before {
     position: absolute;
     content: "";
-    top: -.75rem;
+    top: -.5rem;
     right: 0;
     width: 100%;
     height: 20%;
@@ -134,12 +210,25 @@ ul {
 
 @keyframes navTabActivateDown {
     0% {
-        top: -.75rem;
+        top: -1.0rem;
         opacity: 0;
         height: 0%;
     }
     100% {
         top: -.5rem;
+        opacity: 1.0;
+        height: 20%;
+    }
+}
+
+@keyframes navTabActivateUp {
+    0% {
+        top: 1.75rem;
+        opacity: 0;
+        height: 0%;
+    }
+    100% {
+        top: 1.25rem;
         opacity: 1.0;
         height: 20%;
     }
@@ -161,7 +250,7 @@ ul {
         height: 20%;
     }
     100% {
-        top: -.75rem;
+        top: -1.0rem;
         opacity: 0;
         height: 0%;
     }
