@@ -93,10 +93,7 @@ class Navbar extends Component {
     }
 
     changeTabAnimation(id) {
-        console.log('change');
         const activeTab = document.getElementById(`nav-span-${id}`)
-        console.log('active tab', activeTab);
-        console.log('previous tab', this.previousTab.current);
         let previousActiveTab = null;
         
         if (this.previousTab.current !== null) {
@@ -104,7 +101,6 @@ class Navbar extends Component {
         }
 
         if (id > this.previousTab.current) {
-            console.log('increase');
             if (this.previousTab.current===null) {
                 activeTab.className="nav-li nav-li-initial";
             }
@@ -117,7 +113,6 @@ class Navbar extends Component {
         }
         
         if (id < this.previousTab.current) {
-            console.log('decrease');
             if (this.previousTab.current===null) {
                 activeTab.className="nav-li nav-li-initial";
             }
