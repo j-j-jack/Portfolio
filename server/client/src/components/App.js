@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useLayoutEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { changeActiveNavTab } from '../actions';
@@ -19,16 +19,20 @@ const App = (props) => {
     const navRefFour = useRef();
 
     const observers = useRef();
-    const sectionsInWindow = useRef();
     const changeTab = useRef();
-
     const windowSize = useRef();
     const intersectionThresholds = useRef();
 
+    useLayoutEffect(()=> {
+        console.log('layout');
+        window.history.replaceState({id: 1}, "Title", "/");
+        window.history.scrollRestoration = "manual";
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    });
 
     useEffect(() => {
         const navRefs = [navRefOne, navRefTwo, navRefThree, navRefFour];
-
+        changeTab.current = props.changeActiveNavTab;
         windowSize.current = window.innerHeight;
         
         const changeIntersectionThresholds = () => {
@@ -50,8 +54,15 @@ const App = (props) => {
         const intersectionSetup = () => {
             observers.current = [];
             for (let i = 0; i < intersectionThresholds.current.length; i++) {
-            let options = {
-                threshold: intersectionThresholds.current[i]
+            let options = {};
+                if (intersectionThresholds.current[i] <= 1.0) {
+                options = {
+                    threshold: intersectionThresholds.current[i]
+                }
+            } else {
+                options = {
+                    threshold: 1.0
+                }
             }
             observers.current[i] = new IntersectionObserver(entry => {
                     if (entry[0].isIntersecting) {
@@ -73,21 +84,13 @@ const App = (props) => {
             changeIntersectionThresholds();
             intersectionSetup();
         })
-
-        changeTab.current = props.changeActiveNavTab;
-        sectionsInWindow.current = {1: false, 2: false, 3: false, 4: false};
-        
-        
-        
     })
-
-    // the refs for what the nav links to are ordered from last to first
     
 
     return (
         <React.Fragment>
             {/* Scroll animation here */}
-            <div>
+            <div id="home/">
                 <Navbar />
                 <div className="content">
                 <section id="1" ref={navRefOne} className="standard-margin">
