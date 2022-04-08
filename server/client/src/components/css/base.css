@@ -17,6 +17,7 @@ html {
 }
 
 body {
+    scrollbar-gutter: stable both-edges;
     font-family: "Neutra Text Alt", sans-serif;
     font-weight: 400;
     background-color: var(--glitch-white);
@@ -25,12 +26,26 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    overflow-y: hidden;
 }
 
 #root {
     margin: 0;
     padding: 0;
     position: relative;
+}
+
+#n {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 9000;
+    top: 0;
+    left: 0;
+}
+.faded-out {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .project-card-container-m-left {
@@ -48,6 +63,8 @@ body {
 
 .content {
     margin: 2em;
+    margin-top: 0;
+    padding-top: 2em;
 }
 
 @media(max-width: 576px) {

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import "./css/landing.css";
 import "./css/glitch-colors.css";
 import * as d3 from 'd3';
-import "animate.css"
+import "animate.css";
 
 // letters lighter on mouseover
 // https://www.google.com/search?q=inside+a+spaceship&rlz=1C1SQJL_enIE895IE895&sxsrf=APq-WBtI82L4Fk-6id-BPb9cfY7YaqwC9A:1647617572800&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiEz5vh_c_2AhVGh1wKHeAcCKIQ_AUoAXoECAEQAw&biw=1280&bih=919&dpr=1#imgrc=5RvfVup02zMKCM
