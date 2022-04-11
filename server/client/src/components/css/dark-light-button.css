@@ -15,7 +15,7 @@
     border-radius: 50%;
 }
 
-.sun-moon-container {
+.sun-up-container {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -25,7 +25,21 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: sun-rotate ease-in-out 2s infinite;
+    animation: sun-rotate ease-out 2s;
+}
+
+.sun-down-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: moon-rotate ease-out 2s;
+    animation-fill-mode: forwards;
 }
 
 .sun-moon-container > div {
@@ -52,6 +66,15 @@
 }
 
 @keyframes sun-rotate{
+    0% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes moon-rotate{
     0% {
         transform: rotate(0deg);
     }
