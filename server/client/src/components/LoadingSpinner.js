@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
 import "./css/loading-spinner.css";
-import "./css/glitch-colors.css";
 
 const LoadingSpinner = (props) => {
     const svgRefOne = useRef();

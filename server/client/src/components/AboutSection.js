@@ -2,7 +2,6 @@ import React from 'react';
 import Button from './Button';
 import TechnologyContainer from './TechnologyContainer';
 import "animate.css";
-import "./css/glitch-colors.css";
 import "./css/about-section.css";
 
 const AboutSection = () => {

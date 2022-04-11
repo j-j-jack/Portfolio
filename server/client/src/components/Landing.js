@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import "./css/landing.css";
-import "./css/glitch-colors.css";
 import * as d3 from 'd3';
 import "animate.css";
 

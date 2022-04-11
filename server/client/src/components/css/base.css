@@ -36,8 +36,8 @@ body {
 }
 
 #n {
-    position: absolute;
-    height: 100%;
+    position: fixed;
+    height: 4em;
     width: 100%;
     z-index: 9000;
     top: 0;

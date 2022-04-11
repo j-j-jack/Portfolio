@@ -157,6 +157,7 @@ const App = (props) => {
                 fadeObserver.current.observe(ref);
             });
             document.body.style.overflowY = "overlay";
+            document.body.style.pointerEvents = "auto";
         }, 4000);
 
     })

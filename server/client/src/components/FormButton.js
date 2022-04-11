@@ -1,8 +1,6 @@
 import React, { useRef, useState } from 'react';
 import * as d3 from 'd3';
 import "./css/button.css";
-import "./css/glitch-colors.css";
-
 
 const FormButton = (props) => {
     // button takes a className for extra styling, the button text and icon as props

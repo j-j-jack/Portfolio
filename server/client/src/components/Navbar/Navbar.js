@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { navbarItems  } from './navbarItems';
 import { connect } from 'react-redux';
 import { changeActiveNavTab, openMobileNav } from '../../actions';
-import "../css/glitch-colors.css";
 import '../css/navbar.css';
+
+import DarkLightButton from '../DarkLightButton';
 
 class Navbar extends Component {
      constructor (props) {
@@ -163,10 +164,15 @@ class Navbar extends Component {
                 >
                 <span className="sr-only">Menu</span>
             </button>
-            <nav ref={this.navRef} className="navbar" data-visible="false">
+            <nav ref={this.navRef} className="navbar" data-visible="false"> 
+            <div className="nav-container-outer">
                 <ul className="nav-container">
                     {this.renderList()}
                 </ul>
+            </div>
+                <div className="dark-button-container">
+                    <DarkLightButton />
+                </div>
             </nav>
         </React.Fragment>
         );
