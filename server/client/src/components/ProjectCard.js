@@ -10,12 +10,26 @@ const ProjectCard = (props) => {
     // as well as an array of technologies used
     const [hover, setHover] = useState(false);
     const detailsRef = useRef();
+
+    const spanCreator = (tech) => {
+        let stringArray = [];
+        for (let i = 0; i < tech.length; i++) {
+            stringArray.push(tech[i]);
+        }
+        return stringArray.map((letter, index) => {
+            console.log(index);
+            return (
+                <span key={`${tech}-${index}-tech-span`} className="tech-span">{letter}</span>
+            );
+        })
+    }
     const technologiesUsed = () => {
         return (
             <div className="technologies-used">
                 {props.technologies.map(
                     (technology)=> {return (
-                        <div key={`${technology}${props.uniqueKey}`}>{technology}</div>
+                        <div key={`${technology}${props.uniqueKey}`}>{spanCreator(technology)}
+                        </div>
                     )})}   
             </div>
         )

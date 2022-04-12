@@ -11,10 +11,10 @@
 
 .sun-up-container {
     position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
+    height: 120%;
+    width: 120%;
+    top: -10%;
+    left: -10%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,10 +24,10 @@
 
 .sun-down-container {
     position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
+    height: 120%;
+    width: 120%;
+    top: -10%;
+    left: -10%;
     display: flex;
     flex-direction: column;
     align-items: center;
