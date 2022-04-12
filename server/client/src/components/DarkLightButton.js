@@ -4,33 +4,66 @@ import sun from "../assets/images/sun.svg";
 import "./css/dark-light-button.css";
 
 const DarkLightButton = () => {
-    const stylesheetRef = useRef();
+    const containerRef = useRef();
     const sunMoonContainer = useRef();
     const [lightState, setLightState] = useState('light');
-    
+     /* 
+     --glitch-yellow: hsl(55, 57%, 49%);
+    --glitch-green: hsl(157, 57%, 49%);
+    --glitch-aqua: hsl(191, 57%, 49%);
+    --glitch-blue: hsl(242, 57%, 49%);
+    --glitch-pink: hsl(320, 57%, 49%);
+    --glitch-red: hsl(4, 57%, 49%);
+
+    --glitch-black: hsl(242, 57%, 9%);
+    --glitch-white: hsl(242, 57%, 89%);
+
+
+    --glitch-light-shadow: hsla(242, 57%, 89%, 0.692);
+    --glitch-dark-shadow: hsla(240, 21%, 20%, 0.692);
+
+    */
+
     const changeRotation = () => {
         if (lightState === 'light') {
+            containerRef.current.style.cursor = "not-allowed";
+            containerRef.current.style.pointerEvents = "none";
+            containerRef.current.style.backgroundColor = "var(--glitch-white)";
+            setTimeout(() => {
+                containerRef.current.style.pointerEvents = 'auto'
+                containerRef.current.style.cursor = 'pointer';
+            }, 600);
+            
+            document.documentElement.style.setProperty('--glitch-black', 'hsl(242, 57%, 89%)');
+            document.documentElement.style.setProperty('--glitch-white', 'hsl(242, 57%, 9%)');
+            
+            document.documentElement.style.setProperty('--glitch-light-shadow', 'hsla(240, 21%, 20%, 0.692)');
+            document.documentElement.style.setProperty('--glitch-dark-shadow', 'hsla(242, 57%, 89%, 0.692)');
+            
             setLightState('dark');
         } else {
+            containerRef.current.style.cursor = "not-allowed";
+            containerRef.current.style.pointerEvents = "none";
+            containerRef.current.style.backgroundColor = "var(--glitch-aqua)";
+            setTimeout(() => {
+                containerRef.current.style.pointerEvents = 'auto'
+                containerRef.current.style.cursor = 'pointer';
+            }, 600); 
+
+            document.documentElement.style.setProperty('--glitch-black', 'hsl(242, 57%, 9%)');
+            document.documentElement.style.setProperty('--glitch-white', 'hsl(242, 57%, 89%)');
+
+            document.documentElement.style.setProperty('--glitch-light-shadow', 'hsla(242, 57%, 89%, 0.692)');
+            document.documentElement.style.setProperty('--glitch-dark-shadow', 'hsla(240, 21%, 20%, 0.692)');
+
             setLightState('light');
         }
     }
 
-
-    useEffect(() => {
-        const sheets = document.styleSheets;
-        for (let i = 0; i < sheets.length; i++) {
-            if (sheets[i].title === 'gc') {
-                stylesheetRef.current = sheets[i];
-            }
-        }
-        console.log(stylesheetRef.current);
-    }, []);
-
     const renderHelper = () => {
         if (lightState === "light") {
             return (
-                <div onClick={() => {changeRotation()}} ref={sunMoonContainer} className="sun-up-container">
+                <div ref={sunMoonContainer} className="sun-up-container">
             <div> 
                 <img src={sun} />
             </div>
@@ -41,7 +74,7 @@ const DarkLightButton = () => {
             );
         } else if (lightState === "dark") {
             return (
-                <div onClick={() => {changeRotation()}} ref={sunMoonContainer} className="sun-down-container">
+                <div ref={sunMoonContainer} className="sun-down-container">
             <div> 
                 <img src={sun} />
             </div>
@@ -54,8 +87,9 @@ const DarkLightButton = () => {
     }
 
     return (
-        <div className="dark-light-container-outer">
+        <div ref={containerRef} onClick={() => {changeRotation()}} className="dark-light-container-outer">
             <div className="blocking-div">
+                <span>Change</span>
             </div>
             {renderHelper()}
         </div>

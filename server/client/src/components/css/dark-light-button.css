@@ -1,11 +1,4 @@
-.dark-button-container {
-    margin-top: .4em;
-    border-radius: 50%;
-    position: absolute;
-    width: 3.2em;
-    height: 3.2em;
-    background-color: var(--glitch-blue);
-}
+
 
 .dark-light-container-outer {
     position: relative;
@@ -13,6 +6,7 @@
     height: 100%;
     overflow: hidden;
     border-radius: 50%;
+    background-color: var(--glitch-aqua);
 }
 
 .sun-up-container {
@@ -25,7 +19,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: sun-rotate ease-out 2s;
+    animation: sun-rotate ease-out .5s; 
 }
 
 .sun-down-container {
@@ -38,7 +32,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: moon-rotate ease-out 2s;
+    animation: moon-rotate ease-out .5s;
     animation-fill-mode: forwards;
 }
 
@@ -56,13 +50,18 @@
 }
 
 .blocking-div {
+    text-align: center;
+    font-family: "neutra-text-italic", sans-serif;
+    font-style: italic;
+    font-size: .6em;
     position: absolute;
-    width: 100%;
-    height: 50%;
+    width: 5em;
+    height: 4em;
     top: 50%;
     left: 0;
-    background-color: var(--glitch-green);
-    z-index: 9999;
+    background-color: var(--glitch-white);
+    color: var(--glitch-pink);
+    z-index: 10999;
 }
 
 @keyframes sun-rotate{

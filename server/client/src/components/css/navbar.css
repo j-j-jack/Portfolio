@@ -4,11 +4,6 @@
     --hover-animation-duration: 250ms;
 }
 
-.dark-button-container {
-    background: pink; 
-    display: inline-block; 
-    width: 20%;
-}
 
 .navbar {
     padding-left: 20%;
@@ -18,9 +13,7 @@
     width: 100%;
     height: 4rem;
     color: var(--glitch-black);
-    background-image: linear-gradient(to bottom,
-        var(--glitch-light-shadow), var(--glitch-light-shadow), var(--glitch-light-shadow), 
-            var(--glitch-dark-shadow));
+    background-color: var(--glitch-light-shadow);
     backdrop-filter: blur(1rem);
     z-index: 9000;
     padding-bottom: 2rem;
@@ -44,7 +37,7 @@ ul {
 
 .nav-container-outer {
     display: inline-block;
-    width: 80%;
+    width: 100%;
 
 }
 
@@ -275,7 +268,7 @@ a {
 }
 
 a, a:visited, a:hover, a:active {
-  color: inherit;
+  color: var(--glitch-black);
 }
 
 .mobile-nav-toggle {

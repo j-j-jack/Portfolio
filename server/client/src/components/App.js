@@ -9,6 +9,7 @@ import ProjectCard from './ProjectCard';
 import ContactForm from './ContactForm';
 import Landing from './Landing';
 import AboutSection from './AboutSection';
+import DarkLightButton from './DarkLightButton';
 import { index } from 'd3';
 
 
@@ -166,7 +167,12 @@ const App = (props) => {
     return (
         <React.Fragment>
             {/* Scroll animation here */}
+            <div 
+                className="dark-button-container animate__animated animate__fadeIn animate__delay-4s">
+                    <DarkLightButton />
+                </div>
             <div id="home/">
+                
                 <div id="n" className="faded-out" ref={fadeInRefEight}>
                     <Navbar/>
                 </div>

@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import { changeActiveNavTab, openMobileNav } from '../../actions';
 import '../css/navbar.css';
 
-import DarkLightButton from '../DarkLightButton';
-
 class Navbar extends Component {
      constructor (props) {
         super(props);
@@ -170,9 +168,6 @@ class Navbar extends Component {
                     {this.renderList()}
                 </ul>
             </div>
-                <div className="dark-button-container">
-                    <DarkLightButton />
-                </div>
             </nav>
         </React.Fragment>
         );
