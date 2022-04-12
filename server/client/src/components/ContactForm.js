@@ -27,11 +27,10 @@ const ContactForm = (props) => {
             subject,
             body
         });
-        props.changeContactedStatus('not_contacted')
         if (response.data.messageId) {
-            props.changeContactedStatus('contacted');
+            setTimeout(()=> { props.changeContactedStatus('contacted');}, 5000);
         } else {
-            props.changeContactedStatus('failed');
+            setTimeout(()=> { props.changeContactedStatus('failed');}, 5000);
         }
     }
 
@@ -80,12 +79,6 @@ const ContactForm = (props) => {
             </form>
             );
         } else if (props.contacted==='loading') {
-            const formHeight = formContainer.current.clientHeight;
-            d3.select(formContainer.current).style('height', `${formHeight}px`);
-            const t = d3.transition()
-                .duration(200)
-                    .ease(d3.easeLinear);
-            d3.select(formContainer.current).transition(t).style('height', '25em');
             return (
                 <LoadingSpinner text="Loading..." />
             );

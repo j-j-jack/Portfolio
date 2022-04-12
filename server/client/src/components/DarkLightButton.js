@@ -7,22 +7,6 @@ const DarkLightButton = () => {
     const containerRef = useRef();
     const sunMoonContainer = useRef();
     const [lightState, setLightState] = useState('light');
-     /* 
-     --glitch-yellow: hsl(55, 57%, 49%);
-    --glitch-green: hsl(157, 57%, 49%);
-    --glitch-aqua: hsl(191, 57%, 49%);
-    --glitch-blue: hsl(242, 57%, 49%);
-    --glitch-pink: hsl(320, 57%, 49%);
-    --glitch-red: hsl(4, 57%, 49%);
-
-    --glitch-black: hsl(242, 57%, 9%);
-    --glitch-white: hsl(242, 57%, 89%);
-
-
-    --glitch-light-shadow: hsla(242, 57%, 89%, 0.692);
-    --glitch-dark-shadow: hsla(240, 21%, 20%, 0.692);
-
-    */
 
     const changeRotation = () => {
         if (lightState === 'light') {
