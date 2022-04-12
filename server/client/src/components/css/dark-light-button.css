@@ -1,5 +1,3 @@
-
-
 .dark-light-container-outer {
     position: relative;
     width: 100%;
@@ -19,7 +17,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: sun-rotate ease-out .5s; 
+    animation: sun-rotate ease-in .5s; 
+    backface-visibility: hidden;
 }
 
 .sun-down-container {
@@ -32,14 +31,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: moon-rotate ease-out .5s;
+    animation: moon-rotate ease-in .5s;
     animation-fill-mode: forwards;
+    backface-visibility: hidden;
 }
 
 .sun-moon-container > div {
     flex: 1;
     text-align: center;
     position: relative;
+    backface-visibility: hidden;
 }
 
 .sun-moon-container > div > img {
@@ -60,8 +61,12 @@
     top: 50%;
     left: 0;
     background-color: var(--glitch-white);
-    color: var(--glitch-pink);
     z-index: 10999;
+    color: inherit;
+}
+
+.blocking-div:hover {
+    color: var(--glitch-pink);
 }
 
 @keyframes sun-rotate{
@@ -69,7 +74,7 @@
         transform: rotate(180deg);
     }
     100% {
-        transform: rotate(0deg);
+        transform: rotate(360deg);
     }
 }
 

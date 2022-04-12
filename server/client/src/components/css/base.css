@@ -55,6 +55,11 @@ body {
     top: 90vh;
     left: 5vw;
     z-index: 10999;
+    color: var(--glitch-black);
+}
+
+.dark-button-container:hover {
+    color: var(--glitch-pink);
 }
 
 
