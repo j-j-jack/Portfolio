@@ -1,15 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
+import { connect } from 'react-redux';
+import { changeLightMode } from '../actions';
 import moon from "../assets/images/moon.svg";
 import sun from "../assets/images/sun.svg";
 import "./css/dark-light-button.css";
 
-const DarkLightButton = () => {
+const DarkLightButton = (props) => {
     const containerRef = useRef();
     const sunMoonContainer = useRef();
-    const [lightState, setLightState] = useState('light');
 
     const changeRotation = () => {
-        if (lightState === 'light') {
+        if (props.lightMode === 'light') {
             containerRef.current.style.cursor = "not-allowed";
             containerRef.current.style.pointerEvents = "none";
             containerRef.current.style.backgroundColor = "var(--glitch-white)";
@@ -24,7 +25,7 @@ const DarkLightButton = () => {
             document.documentElement.style.setProperty('--glitch-light-shadow', 'hsla(240, 21%, 20%, 0.692)');
             document.documentElement.style.setProperty('--glitch-dark-shadow', 'hsla(242, 57%, 89%, 0.692)');
             
-            setLightState('dark');
+            props.changeLightMode('dark');
         } else {
             containerRef.current.style.cursor = "not-allowed";
             containerRef.current.style.pointerEvents = "none";
@@ -40,12 +41,12 @@ const DarkLightButton = () => {
             document.documentElement.style.setProperty('--glitch-light-shadow', 'hsla(242, 57%, 89%, 0.692)');
             document.documentElement.style.setProperty('--glitch-dark-shadow', 'hsla(240, 21%, 20%, 0.692)');
 
-            setLightState('light');
+            props.changeLightMode('light');
         }
     }
 
     const renderHelper = () => {
-        if (lightState === "light") {
+        if (props.lightMode === "light") {
             return (
                 <div ref={sunMoonContainer} className="sun-up-container">
             <div> 
@@ -56,7 +57,7 @@ const DarkLightButton = () => {
             </div>
             </div>
             );
-        } else if (lightState === "dark") {
+        } else if (props.lightMode === "dark") {
             return (
                 <div ref={sunMoonContainer} className="sun-down-container">
             <div> 
@@ -80,4 +81,10 @@ const DarkLightButton = () => {
     );
 }
 
-export default DarkLightButton;
+const mapStateToProps = (state) => {
+    return { 
+        lightMode: state.lightMode.lightMode
+    };
+}
+
+export default connect(mapStateToProps, { changeLightMode })(DarkLightButton);

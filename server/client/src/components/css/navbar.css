@@ -21,7 +21,6 @@
 }
 
 
-
 ul {
     list-style: none;
 }
@@ -298,10 +297,23 @@ a, a:visited, a:hover, a:active {
         margin-top: 2rem;
     }
 
-    .mobile-nav-toggle {
+    .toggle-background {
+        background-color: var(--glitch-white);
+        position: absolute;
+        z-index: 9998;
+        width: 2em;
+        height: 2em;
+    }
+
+    .mobile-nav-toggle-light {
+        position: relative;
+        overflow: hidden;
         display: block;
         position: fixed;
-        background: url(../../assets/images/hamburger.svg);
+        border: none;
+        border-radius: .5rem;
+        background-color: var(--glitch-light-shadow);
+        background-image: url(../../assets/images/hamburger-light.svg);
         background-size: cover;
         background-repeat: no-repeat;
         width: 2rem;
@@ -312,8 +324,32 @@ a, a:visited, a:hover, a:active {
         z-index: 9999;
     }
 
-    .mobile-nav-toggle[aria-expanded="true"] {
-        background: url(../../assets/images/close.svg);
+    .mobile-nav-toggle-light[aria-expanded="true"] {
+        background: url(../../assets/images/close-light.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .mobile-nav-toggle-dark {
+        overflow: hidden;
+        display: block;
+        position: fixed;
+        border: none;
+        border-radius: .5rem;
+        background-color: var(--glitch-light-shadow);
+        background-image: url(../../assets/images/hamburger-dark.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 2rem;
+        height: 2rem;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+        z-index: 9999;
+    }
+
+    .mobile-nav-toggle-dark[aria-expanded="true"] {
+        background: url(../../assets/images/close-dark.svg);
         background-repeat: no-repeat;
         background-size: cover;
     }

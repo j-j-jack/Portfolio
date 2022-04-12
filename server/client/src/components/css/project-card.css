@@ -52,6 +52,7 @@
 }
 
 .project-details-container {
+  background-color: var(--glitch-black);
   opacity: 0;
 }
 

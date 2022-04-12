@@ -65,6 +65,10 @@
     color: inherit;
 }
 
+img > svg{
+    fill: blue;
+}
+
 .blocking-div:hover {
     color: var(--glitch-pink);
 }

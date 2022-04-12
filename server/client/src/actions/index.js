@@ -1,4 +1,5 @@
-import { CHANGE_ACTIVE_NAV_TAB, OPEN_MOBILE_NAV, CHANGE_CONTACTED_STATUS } from './types';
+import { CHANGE_ACTIVE_NAV_TAB, OPEN_MOBILE_NAV, 
+    CHANGE_CONTACTED_STATUS, CHANGE_LIGHT_MODE } from './types';
 
 export const changeActiveNavTab = (tabNumber) => {
     return {
@@ -20,3 +21,10 @@ export const changeContactedStatus = (status) => {
         payload: status
     };
 };
+
+export const changeLightMode = (mode) => {
+    return {
+        type: CHANGE_LIGHT_MODE, 
+        payload: mode
+    }
+}

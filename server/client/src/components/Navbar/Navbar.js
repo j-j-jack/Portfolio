@@ -3,6 +3,7 @@ import { navbarItems  } from './navbarItems';
 import { connect } from 'react-redux';
 import { changeActiveNavTab, openMobileNav } from '../../actions';
 import '../css/navbar.css';
+import { timeHours } from 'd3';
 
 class Navbar extends Component {
      constructor (props) {
@@ -157,7 +158,7 @@ class Navbar extends Component {
                 ref={this.toggleRef}
                 aria-controls="navbar" 
                 aria-expanded="false" 
-                className="mobile-nav-toggle"
+                className={`mobile-nav-toggle-${this.props.lightMode}`}
                 onClick={() => this.mobileNavToggle()}
                 >
                 <span className="sr-only">Menu</span>
@@ -177,8 +178,10 @@ class Navbar extends Component {
 const mapStateToProps = (state) => {
     return { 
         activeTab: state.nav.activeTab,
-        mobileNavOpen: state.nav.mobileNavOpen
+        mobileNavOpen: state.nav.mobileNavOpen,
+        lightMode: state.lightMode.lightMode
     }
 }
+   
 
 export default connect(mapStateToProps, { changeActiveNavTab, openMobileNav })(Navbar);
