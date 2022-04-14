@@ -25,6 +25,7 @@
   position: relative;
   width: 100%;
   height: 2.5em;
+  overflow: hidden;
 }
 
 .tech-text-container {
@@ -39,32 +40,19 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(
-    var(--glitch-dark-shadow), var(--glitch-dark-shadow), var(--glitch-dark-shadow),
-    var(--glitch-light-shadow), var(--glitch-light-shadow), var(--glitch-light-shadow),
-    var(--glitch-dark-shadow), var(--glitch-dark-shadow), var(--glitch-dark-shadow),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-black), var(--glitch-black), var(--glitch-black),
-    var(--glitch-light-shadow), var(--glitch-light-shadow), var(--glitch-light-shadow),
-    var(--glitch-dark-shadow), var(--glitch-dark-shadow), var(--glitch-dark-shadow));
-    
-    
+  background-image: linear-gradient(174deg, 
+       var(--glitch-black), var(--glitch-black), var(--glitch-black),
+      var(--glitch-black), var(--glitch-aqua) , var(--glitch-black), 
+      var(--glitch-black), var(--glitch-pink), var(--glitch-black),
+      var(--glitch-black), var(--glitch-green), var(--glitch-black),
+      var(--glitch-black), var(--glitch-black), var(--glitch-black),
+      var(--glitch-black), var(--glitch-black), var(--glitch-black),
+      var(--glitch-black), var(--glitch-black), var(--glitch-black),
+      var(--glitch-black), var(--glitch-black), var(--glitch-black),
+      var(--glitch-black), var(--glitch-aqua) , var(--glitch-black), 
+      var(--glitch-black), var(--glitch-blue), var(--glitch-black),
+      var(--glitch-black), var(--glitch-green), var(--glitch-black),
+      var(--glitch-black), var(--glitch-black), var(--glitch-black));
 }
 
 .technology-container-inner {
