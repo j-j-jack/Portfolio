@@ -21,11 +21,14 @@
   }
 
   .parallax__layer--back {
-    background: url(../../assets//images/background.jpg), url(../../assets/images/background.jpg);
-    background-size: cover;
-    background-repeat: repeat-y;
-    -webkit-transform: translateZ(-1px) scale(2);
-    transform: translateZ(-1px) scale(2);
+    /* https://www.magicpattern.design/tools/css-backgrounds */
+    background-color: #d4d3f3;
+    opacity: 0.2;
+    background-image: radial-gradient(var(--glitch-black) 1.55px, var(--glitch-white) 1.55px);
+    background-size: 31px 31px;
+
+    -webkit-transform: translateZ(-2px) scale(3);
+    transform: translateZ(-2px) scale(3);
   }
 
 

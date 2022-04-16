@@ -8,6 +8,8 @@ const Parralax = (props) => {
 
     useEffect(() => {
         const changeBackgroundSizeWithHeight = () => {
+            // Andrii Verbytskyi on Stack Overflow
+            // https://stackoverflow.com/questions/1145850/how-to-get-height-of-entire-document-with-javascript
             var pageHeight = 0;
 
             function findHighestNode(nodesList) {
