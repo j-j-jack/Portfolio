@@ -86,7 +86,6 @@ const App = (props) => {
             }
             observers.current[i] = new IntersectionObserver(entry => {
                     if (entry[0].isIntersecting) {
-                    console.log(entry[0].target.id);
                     changeTab.current(entry[0].target.id);
                     }
                 }, options);
@@ -145,7 +144,6 @@ const App = (props) => {
                 entries.forEach(async (entry) => {
                     if (entry.isIntersecting) {
                         await delay(.25);
-                        console.log(entry.target);
                         entry.target.className += ` animate__animated animate__${fadeDict[entry.target.id]}`;
                         fadeObserver.current.unobserve(entry.target);
                         setTimeout(() => {
