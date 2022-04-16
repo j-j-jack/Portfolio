@@ -114,7 +114,7 @@ const Landing = () => {
       <path id="s-Rect_2-d1224" d="M0.0 -2.000000000000057 L972.0000000000002 -2.000000000000057 L972.0000000000002 628.0 L0.0 628.0 Z "></path>
     </defs>
     <g style={{"mixBlendMode":"normal"}}>
-      <use className="logo-background" xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#s-Rect_2-d1224" fill="#3659C4" fillOpacity="1.0"></use>
+      <use className="logo-background" xmlnsXlink="http://www.w3.org/1999/xlink" xlinkHref="#s-Rect_2-d1224" opacity="0" fill="#3659C4" fillOpacity="1.0"></use>
     </g>
   </g>
   <g className="animate__animated animate__fadeInUp animate__delay-3s">

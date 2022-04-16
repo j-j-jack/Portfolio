@@ -22,6 +22,8 @@ const DarkLightButton = (props) => {
             document.documentElement.style.setProperty('--glitch-black', 'hsl(242, 57%, 89%)');
             document.documentElement.style.setProperty('--glitch-white', 'hsl(242, 57%, 9%)');
             
+            document.documentElement.style.setProperty('--glitch-faded', 'hsla(240, 21%, 20%, 0.392)');
+            
             document.documentElement.style.setProperty('--glitch-light-shadow', 'hsla(240, 21%, 20%, 0.692)');
             document.documentElement.style.setProperty('--glitch-dark-shadow', 'hsla(242, 57%, 89%, 0.692)');
             
@@ -37,6 +39,8 @@ const DarkLightButton = (props) => {
 
             document.documentElement.style.setProperty('--glitch-black', 'hsl(242, 57%, 9%)');
             document.documentElement.style.setProperty('--glitch-white', 'hsl(242, 57%, 89%)');
+
+            document.documentElement.style.setProperty('--glitch-faded', 'hsla(242, 57%, 89%, 0.392)');
 
             document.documentElement.style.setProperty('--glitch-light-shadow', 'hsla(242, 57%, 89%, 0.692)');
             document.documentElement.style.setProperty('--glitch-dark-shadow', 'hsla(240, 21%, 20%, 0.692)');

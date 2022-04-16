@@ -312,7 +312,7 @@ a, a:visited, a:hover, a:active {
         position: fixed;
         border: none;
         border-radius: .5rem;
-        background-color: var(--glitch-light-shadow);
+        background-color: var(--glitch-faded);
         background-image: url(../../assets/images/hamburger-light.svg);
         background-size: cover;
         background-repeat: no-repeat;
@@ -336,7 +336,7 @@ a, a:visited, a:hover, a:active {
         position: fixed;
         border: none;
         border-radius: .5rem;
-        background-color: var(--glitch-light-shadow);
+        background-color: var(--glitch-faded);
         background-image: url(../../assets/images/hamburger-dark.svg);
         background-size: cover;
         background-repeat: no-repeat;
