@@ -5,8 +5,14 @@ import "./css/parralax.css";
 
 const Parralax = (props) => {
     const backgroundRef = useRef();
+    const parralaxRef = useRef();
 
     useEffect(() => {
+        setTimeout(()=> {
+            parralaxRef.current.style.overflowX = 'hidden';
+            parralaxRef.current.style.overflowY = 'auto';
+        }, 3500);
+
         const changeBackgroundSizeWithHeight = () => {
             // Andrii Verbytskyi on Stack Overflow
             // https://stackoverflow.com/questions/1145850/how-to-get-height-of-entire-document-with-javascript
@@ -35,8 +41,8 @@ const Parralax = (props) => {
     }, []);
 
     return (
-        <div className="parrallax-outer">
-        <div className="parallax">
+        <div className="parallax-outer">
+        <div ref={parralaxRef} className="parallax">
             <div ref={backgroundRef} className="parallax__layer parallax__layer--back">
             </div>
             <div className="parallax__layer parallax__layer--base">

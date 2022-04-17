@@ -166,16 +166,15 @@ const App = (props) => {
     return (
         <React.Fragment>
             
-            {/* Scroll animation here */}
             <div 
                 className="dark-button-container animate__animated animate__fadeIn animate__delay-4s">
                     <DarkLightButton />
                 </div>
             <div id="home/">
-                <Parralax>
                 <div id="n" className="faded-out" ref={fadeInRefEight}>
                     <Navbar/>
                 </div>
+                <Parralax>
                 <div className="content">
                 <section id="1" ref={navRefOne}>
                     <Landing />

@@ -1,10 +1,16 @@
 
+.parallax-outer {
+  
+}
+
 .parallax {
+  scrollbar-gutter: stable both-edges;
+    scroll-behavior: auto;
     height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
     -webkit-perspective: 1px;
     perspective: 1px;
+    position: relative;
   }
 
   .parallax__layer {

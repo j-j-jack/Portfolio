@@ -17,7 +17,6 @@ html {
 }
 
 body {
-    scrollbar-gutter: stable both-edges;
     font-family: "Neutra Text Alt", sans-serif;
     font-weight: 400;
     background-color: var(--glitch-white);
@@ -26,8 +25,8 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
-    overflow-y: hidden;
     color: var(--glitch-black);
+    
 }
 
 #root {
