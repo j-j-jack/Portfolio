@@ -28,7 +28,6 @@ const Parralax = (props) => {
             }
         }
         findHighestNode(document.documentElement.childNodes);
-        console.log(pageHeight);
         backgroundRef.current.style.height = `${pageHeight}px`;
     }
 
@@ -36,7 +35,6 @@ const Parralax = (props) => {
 
         window.addEventListener('resize', () => {
             changeBackgroundSizeWithHeight();
-            console.log('resize');
         })
     }, []);
 

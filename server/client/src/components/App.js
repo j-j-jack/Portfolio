@@ -179,7 +179,7 @@ const App = (props) => {
                 <section id="1" ref={navRefOne}>
                     <Landing />
                 </section>
-                <section id="2" ref={navRefTwo} className="standard-margin">
+                <section id="2" ref={navRefTwo}>
                     <h2 className="faded-out" ref={fadeInRefOne} id="s2h">My Work</h2>
                     <p id="s2sh" className="faded-out" ref={fadeInRefNine}>
                         Some of my work is displayed below...

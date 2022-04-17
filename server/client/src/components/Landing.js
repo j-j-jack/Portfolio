@@ -28,10 +28,8 @@ const Landing = () => {
       if (jAnimationEnabled) {
         jAnimationEnabled = false;
         turnOnAnimation(jRef);
-        console.log('mouse-over j');
       
       setTimeout(()=> {
-        console.log('reenabled');
         turnOffAnimation(jRef);
         jAnimationEnabled=true;
         }, 
@@ -43,10 +41,8 @@ const Landing = () => {
       if (sAnimationEnabled) {
         sAnimationEnabled = false;
         turnOnAnimation(sRef);
-        console.log('mouse-over j');
       
       setTimeout(()=> {
-        console.log('reenabled');
         turnOffAnimation(sRef);
         sAnimationEnabled=true;
         }, 
@@ -98,6 +94,7 @@ const Landing = () => {
 
 
     return (
+      <div className="landing-container-outer">
         <div className="landing-container">
           <div className="animate__animated animate__fadeIn landing-text-one">
               Hello,
@@ -108,6 +105,7 @@ const Landing = () => {
           <div className="landing-text-three animate__animated animate__fadeIn animate__delay-2s">
             I'm a Web Developer
           </div>
+          <div className="landing-svg-container">
       <svg ref={mainSvgRef} xmlns="http://www.w3.org/2000/svg" className="logo-svg" viewBox="0.0 -2.000000000000057 972.0 630.0" preserveAspectRatio="none">
       <g>
     <defs>
@@ -160,6 +158,8 @@ const Landing = () => {
   </g>
   </g>
 </svg>
+</div>
+</div>
 </div>
     );
 };

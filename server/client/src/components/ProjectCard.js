@@ -17,7 +17,6 @@ const ProjectCard = (props) => {
             stringArray.push(tech[i]);
         }
         return stringArray.map((letter, index) => {
-            console.log(index);
             return (
                 <span key={`${tech}-${index}-tech-span`} className="tech-span">{letter}</span>
             );

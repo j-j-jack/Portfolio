@@ -5,7 +5,7 @@
 
 .parallax {
   scrollbar-gutter: stable both-edges;
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
     height: 100vh;
     overflow: hidden;
     -webkit-perspective: 1px;
