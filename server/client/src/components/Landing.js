@@ -96,6 +96,7 @@ const Landing = () => {
     return (
       <div className="landing-container-outer">
         <div className="landing-container">
+          <div className="landing-text-container">
           <div className="animate__animated animate__fadeIn landing-text-one">
               Hello,
           </div>
@@ -104,6 +105,7 @@ const Landing = () => {
           </div>
           <div className="landing-text-three animate__animated animate__fadeIn animate__delay-2s">
             I'm a Web Developer
+          </div>
           </div>
           <div className="landing-svg-container">
       <svg ref={mainSvgRef} xmlns="http://www.w3.org/2000/svg" className="logo-svg" viewBox="0.0 -2.000000000000057 972.0 630.0" preserveAspectRatio="none">
