@@ -115,7 +115,7 @@ const App = (props) => {
 
         setTimeout(()=> {
             const fadeInRefs = [fadeInRefOne.current, fadeInRefTwo.current, fadeInRefThree.current,
-                fadeInRefFour.current, fadeInRefFive.current, fadeInRefSix.current, 
+                fadeInRefFour.current,fadeInRefFive.current, fadeInRefSix.current, 
                 fadeInRefSeven.current, fadeInRefNine.current, fadeInRefTen.current,
                 fadeInRefEleven.current];
 
@@ -127,6 +127,7 @@ const App = (props) => {
                 "pc3": "fadeInLeft",
                 "pc4": "fadeInRight",
                 "s3h": "bounceIn", 
+                "s3sh": "fadeIn",
                 "s3": "fadeIn", 
                 "n": "fadeInDown",
                 "s4h": "fadeIn",
@@ -182,7 +183,14 @@ const App = (props) => {
                 <section id="2" ref={navRefTwo}>
                     <h2 className="faded-out" ref={fadeInRefOne} id="s2h">My Work</h2>
                     <p id="s2sh" className="faded-out" ref={fadeInRefNine}>
-                        Some of my work is displayed below...
+                        As of the start of 2021, I had no basically no knowledge of web development whatsoever.
+                        I have displayed a small selection of projects that I have completed since then to showcase
+                        my progress. Feel free to visit my <a 
+                            target="_blank" rel="noopener" 
+                            className="github-work-link" 
+                            href="http://github.com">
+                                Github
+                            </a> page.
                     </p>
                     <div ref={fadeInRefTwo} id="pc1" className="project-card-container-m-left faded-out">
                         <ProjectCard 
@@ -214,24 +222,23 @@ const App = (props) => {
                             technologies = {["Django", "Stripe Api", "S3", "jQuery", "Javascript"]}
                         />
                         </div>
-                    <div ref={fadeInRefFive} id="pc4" className="project-card-container-m-right faded-out">
-                        <ProjectCard 
-                            uniqueKey="4"
-                            githubLink="https://github.com"
-                            liveLink="https://www.youtube.com"
-                            projectTitle="E-book Club"
-                            projectDescription="This is the project description. It is a very good project"
-                            technologies = {["Django", "Stripe Api", "S3", "jQuery", "Javascript"]}
-                        />
-                    </div>
                 </section>
-                <section id="3" ref={navRefThree} className="standard-margin">
+                <section id="3" ref={navRefThree}>
                     <h2 className="faded-out" ref={fadeInRefSix} id="s3h">About Me</h2>
+                    <p className="faded-out" ref={fadeInRefFive} id="s3sh">
+                        Hi, my name is Jack and I'm passionate about web development. 
+                        I really enjoy the process of bringing a project from the early stages to completion. 
+                        I have an appreciation for many aspects of web dev from UI/UX design stages
+                        to writing complex logic to manipulate data. 
+                        I love working with enthusiastic and ambitious people so if that's you 
+                        - contact me below! I am based in Gorey, Ireland.
+                        <a className="contact-scroll-link" href="#4">Scroll down</a> to contact me.
+                    </p>  
                     <div className="faded-out" id="s3" ref={fadeInRefSeven}>
                         <AboutSection />
                     </div>
                 </section>
-                <section id="4" ref={navRefFour} className="standard-margin">
+                <section id="4" ref={navRefFour}>
                     <h2 className="faded-out" id="s4h" ref={fadeInRefTen}>
                         Why not contact me?...
                     </h2>

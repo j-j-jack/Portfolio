@@ -16,7 +16,9 @@
   margin-top: 10vh;
 }
 
-
+.landing-text-container {
+  color: var(--glitch-black);
+}
 
 .landing-svg-container {
   display: inline-block;
@@ -56,6 +58,7 @@
 }
 
 .logo-svg {
+  margin-top: 2em;
     width: 80%;
     aspect-ratio: 1.542857142857143;
 }
