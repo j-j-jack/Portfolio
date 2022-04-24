@@ -19,10 +19,23 @@ const ContactForm = (props) => {
     const [body, setBody] = useState('');
     const formContainer = useRef();
 
+    //refs for form inputs
     const nameRef = useRef();
     const emailRef = useRef();
     const subjectRef = useRef();
     const bodyRef = useRef(); 
+
+    //refs for error message containers
+    const nameErrorRef = useRef();
+    const emailErrorRef = useRef();
+    const subjectErrorRef = useRef();
+    const bodyErrorRef = useRef();
+
+    // refs for form labels 
+    const nameLabelRef = useRef();
+    const emailLabelRef = useRef();
+    const subjectLabelRef = useRef();
+    const bodyLabelRef = useRef();
 
     const handleSubmit = async(event) => {
         event.preventDefault();
@@ -39,7 +52,6 @@ const ContactForm = (props) => {
         }
 
         if (nameRef.current.value === null || nameRef.current.value === '') {
-            console.log('enter name field');
             errorMessages["name"] = "please fill out this field";
         }
 
@@ -73,11 +85,43 @@ const ContactForm = (props) => {
         if (bodyRef.current.value === null || bodyRef.current.value === '') {
             errorMessages["body"] = "please fill out this field";
         }
+        
+        let exitSubmit = false;
+        for (let [key, value] of Object.entries(errorMessages)) {
+            if (key === "name") {
+                if (value.length > 0)  {
+                    nameLabelRef.current.className = "form-label error-exists";
+                    exitSubmit = true;
+                }
+                nameErrorRef.current.innerText = value;
+            }
 
-           
+            if (key === "email") {
+                if (value.length > 0)  {
+                    exitSubmit = true;
+                }
+                emailErrorRef.current.innerText = value;
+            }
 
-        console.log(errorMessages);
-        return;
+            if (key === "subject") {
+                if (value.length > 0)  {
+                    exitSubmit = true;
+                }
+                subjectErrorRef.current.innerText = value;
+            }
+
+            if (key === "body") {
+                if (value.length > 0)  {
+                    exitSubmit = true;
+                }
+                bodyErrorRef.current.innerText = value;
+            }
+        }
+        
+        if (exitSubmit) {
+            console.log('return');
+            return;
+        }
 
         props.changeContactedStatus('loading');
         event.preventDefault();
@@ -110,9 +154,11 @@ const ContactForm = (props) => {
                     placeholder="Your Name"
                     className="form-control"
                     value={name}
+                    minlength="3"
                     onChange={(event)=> setName(event.target.value)}
                 />
-                <label for="name" class="form-label">Your Name</label>
+                <label ref={nameLabelRef} for="name" class="form-label">Your Name</label>
+                <div class="error-container" ref={nameErrorRef}></div>
                 </div>
                 <div className="form-group">
                 <input
@@ -126,6 +172,7 @@ const ContactForm = (props) => {
                     onChange={(event)=> setEmail(event.target.value)}
                 />
                 <label for="email" class="form-label">Your Email</label>
+                <div class="error-container" ref={emailErrorRef}></div>
                 </div>
                 <div className="form-group">
                 <input
@@ -136,9 +183,11 @@ const ContactForm = (props) => {
                     placeholder="Subject"
                     className="form-control"
                     value={subject}
+                    minlength="3"
                     onChange={(event)=> setSubject(event.target.value)}
                 />
                 <label for="subject" class="form-label">Subject</label>
+                <div class="error-container" ref={subjectErrorRef}></div>
                 </div>
                 <div className="form-group">
                 <textarea
@@ -148,10 +197,12 @@ const ContactForm = (props) => {
                     placeholder="Your Message"
                     className="form-control"
                     value={body}
+                    minlength="20"
                     onChange={(event)=> setBody(event.target.value)}
                 >
                 </textarea>
                 <label for="body" class="text-label">Your Message</label>
+                <div class="error-container" ref={bodyErrorRef}></div>
                 </div>
                 <div className="contact-button-container">
                     <FormButton
