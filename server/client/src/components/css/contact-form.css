@@ -8,12 +8,13 @@
 .form-container {
   color: var(--glitch-white);
   background-color: var(--glitch-black);
-  height: 33em;
-  padding-top: 2em;
+  height: 36.5em;
+  padding-top: 4.0em;
   border: 1px solid black;
   border-radius: 1em;
   padding-left: 20%;
   padding-right: 20%;
+  position: relative;
 }
 
 .form-group {
@@ -168,4 +169,10 @@ textarea {
   color: var(--glitch-red);
   position: absolute;
   bottom: 1.75em;
+}
+
+#form-instructions {
+  position: absolute;
+  top: 0.5em;
+  left: 3.5em;
 }

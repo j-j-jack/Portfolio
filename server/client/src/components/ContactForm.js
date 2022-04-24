@@ -132,15 +132,17 @@ const ContactForm = (props) => {
             body
         });
         if (response.data.messageId) {
-            setTimeout(()=> { props.changeContactedStatus('contacted');}, 5000);
+            setTimeout(()=> { props.changeContactedStatus('contacted');}, 7000);
         } else {
-            setTimeout(()=> { props.changeContactedStatus('failed');}, 5000);
+            setTimeout(()=> { props.changeContactedStatus('failed');}, 7000);
         }
     }
 
     const renderHelper = () => {
         if (props.contacted==='not_contacted') {
             return (
+            <React.Fragment>
+            <div id="form-instructions">Fill out the form below</div>
             <form  
                 onSubmit={handleSubmit}
                 noValidate
@@ -154,11 +156,11 @@ const ContactForm = (props) => {
                     placeholder="Your Name"
                     className="form-control"
                     value={name}
-                    minlength="3"
+                    minLength="3"
                     onChange={(event)=> setName(event.target.value)}
                 />
-                <label ref={nameLabelRef} for="name" class="form-label">Your Name</label>
-                <div class="error-container" ref={nameErrorRef}></div>
+                <label ref={nameLabelRef} htmlFor="name" className="form-label">Your Name</label>
+                <div className="error-container" ref={nameErrorRef}></div>
                 </div>
                 <div className="form-group">
                 <input
@@ -171,8 +173,8 @@ const ContactForm = (props) => {
                     value={email}
                     onChange={(event)=> setEmail(event.target.value)}
                 />
-                <label for="email" class="form-label">Your Email</label>
-                <div class="error-container" ref={emailErrorRef}></div>
+                <label htmlFor="email" className="form-label">Your Email</label>
+                <div className="error-container" ref={emailErrorRef}></div>
                 </div>
                 <div className="form-group">
                 <input
@@ -183,11 +185,11 @@ const ContactForm = (props) => {
                     placeholder="Subject"
                     className="form-control"
                     value={subject}
-                    minlength="3"
+                    minLength="3"
                     onChange={(event)=> setSubject(event.target.value)}
                 />
-                <label for="subject" class="form-label">Subject</label>
-                <div class="error-container" ref={subjectErrorRef}></div>
+                <label htmlFor="subject" className="form-label">Subject</label>
+                <div className="error-container" ref={subjectErrorRef}></div>
                 </div>
                 <div className="form-group">
                 <textarea
@@ -197,12 +199,12 @@ const ContactForm = (props) => {
                     placeholder="Your Message"
                     className="form-control"
                     value={body}
-                    minlength="20"
+                    minLength="20"
                     onChange={(event)=> setBody(event.target.value)}
                 >
                 </textarea>
-                <label for="body" class="text-label">Your Message</label>
-                <div class="error-container" ref={bodyErrorRef}></div>
+                <label htmlFor="body" className="text-label">Your Message</label>
+                <div className="error-container" ref={bodyErrorRef}></div>
                 </div>
                 <div className="contact-button-container">
                     <FormButton
@@ -211,6 +213,7 @@ const ContactForm = (props) => {
                     />
                 </div>
             </form>
+            </React.Fragment>
             );
         } else if (props.contacted==='loading') {
             return (

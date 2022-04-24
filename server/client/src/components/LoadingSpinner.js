@@ -7,10 +7,31 @@ const LoadingSpinner = (props) => {
     const svgRefTwo = useRef();
     const svgRefThree = useRef();
     const textRef = useRef();
+    const outerRef = useRef();
 
 
     
     useEffect(() => {
+
+        const setOuterDimensions = () => {
+            // height of form in pxs
+            let height = 642.39;
+            let width = window.getComputedStyle(document.body).getPropertyValue('width');
+            width = parseInt(width, 10) - 128;
+            let dimension = 0;
+            if (width > height) {
+                dimension = height;
+            } else {
+                dimension = width;
+            }
+            console.log(width);
+            console.log(height);
+            outerRef.current.style.height = `${dimension}px`;
+            outerRef.current.style.height = `${dimension}px`;
+        }
+
+        setOuterDimensions();
+        window.addEventListener('resize', () => setOuterDimensions());
 
         // set random rotation for svgs
 
@@ -98,11 +119,14 @@ const LoadingSpinner = (props) => {
             .attr("r", `${Math.random()*2}%`).attr('cx', `${cx}%`).attr('cy', `${cy}%`).transition(tThree).attr('cx', `${100-cx}%`).attr('cy', `${100-cy}%`).on('end', () => transitionLoopFive(circleThree._groups[0][0], cx, cy));
         }
     }, []);
-    return (<div className="loading-spinner-container">
-                <div ref={textRef} className="loading-text loading-text-color">{props.text}</div>
-                <svg ref={svgRefOne} className='loading-spinner-svg-one'></svg>
-                <svg ref={svgRefTwo} className='loading-spinner-svg-two'></svg>
-                <svg ref={svgRefThree} className='loading-spinner-svg-three'></svg>
+    return (
+            <div ref={outerRef} className="loading-spinner-outer">
+                <div className="loading-spinner-container">
+                    <div ref={textRef} className="loading-text loading-text-color">{props.text}</div>
+                    <svg ref={svgRefOne} className='loading-spinner-svg-one'></svg>
+                    <svg ref={svgRefTwo} className='loading-spinner-svg-two'></svg>
+                    <svg ref={svgRefThree} className='loading-spinner-svg-three'></svg>
+                </div>
             </div>
             );
 
