@@ -34,7 +34,7 @@ const FormButton = (props) => {
     }
 
     const hoverEffect = () => {
-        if(hover && lineCount.current<100) {
+        if(hover && lineCount.current<50) {
             buttonGlitch();
             let randomInterval = Math.random()/100 + .001;
             timeouts.current.push(setTimeout(hoverEffectTwo, randomInterval));
@@ -49,7 +49,7 @@ const FormButton = (props) => {
 
 
     const hoverEffectTwo = () => {
-        if(hover && lineCount.current<100) {
+        if(hover && lineCount.current<50) {
             buttonGlitch();
             let randomInterval = Math.random()/100 + .001;
             timeouts.current.push(setTimeout(hoverEffect, randomInterval));

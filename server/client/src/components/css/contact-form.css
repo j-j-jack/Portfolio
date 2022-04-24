@@ -1,3 +1,5 @@
+/* adapted from tutorial https://www.youtube.com/watch?v=6iTA4aZjfGY */
+
 .form-submission-button-image {
   background: url(../../assets/images/email.svg);
   background-repeat: no-repeat;
@@ -6,36 +8,158 @@
 .form-container {
   color: var(--glitch-white);
   background-color: var(--glitch-black);
-  height: 35em;
-  padding-top: 1.5em;
+  height: 33em;
+  padding-top: 2em;
   border: 1px solid black;
   border-radius: 1em;
-  text-align: center;
   padding-left: 20%;
   padding-right: 20%;
   margin-bottom: 2em;
 }
 
-input {
-  display: block;
-  height: 1.5em;
-  margin-top: .5em;
-  margin-bottom: 1.5em;
-  width: 100%;
-  border-radius: 1em;
+.form-group {
+  transition: all .1s;
 }
+
+input {
+  color: var(--glitch-black);
+  padding: 0;
+  display: block;
+  height: 3em;
+  margin-bottom: 1em;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+
+textarea:focus {
+  outline: none;
+}
+
+.form-label {
+  backface-visibility: hidden;
+  color: var(--glitch-black);
+  display: block;
+  opacity: 1;
+  transform: translate(2.0em, -2.5em);
+  transition: transform .25s;
+  transform-origin: 11.0em 0;
+  width: 50%;
+  border-radius: .5em;
+}
+
+.form-label:focus-within {
+  color: var(--glitch-red);
+}
+
+.text-label {
+  color: var(--glitch-black);
+  display: block;
+  opacity: 1;
+  transform: translate(2.0em, -11.5em);
+  transition: transform .25s;
+  transform-origin: 11.0em 0;
+  width: 50%;
+  border-radius: .5em;
+}
+
+@keyframes background-opacity {
+  0% {
+    background-color: transparent;
+  }
+  80% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: var(--glitch-black);
+  }
+}
+
+.form-control {
+  backface-visibility: hidden;
+  box-shadow: none;
+  background-color: var(--glitch-white);
+  border-radius: 1.5em;
+  border-color: var(--glitch-faded);
+  border-style: none none solid none;
+  border-width: .25em;
+  width: 100%;
+  transition: all .1s;
+  padding: 5px;
+}
+
+.form-control::placeholder {
+  color: transparent;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: var(--glitch-aqua);
+}
+
+
+.form-control:focus + .text-label {
+  color: var(--glitch-aqua);
+  padding-left: 1.0em;
+  background-color: var(--glitch-black);
+  transition: background-color linear .25s;
+  transform: translateY(-13.0em) scale(0.8);
+}
+
+.form-control:not(:placeholder-shown) + .text-label {
+  color: var(--glitch-aqua);
+  padding-left: 1.0em;
+  background-color: var(--glitch-black);
+  transform: translateY(-13.0em) scale(0.8);
+}
+
+.form-control:focus + .form-label {
+  color: var(--glitch-aqua);
+  padding-left: 1.0em;
+  background-color: var(--glitch-black);
+  transition: background-color linear .25s;
+  transform: translateY(-4.0em) scale(0.8);
+}
+
+.form-control:not(:placeholder-shown) + .form-label {
+  color: var(--glitch-aqua);
+  padding-left: 1.0em;
+  background-color: var(--glitch-black);
+  transform: translateY(-4.0em) scale(0.8);
+}
+
+.form-control:not(:placeholder-shown):invalid + .form-label {
+  color: var(--glitch-red);
+  padding-left: 1.0em;
+  background-color: var(--glitch-black);
+  transform: translateY(-4.0em) scale(0.8);
+}
+
+.form-group:focus-within {
+  transform: scale(1.05, 1.05);
+}
+
+.form-group:invalid {
+  color: var(--glitch-red);
+}
+
 label {
   display: block;
   height: 1.5em;
 }
 
 textarea {
+  color: var(--glitch-black);
   min-height: 15em;
-  margin-top: .5em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   display: block;
   width: 100%;
   border-radius: 1em; 
   resize: none;
   max-height: 30em;
+}
+
+.contact-button-container {
+  text-align: center;
 }

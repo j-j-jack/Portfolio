@@ -231,8 +231,11 @@ const App = (props) => {
                         I have an appreciation for many aspects of web dev from UI/UX design stages
                         to writing complex logic to manipulate data. 
                         I love working with enthusiastic and ambitious people so if that's you 
-                        - contact me below! I am based in Gorey, Ireland.
-                        <a className="contact-scroll-link" href="#4">Scroll down</a> to contact me.
+                        - contact me below! I am based in Gorey, Ireland. <a 
+                            className="contact-scroll-link" 
+                            href="#4">
+                                Scroll down
+                            </a> to contact me.
                     </p>  
                     <div className="faded-out" id="s3" ref={fadeInRefSeven}>
                         <AboutSection />

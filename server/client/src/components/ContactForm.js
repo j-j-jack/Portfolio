@@ -38,39 +38,59 @@ const ContactForm = (props) => {
         if (props.contacted==='not_contacted') {
             return (
             <form  onSubmit={handleSubmit}>
-                <label htmlFor="name-input">Name </label>
+                <div className="form-group">
                 <input
-                    id="name-input"
+                    id="name"
+                    name="name"
                     type="text"
+                    placeholder="Your Name"
+                    className="form-control"
                     value={name}
                     onChange={(event)=> setName(event.target.value)}
                     required
                 />
-                <label htmlFor="email-input">Email</label>
+                <label for="name" class="form-label">Your Name</label>
+                </div>
+                <div className="form-group">
                 <input
-                    id="email-input"
+                    id="email"
+                    name="email"
                     type="email"
+                    placeholder="Your Email"
+                    className="form-control"
                     value={email}
                     onChange={(event)=> setEmail(event.target.value)}
                     required
                 />
-                <label htmlFor="subject-input">Subject</label>
+                <label for="email" class="form-label">Your Email</label>
+                </div>
+                <div className="form-group">
                 <input
-                    id="subject-input"
+                    id="subject"
+                    name="subject"
                     type="text"
+                    placeholder="Subject"
+                    className="form-control"
                     value={subject}
                     onChange={(event)=> setSubject(event.target.value)}
                     required
                 />
-                <label htmlFor="body-input">Message</label>
+                <label for="subject" class="form-label">Subject</label>
+                </div>
+                <div className="form-group">
                 <textarea 
-                    id="body-input"
+                    id="body"
+                    name="body"
+                    placeholder="Your Message"
+                    className="form-control"
                     value={body}
                     onChange={(event)=> setBody(event.target.value)}
                     required
                 >
                 </textarea>
-                <div style={{"textAlign": "center","marginTop": "2em"}}>
+                <label for="body" class="text-label">Your Message</label>
+                </div>
+                <div className="contact-button-container">
                     <FormButton
                         buttonClass="form-submission-button" 
                         buttonText="Submit"
