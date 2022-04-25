@@ -2,7 +2,9 @@
   background: var(--glitch-black);
   color: var(--glitch-white);
   padding: 2em;
+  padding-top: 4em;
   border-radius: 2em;
+  position: relative;
 }
 
 .about-section-button-container {
@@ -42,17 +44,20 @@
   height: 100%;
   background-image: linear-gradient(177deg, 
        var(--glitch-black), var(--glitch-black), var(--glitch-black),
-      var(--glitch-black), var(--glitch-aqua) , var(--glitch-black), 
-      var(--glitch-black), var(--glitch-pink), var(--glitch-black),
+      var(--glitch-black), var(--glitch-white) , var(--glitch-black), 
+      var(--glitch-black), var(--glitch-yellow), var(--glitch-black),
       var(--glitch-black), var(--glitch-green), var(--glitch-black),
       var(--glitch-black), var(--glitch-black), var(--glitch-black),
       var(--glitch-black), var(--glitch-black), var(--glitch-black),
       var(--glitch-black), var(--glitch-black), var(--glitch-black),
       var(--glitch-black), var(--glitch-black), var(--glitch-black),
-      var(--glitch-black), var(--glitch-aqua) , var(--glitch-black), 
-      var(--glitch-black), var(--glitch-blue), var(--glitch-black),
+      var(--glitch-black), var(--glitch-black), var(--glitch-black),
+      var(--glitch-black), var(--glitch-black), var(--glitch-black),
+      var(--glitch-black), var(--glitch-black), var(--glitch-black),
+      var(--glitch-black), var(--glitch-yellow) , var(--glitch-black), 
+      var(--glitch-black), var(--glitch-white), var(--glitch-black),
       var(--glitch-black), var(--glitch-green), var(--glitch-black),
-      var(--glitch-black), var(--glitch-black), var(--glitch-black));
+      var(--glitch-black), var(--glitch-yellow), var(--glitch-black));
 }
 
 .technology-container-inner {
@@ -156,5 +161,17 @@
 .animate__fadeInOutDown {
   -webkit-animation-name: fadeInOutDown;
   animation-name: fadeInOutDown;
+}
+
+#technologies-intro {
+  position: absolute;
+  top: 0.5em;
+  left: 3.5em;
+}
+
+#technologies-outro {
+  position: absolute;
+  bottom: 0.5em;
+  right: 3.5em;
 }
 

@@ -6,7 +6,12 @@ import "./css/about-section.css";
 const AboutSection = () => {
     return (
         <div className="about-section-container">
-            <div><h4>Some of the technologies I've used recently</h4></div>
+            <div id="technologies-intro">
+                These are some of the technologies I've used recently...
+            </div>
+            <div id="technologies-outro">
+                There aren't millions. Thats just an illusion...
+            </div>
             <div>
             <TechnologyContainer 
                 technologies={['HTML', 'CSS', 'Bootstrap', 'Git', 'VSCode', 'ReactJS', 

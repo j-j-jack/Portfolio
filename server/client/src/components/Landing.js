@@ -53,7 +53,7 @@ const Landing = () => {
   }, []);
   
     useEffect(() => {
-      let colors = ['green', 'white', 'yellow', 'green', 'green', 'aqua', 'yellow', 'yellow'];
+      let colors = ['green', 'white', 'yellow', 'green', 'green', 'white', 'yellow', 'yellow'];
 
       const movePointOne = async (point) => {            
         let color = colors[parseInt(Math.random()*8)];
