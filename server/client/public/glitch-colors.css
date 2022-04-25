@@ -11,15 +11,15 @@
     --glitch-x-ten: hsl(157, 57%, 49%);
     --glitch-x-eleven: hsl(174, 57%, 49%);
     --glitch-x-twelve: hsl(191, 57%, 49%);
-    --glitch-x-thirteen: #3682c4;
-    --glitch-x-fourteen: #3659c4;
+    --glitch-x-thirteen: hsl(208, 57%, 49%);
+    --glitch-x-fourteen: hsl(225, 57%, 49%);
     --glitch-x-fifteen: hsl(242, 57%, 49%);
     --glitch-x-sixteen: hsl(259, 57%, 49%);
     --glitch-x-seventeen: hsl(276, 57%, 49%);
-    --glitch-x-nineteen: hsl(303, 57%, 49%);
-    --glitch-x-twenty: hsl(320, 57%, 49%);
-    --glitch-x-twenty-one: hsl(337, 57%, 49%);
-    --glitch-x-twenty-two: hsl(354, 57%, 49%);
+    --glitch-x-eighteen: hsl(293, 57%, 49%);
+    --glitch-x-nineteen: hsl(310, 57%, 49%);
+    --glitch-x-twenty: hsl(337, 57%, 49%);
+    --glitch-x-twenty-one: hsl(354, 57%, 49%);
 
 
     --glitch-yellow: hsl(55, 57%, 49%);
@@ -27,19 +27,34 @@
     --glitch-aqua: hsl(191, 57%, 49%);
     --glitch-blue: hsl(242, 57%, 49%);
     --glitch-pink: hsl(320, 57%, 49%);
-    --glitch-red: hsl(4, 57%, 49%);
+    --glitch-red: hsl(354, 57%, 49%);
 
     --glitch-black: hsl(242, 57%, 9%);
     --glitch-white: hsl(242, 57%, 89%);
 
-    --glitch-black: #0b0a24;
-    --glitch-white: #d4d3f3;
+    --glitch-white-two: hsl(242, 57%, 89%);
 
     --glitch-faded: hsla(242, 57%, 89%, 0.392);
+
+    --glitch-grey: hsl(243, 12%, 66%);
 
     --glitch-light-shadow: hsla(242, 57%, 89%, 0.692);
     --glitch-dark-shadow: hsla(240, 21%, 20%, 0.692);
 
+    --glitch-wild: hsl(4, 57%, 49%);
+
+}
+
+.glitch-white-two {
+    color: var(--glitch-white-two);
+    stroke: var(--glitch-white-two);
+    fill: var(--glitch-white-two);
+}
+
+.glitch-wild {
+    color: var(--glitchx-wild);
+    stroke: var(--glitchx-wild);
+    fill: var(--glitch-wild);
 }
 
 .glitch-white {
