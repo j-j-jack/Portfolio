@@ -3,6 +3,11 @@ import "animate.css";
 import { stackOffsetDiverging } from 'd3';
 
 const TechnologyContainer = (props) => {
+
+   // each of the keys in the links dictionary should match exactly the values contained
+   // in the technologies array. ie 'HTML' in the technologies array to 'HTML' : 'egValue.com'
+   // in the links dictionary.
+
     const noOfBoxes= useRef(20);
     const availableBoxes = useRef([]);
     const availableTech = useRef(props.technologies);
@@ -23,10 +28,13 @@ const TechnologyContainer = (props) => {
     }
 
     const sendToWeb = (box) => {
-        let boxToClick = document.getElementById(`ttc${box}`);
-        let style = getComputedStyle(boxToClick).getPropertyValue("animation");
-        console.log(style);
-        console.log(boxToClick.textContent);
+        const linkKey = document.getElementById(`ttc${box}`).textContent;
+        console.log(linkKey);
+        console.log(typeof(linkKey));
+        if (linkKey === '' || linkKey === undefined || linkKey === null) {
+            return;
+        }
+        window.open(props.links[linkKey], '_blank');
     }
     const randomiser = () => {
         const bl = availableBoxes.current.length;
