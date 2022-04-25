@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import "animate.css";
+import { stackOffsetDiverging } from 'd3';
 
 const TechnologyContainer = (props) => {
     const noOfBoxes= useRef(20);
@@ -22,7 +23,9 @@ const TechnologyContainer = (props) => {
     }
 
     const sendToWeb = (box) => {
-        let boxToClick = document.getElementById(`tco${box}`);
+        let boxToClick = document.getElementById(`ttc${box}`);
+        let style = getComputedStyle(boxToClick).getPropertyValue("animation");
+        console.log(style);
         console.log(boxToClick.textContent);
     }
     const randomiser = () => {
@@ -35,24 +38,24 @@ const TechnologyContainer = (props) => {
         const techIndex = parseInt(Math.random()*tl)
         let tech = availableTech.current[techIndex];
         availableTech.current.splice(techIndex, 1);
-
-        let boxToChange = document.getElementById(`ttc${box}`);
-        let outer = document.getElementById(`tco${box}`);
-        boxToChange.innerText = '';
-        boxToChange.className="tech-text-container";
         
-
-        boxToChange.style.animation = "none";
-        setTimeout(()=>{
-            boxToChange.innerText = tech;
-            boxToChange.className += ` animate__animated
+        let outerContainer = document.getElementById(`tco${box}`);
+        let innerContainer = document.getElementById(`tci${box}`)
+        let boxToChange = document.getElementById(`ttc${box}`);
+        let boxClone = boxToChange.cloneNode(false);
+        boxToChange.remove();
+        boxClone.className="tech-text-container";
+        boxClone.className += ` animate__animated
                                     animate__fadeInOutDown
                                         animate__slow`;
-        }, 1);
-
-        setTimeout(()=>{
-            boxToChange.innerText = '';
+        innerContainer.appendChild(boxClone);
+        boxClone.innerText = tech;
+        outerContainer.style.cursor = 'pointer';
+        setTimeout(() => {
+            outerContainer.style.cursor = "wait";
+            boxClone.innerText = '';
         }, 1500);
+
 
         setTimeout(()=> {
             availableBoxes.current.push(box)
@@ -73,7 +76,7 @@ const TechnologyContainer = (props) => {
     useEffect(()=> {
         boxOrganiserRef.current();
         randomiserRef.current();
-        setInterval(randomiserRef.current, 100);
+        setInterval(randomiserRef.current, 200);
     },[]);
 
 
@@ -95,7 +98,7 @@ const TechnologyContainer = (props) => {
                 className={`${displayClass} technology-container-outer`}
                 onMouseEnter={()=>changeColor()}>
            <div className="technology-container-mask"></div>
-                <div className="technology-container-inner">
+                <div id={`tci${row}`} className="technology-container-inner">
                  <div id={`ttc${row}`} className="tech-text-container"></div>
              </div>
              </div>
