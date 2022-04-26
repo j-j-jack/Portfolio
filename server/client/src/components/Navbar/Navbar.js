@@ -30,6 +30,9 @@ class Navbar extends Component {
         this.changeTabAnimation(this.props.activeTab);
     }
 
+    navigateHome = () => {
+         window.location = "#1";
+    }
     animationAdder = (tabId, type) => {
             const tab = document.getElementById(`nav-link-${tabId}`);
             const currentTabClassName = tab.className;
@@ -164,6 +167,14 @@ class Navbar extends Component {
                 <span className="sr-only">Menu</span>
             </button>
             <nav ref={this.navRef} className="navbar" data-visible="false"> 
+            <div onClick={() => {this.navigateHome()}} className="navbar-logo">
+                <span className="logo-upper">J</span>
+                <span className="logo-lower">ack </span>
+                <span className="logo-upper">O</span>
+                <span className="logo-lower">'</span>
+                <span className="logo-upper">S</span>
+                <span className="logo-lower">ullivan</span>
+                </div>
             <div className="nav-container-outer">
                 <ul className="nav-container">
                     {this.renderList()}
