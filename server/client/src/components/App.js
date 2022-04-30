@@ -11,7 +11,10 @@ import Landing from './Landing';
 import AboutSection from './AboutSection';
 import DarkLightButton from './DarkLightButton';
 import Parralax from './Parralax';
-import { index } from 'd3';
+import LinkButton from './LinkButton';
+
+import github from "../assets/images/github.svg";
+import linkedin from "../assets/images/linkedin.svg";
 
 
 const App = (props) => {
@@ -166,10 +169,32 @@ const App = (props) => {
 
     return (
         <React.Fragment>
-            
+            <div 
+                className="links-box animate__animated animate__fadeIn animate__delay-4s">
+                </div>
             <div 
                 className="dark-button-container animate__animated animate__fadeIn animate__delay-4s">
                     <DarkLightButton />
+                </div>
+            <div 
+                className="github-button-container animate__animated animate__fadeIn animate__delay-4s">
+                    <LinkButton 
+                        linkName="Github"
+                        image={github}
+                        color="--github-black"
+                        colorTwo="--github-white"
+                        link="https://github.com/j-j-jack"
+                    />
+                </div>
+            <div 
+                className="linkedin-button-container animate__animated animate__fadeIn animate__delay-4s">
+                    <LinkButton 
+                        linkName="LinkedIn"
+                        image={linkedin}
+                        color="--linkedin-blue"
+                        colorTwo="--linkedin-white" 
+                        link="https://www.linkedin.com/in/jack-o-sullivan-1122a8205/"
+                    />
                 </div>
             <div id="home/">
                 <div id="n" className="faded-out" ref={fadeInRefEight}>

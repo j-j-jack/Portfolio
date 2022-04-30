@@ -43,6 +43,11 @@
 
     --glitch-wild: hsl(4, 57%, 49%);
 
+    --github-black: rgb(0,0,0);
+    --linkedin-blue: rgb(10,102,194);
+    --github-white: rgb(255, 255, 255);
+    --linkedin-white: rgb(255, 255, 255);
+
 }
 
 .glitch-white-two {

@@ -1,0 +1,44 @@
+.link-container-outer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.link-image-container {
+    position: absolute;
+    height: 120%;
+    width: 120%;
+    top: -30%;
+    left: -10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+}
+
+
+.link-blocking-div {
+    text-align: center;
+    font-family: "neutra-text-italic", sans-serif;
+    font-style: italic;
+    font-size: .6em;
+    position: absolute;
+    width: 5em;
+    height: 4em;
+    top: 50%;
+    left: 0;
+    z-index: 10999;
+    color: inherit;
+}
+
+.link-blocking-div:hover {
+    cursor: pointer;
+}
+
+.link-container-outer:hover {
+    cursor: pointer;
+}
+
