@@ -3,24 +3,23 @@ import * as d3 from 'd3';
 
 import "./css/scroll-animation.css";
 
-const ScrollAnimation = () => {
+const ScrollAnimation = (props) => {
     const topSvg = useRef();
     const bottomSvg = useRef();
-
-    const body = document.body;
+    
+    
+    
+    useEffect(() => {
     let htmlHeight;
     let speedRelativeToBody;
     let isPositive;
-    
+
     const calculateHtmlHeight = () => {
-        htmlHeight = window.getComputedStyle(body).getPropertyValue('height');
+        htmlHeight = props.container.current.scrollHeight;
         htmlHeight = parseInt(htmlHeight, 10);
     }
-    
-    useEffect(() => {
     calculateHtmlHeight()
-    });
-
+    
     const gaussian = (min, max) => {
         // https://stackoverflow.com/questions/25582882/javascript-math-random-normal-distribution-gaussian-bell-curve
         // adapted from Maxwell Collard and Mahdi on Stack Overflow
@@ -73,7 +72,6 @@ const ScrollAnimation = () => {
                 x = x.toString() + '%';
                 let yOne = gaussian(-5, 10);
                 let length = (100 - yOne) - (gaussian(0, speed * 80));
-                console.log(length);
                 length = length.toString() + '%';
                 yOne = (yOne * - 1) + 100;
                 yOne = yOne.toString() + '%';
@@ -88,14 +86,14 @@ const ScrollAnimation = () => {
     }
 
         // min = 0 max = 0.65 approx
-        let lastPosition = window.pageYOffset;
+        let lastPosition = props.container.current.pageYOffset;
         let timeBetweenMeasures = 20;
         let measure = true;
-        document.addEventListener('scroll', (e) => {
+        props.container.current.addEventListener('scroll', (e) => {
             if (measure) {
             measure = false;
             setTimeout(reMeasure, timeBetweenMeasures);
-            let newPosition = window.pageYOffset;
+            let newPosition = props.container.current.scrollTop;
             let speed = lastPosition - newPosition;
             if (speed >= 0) {
                 isPositive = true
@@ -115,6 +113,9 @@ const ScrollAnimation = () => {
             }
 
     window.addEventListener('resize', calculateHtmlHeight);
+    });
+
+    
 
     return (
         <React.Fragment>

@@ -16,7 +16,6 @@ const LinkButton = (props) => {
         if (color==="logo-color") {
             textColor = getComputedStyle(
                 document.documentElement).getPropertyValue(props.colorTwo);
-                console.log(textColor);
             return textColor;
         }
         textColor = getComputedStyle(

@@ -1,24 +1,27 @@
 .top-animation {
+    pointer-events: none;
     position: fixed;
     height: 50%;
-    width: 100%;
+    width: 98%;
     top: 0;
     left: 0;
-    background: navy;
+    background: transparent;
     opacity: 0.5;;
-    z-index: 2000;
+    z-index: 12000;
 }
 
 .bottom-animation {
+    pointer-events: none;
     position: fixed;
     height: 50%;
-    width: 100%;
+    width: 98%;
     top: 50%;
     left: 0;
-    background: black;
+    background: transparent;
     opacity: 0.5;
-    z-index: 2000;
+    z-index: 12000;
 }
+
 
 .top-svg {
     width: 100%;

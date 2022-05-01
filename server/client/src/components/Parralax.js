@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import "./css/parralax.css";
+import ScrollAnimation from './ScrollAnimation';
 // the above css file and the component below are sourced from 
 // https://keithclark.co.uk/articles/pure-css-parallax-websites/
 
@@ -39,6 +40,7 @@ const Parralax = (props) => {
     }, []);
 
     return (
+        <React.Fragment>
         <div className="parallax-outer">
         <div ref={parralaxRef} className="parallax">
             <div ref={backgroundRef} className="parallax__layer parallax__layer--back">
@@ -48,6 +50,8 @@ const Parralax = (props) => {
             </div>
         </div>
         </div>
+        <ScrollAnimation container={parralaxRef}/>
+        </React.Fragment>
     );
 };
 

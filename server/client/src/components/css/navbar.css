@@ -57,7 +57,7 @@
 }
 
 ul {
-    list-style: square;
+    list-style: disc;
 }
 
 .nav-li {
@@ -387,7 +387,7 @@ a, a:visited, a:hover, a:active {
 }
 
 .logo-lower {
-    color: var(--glitch-grey);
+    color: var(--glitch-pink);
 }
 
 .navbar-logo:hover > .logo-upper{
