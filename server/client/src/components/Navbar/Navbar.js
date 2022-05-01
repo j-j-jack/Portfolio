@@ -3,7 +3,6 @@ import { navbarItems  } from './navbarItems';
 import { connect } from 'react-redux';
 import { changeActiveNavTab, openMobileNav } from '../../actions';
 import '../css/navbar.css';
-import { timeHours } from 'd3';
 
 class Navbar extends Component {
      constructor (props) {
@@ -15,9 +14,21 @@ class Navbar extends Component {
         this.previousHoverTabRef = React.createRef(null);
         this.hoverTimeout = React.createRef(null);
         this.previousTab = React.createRef(null);
+        this.visibleRef = React.createRef();
      }
     
     componentDidMount () {
+        //disable transition for navbar when window is resized
+        window.addEventListener('resize', ()=> {
+            this.navRef.current.classList.add('no-transition');
+            console.log(this.navRef.current.classList);
+            setTimeout(()=> {
+            this.navRef.current.classList.remove('no-transition');
+            console.log(this.navRef.current.classList);
+            }, 350);
+        })
+
+        this.visibleRef.current = false;
         this.navLinkRefArray.current = [];
         navbarItems.map(item => {
             this.navLinkRefArray.current.push(`nav-link-${item.id}`)
@@ -46,11 +57,11 @@ class Navbar extends Component {
             this.props.openMobileNav(!this.props.mobileNavOpen);
             const visibility = this.navRef.current.getAttribute('data-visible');
             if (visibility==="false"){
-                this.navRef.current.setAttribute('data-visible', 'true');
+                this.visibleRef.current = "true";
                 this.toggleRef.current.setAttribute('aria-expanded', 'true');
             }
             else if (visibility==="true") {
-                this.navRef.current.setAttribute('data-visible', 'false');
+                this.visibleRef.current = "false";
                 this.toggleRef.current.setAttribute('aria-expanded', 'false')
             }
     }
@@ -166,7 +177,7 @@ class Navbar extends Component {
                 >
                 <span className="sr-only">Menu</span>
             </button>
-            <nav ref={this.navRef} className="navbar" data-visible="false"> 
+            <nav ref={this.navRef} className="navbar" data-visible={this.visibleRef.current}> 
             <div onClick={() => {this.navigateHome()}} className="navbar-logo">
                 <span className="logo-upper">J</span>
                 <span className="logo-lower">ack </span>

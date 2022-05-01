@@ -148,7 +148,7 @@ const App = (props) => {
                 entries.forEach(async (entry) => {
                     if (entry.isIntersecting) {
                         await delay(.25);
-                        entry.target.className += ` animate__animated animate__${fadeDict[entry.target.id]}`;
+                        entry.target.className += ` animate__animated animate__slow animate__${fadeDict[entry.target.id]}`;
                         fadeObserver.current.unobserve(entry.target);
                         setTimeout(() => {
                             entry.target.style.pointerEvents = 'auto';

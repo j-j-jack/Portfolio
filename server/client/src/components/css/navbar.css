@@ -275,10 +275,18 @@ a, a:visited, a:hover, a:active {
     display: none;
 }
 
+.navbar.no-transition {
+    transition: none;
+}
+
 .sr-only {
     display: none;
 }
 @media (max-width: 767px) {
+    .navbar.no-transition {
+    transition: none;
+    }
+    
     .navbar {
         flex-direction: column;
         inset: 0 0 0 30%;
@@ -372,7 +380,7 @@ a, a:visited, a:hover, a:active {
 
 .navbar-logo {
     position: absolute;
-    top: .75rem;
+    top: .85rem;
     left: 2rem;
     font-size: 150%;
     font-weight: 900;
@@ -387,7 +395,7 @@ a, a:visited, a:hover, a:active {
 }
 
 .logo-lower {
-    color: var(--glitch-pink);
+    color: var(--glitch-dark-shadow);
 }
 
 .navbar-logo:hover > .logo-upper{

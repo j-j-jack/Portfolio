@@ -4,10 +4,9 @@ import * as d3 from 'd3';
 import "./css/scroll-animation.css";
 
 const ScrollAnimation = (props) => {
+    
     const topSvg = useRef();
     const bottomSvg = useRef();
-    
-    
     
     useEffect(() => {
     let htmlHeight;
@@ -48,18 +47,20 @@ const ScrollAnimation = (props) => {
             speed = .0065;
         }
 
-        const numberOfLines = parseInt(gaussian(speed + 3, (speed*250)+8));
+        console.log(speed);
+
+        const numberOfLines = parseInt(gaussian(speed + 3, (speed*500)+8));
         const colors = ['glitch-white', 'glitch-red', 'glitch-yellow',
             'glitch-blue', 'glitch-pink', 'glitch-black', 'glitch-aqua', 'glitch-green'];
         if (!top) {
             for (let i=0; i<numberOfLines; i++) {
-                let x = Math.random() * 100;
+                let x = Math.random() * 98;
                 x = x.toString() + '%';
-                let yOne = gaussian(-5, 10);
-                let length = yOne + gaussian(0, speed * 80);
+                let yOne = gaussian(-5, 40);
+                let length = yOne + gaussian(0, 2);
                 length = length.toString() + '%';
                 yOne = yOne.toString() + '%';
-                let duration = gaussian(speed + 100, (speed*1500) + 100);
+                let duration = gaussian(speed + 100, (speed*2500) + 100);
                 let randomColor = colors[Math.floor(Math.random() * 8)];
                 d3.select(topSvg.current).append('line')
                     .attr("class", randomColor).style("stroke-width", 2).attr("x1", x)
@@ -68,14 +69,14 @@ const ScrollAnimation = (props) => {
             }
         } else {
             for (let i=0; i<numberOfLines; i++) {
-                let x = Math.random() * 100;
+                let x = Math.random() * 98;
                 x = x.toString() + '%';
-                let yOne = gaussian(-5, 10);
-                let length = (100 - yOne) - (gaussian(0, speed * 80));
+                let yOne = gaussian(-5, 40);
+                let length = (100 - yOne) - (gaussian(0,  2));
                 length = length.toString() + '%';
                 yOne = (yOne * - 1) + 100;
                 yOne = yOne.toString() + '%';
-                let duration = gaussian(speed + 100, (speed*1500) + 100);
+                let duration = gaussian(speed + 100, (speed*2500) + 100);
                 let randomColor = colors[Math.floor(Math.random() * 8)];
                 d3.select(bottomSvg.current).append('line')
                     .attr("class", randomColor).style("stroke-width", 2).attr("x1", x)
