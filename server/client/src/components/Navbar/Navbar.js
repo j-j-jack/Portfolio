@@ -15,16 +15,15 @@ class Navbar extends Component {
         this.hoverTimeout = React.createRef(null);
         this.previousTab = React.createRef(null);
         this.visibleRef = React.createRef();
+        this.navBlurRef = React.createRef();
      }
     
     componentDidMount () {
         //disable transition for navbar when window is resized
         window.addEventListener('resize', ()=> {
             this.navRef.current.classList.add('no-transition');
-            console.log(this.navRef.current.classList);
             setTimeout(()=> {
             this.navRef.current.classList.remove('no-transition');
-            console.log(this.navRef.current.classList);
             }, 350);
         })
 
@@ -53,14 +52,23 @@ class Navbar extends Component {
             tab.className = newTabClassName;
     }
 
-    mobileNavToggle () {
+    mobileNavToggle (fromNavLinks) {
             this.props.openMobileNav(!this.props.mobileNavOpen);
             const visibility = this.navRef.current.getAttribute('data-visible');
+            if (fromNavLinks) {
+                if (visibility==="false") {
+                    return
+                }
+            }
             if (visibility==="false"){
+                document.getElementsByClassName('content')[0].style.filter = "blur(2px)";
+                this.navBlurRef.current.style.display="block";
                 this.visibleRef.current = "true";
                 this.toggleRef.current.setAttribute('aria-expanded', 'true');
             }
             else if (visibility==="true") {
+                document.getElementsByClassName('content')[0].style.filter = "none";
+                this.navBlurRef.current.style.display = "none";
                 this.visibleRef.current = "false";
                 this.toggleRef.current.setAttribute('aria-expanded', 'false')
             }
@@ -146,6 +154,7 @@ class Navbar extends Component {
                     key={item.name}
                 >
                     <span 
+                        onClick={() => this.mobileNavToggle(true)}
                         id={`nav-span-${item.id}`}
                         className="nav-li">
                     <a 
@@ -168,12 +177,18 @@ class Navbar extends Component {
     render() {
         return (
         <React.Fragment>
+            <div 
+                onClick={() => this.mobileNavToggle(false)}
+                ref={this.navBlurRef} className="mobile-nav-blur-container"
+            >
+                <div className="mobile-nav-blur"></div>
+            </div>
             <button
                 ref={this.toggleRef}
                 aria-controls="navbar" 
                 aria-expanded="false" 
                 className={`mobile-nav-toggle-${this.props.lightMode}`}
-                onClick={() => this.mobileNavToggle()}
+                onClick={() => this.mobileNavToggle(false)}
                 >
                 <span className="sr-only">Menu</span>
             </button>

@@ -282,11 +282,39 @@ a, a:visited, a:hover, a:active {
 .sr-only {
     display: none;
 }
+
+.mobile-nav-blur-container {
+    opacity: 0.99;
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 98%;
+    z-index: 8000;
+}
+
+.mobile-nav-blur {
+    height: 100%;
+    width: 100%;
+    background-color: var(--glitch-dark-shadow);
+    filter: blur(2px);
+    animation: opacity-animation 350ms ease-out;
+}
+
+@keyframes opacity-animation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
 @media (max-width: 767px) {
     .navbar.no-transition {
     transition: none;
     }
-    
+
     .navbar {
         flex-direction: column;
         inset: 0 0 0 30%;

@@ -47,8 +47,6 @@ const ScrollAnimation = (props) => {
             speed = .0065;
         }
 
-        console.log(speed);
-
         const numberOfLines = parseInt(gaussian(speed + 3, (speed*500)+8));
         const colors = ['glitch-white', 'glitch-red', 'glitch-yellow',
             'glitch-blue', 'glitch-pink', 'glitch-black', 'glitch-aqua', 'glitch-green'];
