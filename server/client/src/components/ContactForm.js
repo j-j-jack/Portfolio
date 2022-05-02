@@ -303,7 +303,7 @@ const ContactForm = (props) => {
             );
         } else if (props.contacted==='contacted') {
             return (
-                <div>
+                <div className="form-completion-text-container">
                     <h3 className="form-completion-heading">Thank You!</h3>
                     <p className="form-completion-p">I will read your message and get back to you as soon as possible</p>
                 </div>
@@ -317,9 +317,18 @@ const ContactForm = (props) => {
                     <svg ref={failedSvgRef} className="contact-failed-svg">
                     </svg>
                 </div>
-                <div>
-                    <h3 className="form-completion-heading">Sorry</h3>
-                    <p className="form-completion-p">That didn't work. You can try contacting me at jackosullivan541@gmail.com</p>
+                <div className="form-completion-text-container">
+                    <h3 className="form-completion-heading">Uh Oh... Armageddon!</h3>
+                    <p className="form-completion-p">
+                        Sorry that didn't work. 
+                        You can try contacting me at<span> </span> 
+                        <a class="email-link" 
+                            href="mailto: jackosullivan541@gmail.com" 
+                            rel="noopener noreferrer" 
+                            target="_blank" >
+                                jackosullivan541@gmail.com
+                        </a>
+                        </p>
                 </div>
                 </React.Fragment>
             );

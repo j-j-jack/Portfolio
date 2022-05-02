@@ -179,15 +179,28 @@ textarea {
 }
 
 .form-completion-heading {
+  color: var(--glitch-white-two);
   z-index: 5000;
   font-size: 175%;
-  color: var(--glitch-white);
   text-align: center;
 }
 
 .form-completion-p {
+  color: var(--glitch-white-two);
   z-index: 5000;
   text-align: center;
+}
+
+.form-completion-text-container {
+  
+  border-radius: 2em;
+  position: absolute;
+  top: 4em;
+  left: 50%;
+  width: 75%;
+  transform: translateX(-50%);
+  background-color: var(--glitch-dark-shadow-non-change);
+  z-index: 6000;
 }
 
 /* --------- Armageddon ------------------------------------------------*/
@@ -224,4 +237,13 @@ textarea {
 .contact-failed-svg {
   height: 100%;
   width: 100%;
+}
+
+.email-link, .email-link:visited, 
+    .email-link:hover, .email-link:active {
+  color: var(--glitch-pink);
+}
+
+.email-link:hover {
+  text-decoration: underline;
 }
