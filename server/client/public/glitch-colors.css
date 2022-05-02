@@ -41,6 +41,8 @@
     --glitch-light-shadow: hsla(242, 57%, 89%, 0.692);
     --glitch-dark-shadow: hsla(240, 21%, 20%, 0.692);
 
+   --glitch-dark-shadow-non-change: hsla(240, 21%, 20%, 0.692);
+
     --glitch-wild: hsl(4, 57%, 49%);
 
     --github-black: rgb(0,0,0);
@@ -108,4 +110,16 @@
     color: var(--glitch-pink);
     stroke: var(--glitch-pink);
     fill: var(--glitch-pink);
+}
+
+.glitch-light-shadow {
+    color: var(--glitch-light-shadow);
+    stroke: var(--glitch-light-shadow);
+    fill: var(--glitch-light-shadow);
+}
+
+.glitch-dark-shadow {
+    color: var(--glitch-dark-shadow);
+    stroke: var(--glitch-dark-shadow);
+    fill: var(--glitch-dark-shadow);
 }

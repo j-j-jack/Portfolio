@@ -15,7 +15,6 @@
     background-image: linear-gradient(to bottom, var(--glitch-white), var(--glitch-light-shadow));
     z-index: 9000;
     padding-bottom: 2rem;
-    backdrop-filter: blur(10px);
 }
 
 
@@ -284,8 +283,8 @@ a, a:visited, a:hover, a:active {
 }
 
 .mobile-nav-blur-container {
-    opacity: 0.99;
-    display: none;
+    background-color: transparent;
+    display: none; 
     position: fixed;
     height: 100vh;
     width: 98%;
@@ -295,7 +294,7 @@ a, a:visited, a:hover, a:active {
 .mobile-nav-blur {
     height: 100%;
     width: 100%;
-    background-color: var(--glitch-dark-shadow);
+    background-color: var(--glitch-dark-shadow-non-change);
     filter: blur(2px);
     animation: opacity-animation 350ms ease-out;
 }
@@ -327,7 +326,6 @@ a, a:visited, a:hover, a:active {
 
     .navbar[data-visible="true"] {
         transform: translateX(0%);
-        border-left: 2px solid var(--glitch-dark-shadow);
     }
     
     ul {

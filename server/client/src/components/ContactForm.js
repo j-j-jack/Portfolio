@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import * as d3 from 'd3';
 
 import FormButton from './FormButton';
@@ -36,6 +36,89 @@ const ContactForm = (props) => {
     const emailLabelRef = useRef();
     const subjectLabelRef = useRef();
     const bodyLabelRef = useRef();
+
+    // refs for form completion animations
+    const armageddonIntervalRef = useRef();
+    const fireworksRef = useRef();
+    const failedSvgRef = useRef();
+
+    useEffect(()=> {
+        let yellow = getComputedStyle(
+            document.documentElement).getPropertyValue("--glitch-yellow");
+        let red = getComputedStyle(
+            document.documentElement).getPropertyValue("--glitch-red");
+
+        if(props.contacted==="failed") {
+            armageddonIntervalRef.current = setInterval( () => {
+            let posNeg = (Math.random() > .5);
+                 let duration = 200 + parseInt(Math.random() * 1000);
+                 let size = Math.random() * 1.5;
+                 let sizeAir = `${size}em`;
+                 let sizeGround = `${size*3}em`;
+                 let x = 30 + Math.random() * 40;
+                 let x1 = `${x}%`;
+                 let x2 = null;
+                 if (posNeg){
+                 x2 = `${x+10}%`;
+                 let x2T = `${x+20}%`;
+                d3.select(failedSvgRef.current).append('line')
+                  .attr('class', "glitch-yellow")
+                    .style("stroke-width", 2)
+                      .attr("x1", x1)
+                        .attr("y1", "-100%")
+                          .attr("x2", x2)
+                            .attr("y2", "0%").transition()
+                              .duration(duration).attr("x1", x2).attr("y1", "0%")
+                                .attr("x2", x2T).attr("y2", "100%").style("opacity", "0").remove();
+                 
+                d3.select(failedSvgRef.current).append('circle')
+                  .attr("cx", x2)
+                    .attr("cy", "0%")
+                      .attr("r", sizeAir)
+                        .attr("fill", red)
+                          .transition()
+                            .duration(duration)
+                              .attr("cx", x2T)
+                                .attr("cy", "100%")
+                                  .transition()
+                                    .duration(500)
+                                    .attr("fill", yellow)
+                                    .attr("r", sizeGround)
+                                      .style("opacity", "0")
+                                        .remove();
+                 } else {
+                x2 = `${x-10}%`;
+                let x2T = `${x-20}%`;
+                d3.select(failedSvgRef.current).append('line')
+                  .attr('class', "glitch-yellow")
+                    .style("stroke-width", 2)
+                      .attr("x1", x1)
+                        .attr("y1", "-100%")
+                          .attr("x2", x2)
+                            .attr("y2", "0%").transition()
+                              .duration(duration).attr("x1", x2).attr("y1", "0%")
+                                .attr("x2", x2T).attr("y2", "100%").style("opacity", "0")
+                                  .remove();
+                 
+                d3.select(failedSvgRef.current).append('circle')
+                  .attr("cx", x2)
+                    .attr("cy", "0%")
+                      .attr("r", sizeAir)
+                        .attr("fill", red)
+                          .transition()
+                            .duration(duration)
+                              .attr("cx", x2T)
+                                .attr("cy", "100%")
+                                  .transition()
+                                    .duration(500)
+                                    .attr("fill", yellow)
+                                    .attr("r", sizeGround)
+                                      .style("opacity", "0")
+                                        .remove();
+                }
+            }, 250);
+        }
+    }, [props.contacted]);
 
     const handleSubmit = async(event) => {
         event.preventDefault();
@@ -119,7 +202,6 @@ const ContactForm = (props) => {
         }
         
         if (exitSubmit) {
-            console.log('return');
             return;
         }
 
@@ -222,16 +304,24 @@ const ContactForm = (props) => {
         } else if (props.contacted==='contacted') {
             return (
                 <div>
-                    <h3>Thank You!</h3>
-                    <p>I will read your message and get back to you as soon as possible</p>
+                    <h3 className="form-completion-heading">Thank You!</h3>
+                    <p className="form-completion-p">I will read your message and get back to you as soon as possible</p>
                 </div>
             );
         } else if (props.contacted==='failed') {
             return (
-                <div>
-                    <h3>Sorry</h3>
-                    <p>That didn't work. You can try contacting me at jackosullivan541@gmail.com</p>
+                <React.Fragment>
+                <div className="contact-form-sky"></div>
+                <div className="contact-form-ground"></div>
+                <div className="contact-failed-svg-container">
+                    <svg ref={failedSvgRef} className="contact-failed-svg">
+                    </svg>
                 </div>
+                <div>
+                    <h3 className="form-completion-heading">Sorry</h3>
+                    <p className="form-completion-p">That didn't work. You can try contacting me at jackosullivan541@gmail.com</p>
+                </div>
+                </React.Fragment>
             );
         }
     }

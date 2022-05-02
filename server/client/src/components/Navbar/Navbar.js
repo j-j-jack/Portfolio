@@ -61,7 +61,7 @@ class Navbar extends Component {
                 }
             }
             if (visibility==="false"){
-                document.getElementsByClassName('content')[0].style.filter = "blur(2px)";
+                document.getElementsByClassName('content')[0].style.filter = "blur(12px)";
                 this.navBlurRef.current.style.display="block";
                 this.visibleRef.current = "true";
                 this.toggleRef.current.setAttribute('aria-expanded', 'true');
