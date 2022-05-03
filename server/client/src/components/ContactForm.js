@@ -41,18 +41,32 @@ const ContactForm = (props) => {
     const armageddonIntervalRef = useRef();
     const fireworksRef = useRef();
     const failedSvgRef = useRef();
+    const succeededSvgRef = useRef();
 
     useEffect(()=> {
         let yellow = getComputedStyle(
             document.documentElement).getPropertyValue("--glitch-yellow");
         let red = getComputedStyle(
             document.documentElement).getPropertyValue("--glitch-red");
+        let green = getComputedStyle(
+            document.documentElement).getPropertyValue("--glitch-green");
+        let blue = getComputedStyle(
+            document.documentElement).getPropertyValue("--glitch-blue");
+        let pink = getComputedStyle(
+            document.documentElement).getPropertyValue("--glitch-pink");
+        let aqua = getComputedStyle(
+            document.documentElement).getPropertyValue("--glitch-aqua");
+        let white = getComputedStyle(
+            document.documentElement).getPropertyValue("--glitch-white");
+
+        let colors = [yellow, green, aqua, blue, pink, red, white];
+
 
         if(props.contacted==="failed") {
             armageddonIntervalRef.current = setInterval( () => {
             let posNeg = (Math.random() > .5);
                  let duration = 200 + parseInt(Math.random() * 1000);
-                 let size = Math.random() * 1.5;
+                 let size = .1 + Math.random() * 1.1;
                  let sizeAir = `${size}em`;
                  let sizeGround = `${size*3}em`;
                  let x = 30 + Math.random() * 40;
@@ -118,6 +132,65 @@ const ContactForm = (props) => {
                 }
             }, 250);
         }
+        else if (props.contacted === "contacted") {
+            // https://observablehq.com/@onoratod/animate-a-path-in-d3
+            const svg = d3.select(succeededSvgRef.current).append("svg")
+                        .attr("viewBox", `0 0 1000 1000`).attr("class", "contact-succeeded-svg");
+                    setInterval(() => {
+                        console.log(svg);
+                        const curve = d3.line().curve(d3.curveNatural);
+                        let x = 125 + (Math.random() * 750);
+                        let x2 = null;
+                        let posNeg = (Math.random() > .5);
+                        if (posNeg) {
+                            x2 = x + Math.random() * 200;
+                        }
+                        else {
+                            x2 = x - (Math.random() * 200);
+                        }
+                        let y = 1000;
+                        let y2 = y - 550 - (Math.random() * 250);
+                        console.log((y - y2)/2 );
+
+                        const points = 
+                            [
+                                [x, y], 
+                                
+                                [x + ((x - x2)/2), y - ((y - y2)/2)],
+                                
+                                [x2, y2]
+                            ]
+
+                        var path = svg.append("path")
+                        .attr("class", "glitch-white-stroke firework-fade")
+                          .attr("d", curve(points))
+                            .attr("fill", "none")
+                              .attr("stroke-width", "2");
+
+
+      
+
+    const length = path.node().getTotalLength();
+
+    path.attr("stroke-dasharray", length + " " + length)
+        .attr("stroke-dashoffset", length)
+          .transition()
+          .ease(d3.easeLinear)
+          .attr("stroke-dashoffset", -length)
+          .duration(1000).remove()
+    
+    setTimeout(()=> {
+        svg.append('circle').attr('fill', yellow)
+          .attr('cx', x2).attr('cy', y2).attr('r', 2).transition().duration(250)
+          .attr('fill', colors[parseInt(Math.random() * 7)])
+          .attr('r', 100)
+          .style('opacity', '0').remove();
+    }, 500);
+  
+  
+
+                    }, 350)
+                }
     }, [props.contacted]);
 
     const handleSubmit = async(event) => {
@@ -303,10 +376,16 @@ const ContactForm = (props) => {
             );
         } else if (props.contacted==='contacted') {
             return (
+                <React.Fragment>
+                    <div className="contact-form-sky"></div>
+                    <div className="contact-form-ground"></div>
+                    <div ref={succeededSvgRef} className="contact-succeeded-svg-container">
+                    </div>
                 <div className="form-completion-text-container">
-                    <h3 className="form-completion-heading">Thank You!</h3>
-                    <p className="form-completion-p">I will read your message and get back to you as soon as possible</p>
+                    <h3 className="form-completion-heading">It's a Celebration!</h3>
+                    <p className="form-completion-p">Thank You. I will read your message and get back to you as soon as possible</p>
                 </div>
+                </React.Fragment>
             );
         } else if (props.contacted==='failed') {
             return (

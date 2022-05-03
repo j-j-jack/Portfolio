@@ -247,3 +247,35 @@ textarea {
 .email-link:hover {
   text-decoration: underline;
 }
+
+/* ------ fireworks ---------------------------- */
+
+.contact-succeeded-svg-container {
+  z-index: 4500;
+  position: absolute;
+  top: 2em;
+  left: 2em;
+  height: 28.5em;
+  width: calc(100% - 4em);
+}
+
+.contact-succeeded-svg {
+  height: 100%;
+  width: 100%;
+}
+
+.firework-fade {
+  animation: firework-fade 1s ease-out;
+}
+
+@keyframes firework-fade {
+  0% {
+    opacity: 1.0;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

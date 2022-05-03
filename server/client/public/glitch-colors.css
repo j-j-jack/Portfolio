@@ -70,6 +70,11 @@
     fill: var(--glitch-white);
 }
 
+.glitch-white-stroke {
+    color: var(--glitch-white);
+    stroke: var(--glitch-white);
+}
+
 .glitch-red {
     color: var(--glitch-red);
     stroke: var(--glitch-red);
