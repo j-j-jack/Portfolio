@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import "animate.css";
-import { stackOffsetDiverging } from 'd3';
 
 const TechnologyContainer = (props) => {
 

@@ -4,7 +4,6 @@ import "animate.css";
 
 import { changeActiveNavTab } from '../actions';
 import Navbar from './Navbar/Navbar'
-import ScrollAnimation from './ScrollAnimation';
 import ProjectCard from './ProjectCard';
 import ContactForm from './ContactForm';
 import Landing from './Landing';
@@ -211,7 +210,7 @@ const App = (props) => {
                         As of the start of 2021, I had no basically no knowledge of web development whatsoever.
                         I have displayed a small selection of projects that I have completed since then to showcase
                         my progress. Feel free to visit my <a 
-                            target="_blank" rel="noopener" 
+                            target="_blank" rel="noreferrer" 
                             className="github-work-link" 
                             href="http://github.com">
                                 Github
@@ -274,6 +273,17 @@ const App = (props) => {
                         <ContactForm />
                     </div>
                 </section>
+                <div className="bottom-github-link-container">
+                    <h4>This project was created using React, D3.js and Animate.css.</h4>
+                    <h5>View the Github repo<span> </span>
+                        <a 
+                            className="bottom-github-link"
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://github.com/j-j-jack/Portfolio/tree/master">
+                                here
+                            </a> </h5>
+                </div>
                 </div>
                 </Parralax>
             </div>
