@@ -47,14 +47,14 @@ const ScrollAnimation = (props) => {
             speed = .0065;
         }
 
-        const numberOfLines = parseInt(gaussian(speed + 3, (speed*500)+8));
+        const numberOfLines = parseInt(gaussian(speed + 3, (speed*800)+8));
         const colors = ['glitch-white', 'glitch-red', 'glitch-yellow',
             'glitch-blue', 'glitch-pink', 'glitch-black', 'glitch-aqua', 'glitch-green'];
         if (!top) {
             for (let i=0; i<numberOfLines; i++) {
                 let x = Math.random() * 98;
                 x = x.toString() + '%';
-                let yOne = gaussian(-5, 40);
+                let yOne = gaussian(-25, 40);
                 let length = yOne + gaussian(0, 2);
                 length = length.toString() + '%';
                 yOne = yOne.toString() + '%';
@@ -69,7 +69,7 @@ const ScrollAnimation = (props) => {
             for (let i=0; i<numberOfLines; i++) {
                 let x = Math.random() * 98;
                 x = x.toString() + '%';
-                let yOne = gaussian(-5, 40);
+                let yOne = gaussian(-25, 40);
                 let length = (100 - yOne) - (gaussian(0,  2));
                 length = length.toString() + '%';
                 yOne = (yOne * - 1) + 100;

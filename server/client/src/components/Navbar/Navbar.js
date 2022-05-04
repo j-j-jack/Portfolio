@@ -193,7 +193,11 @@ class Navbar extends Component {
                 <span className="sr-only">Menu</span>
             </button>
             <nav ref={this.navRef} className="navbar" data-visible={this.visibleRef.current}> 
-            <div onClick={() => {this.navigateHome()}} className="navbar-logo">
+            <div 
+            onClick={() => {
+                this.navigateHome()
+                this.mobileNavToggle(true)
+                }} className="navbar-logo">
                 <span className="logo-upper">J</span>
                 <span className="logo-lower">ack </span>
                 <span className="logo-upper">O</span>

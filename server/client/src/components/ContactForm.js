@@ -33,13 +33,8 @@ const ContactForm = (props) => {
 
     // refs for form labels 
     const nameLabelRef = useRef();
-    const emailLabelRef = useRef();
-    const subjectLabelRef = useRef();
-    const bodyLabelRef = useRef();
 
     // refs for form completion animations
-    const armageddonIntervalRef = useRef();
-    const fireworksRef = useRef();
     const failedSvgRef = useRef();
     const succeededSvgRef = useRef();
 
@@ -63,10 +58,10 @@ const ContactForm = (props) => {
 
 
         if(props.contacted==="failed") {
-            armageddonIntervalRef.current = setInterval( () => {
+            setInterval( () => {
             let posNeg = (Math.random() > .5);
-                 let duration = 200 + parseInt(Math.random() * 1000);
-                 let size = .1 + Math.random() * 1.1;
+                 let duration = 500 + parseInt(Math.random() * 600);
+                 let size = .3 + Math.random();
                  let sizeAir = `${size}em`;
                  let sizeGround = `${size*3}em`;
                  let x = 30 + Math.random() * 40;
@@ -130,7 +125,7 @@ const ContactForm = (props) => {
                                       .style("opacity", "0")
                                         .remove();
                 }
-            }, 250);
+            }, 350);
         }
         else if (props.contacted === "contacted") {
             // https://observablehq.com/@onoratod/animate-a-path-in-d3
@@ -214,6 +209,7 @@ const ContactForm = (props) => {
         function ValidateEmail() 
         // https://www.w3resource.com/javascript/form/email-validation.php
         {
+            //eslint-disable-next-line
             if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailRef.current.value))
             {
                 return (true)

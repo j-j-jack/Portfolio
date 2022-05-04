@@ -13,19 +13,6 @@ const TechnologyContainer = (props) => {
     const availableTech = useRef(props.technologies);
     const randomiserRef = useRef();
     const boxOrganiserRef = useRef();
-    const colors = [
-        'hsl(4, 57%, 49%)', 'hsl(21, 57%, 49%)', 'hsl(38, 57%, 49%)',
-        'hsl(55, 57%, 49%)', 'hsl(72, 57%, 49%)', 'hsl(89, 57%, 49%)', 
-        'hsl(106, 57%, 49%)', 'hsl(123, 57%, 49%)', 'hsl(140, 57%, 49%)', 
-        'hsl(157, 57%, 49%)', 'hsl(174, 57%, 49%)', 'hsl(191, 57%, 49%)', 
-        'hsl(208, 57%, 49%)', 'hsl(225, 57%, 49%)', 'hsl(242, 57%, 49%)', 
-        'hsl(259, 57%, 49%)', 'hsl(276, 57%, 49%)', 'hsl(293, 57%, 49%)', 
-        'hsl(310, 57%, 49%)', 'hsl(337, 57%, 49%)', 'hsl(354, 57%, 49%)'
-    ];
-    const changeColor = () => {
-        let newColor = colors[parseInt(Math.random() * 21)];
-        document.documentElement.style.setProperty('--glitch-wild', newColor);
-    }
 
     const sendToWeb = (box) => {
         const linkKey = document.getElementById(`ttc${box}`).textContent;
@@ -103,8 +90,7 @@ const TechnologyContainer = (props) => {
                 onClick={() => sendToWeb(row)}
                 id={`tco${row}`}
                 key={`techBox${row}`} 
-                className={`${displayClass} technology-container-outer`}
-                onMouseEnter={()=>changeColor()}>
+                className={`${displayClass} technology-container-outer`}>
            <div className="technology-container-mask"></div>
                 <div id={`tci${row}`} className="technology-container-inner">
                  <div id={`ttc${row}`} className="tech-text-container"></div>
