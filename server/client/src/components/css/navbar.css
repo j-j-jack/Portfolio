@@ -75,7 +75,6 @@ li::marker {
 .nav-li-initial::after {
     position: absolute;
     content: "";
-    top: 1.25rem;
     left: 0;
     width: 100%;
     height: 20%;
@@ -433,6 +432,10 @@ a, a:visited, a:hover, a:active {
     .nav-li-activate-right::after, .nav-li-deactivate-right::after {
         top: 1.75rem;
     }
+
+    .nav-li-initial::after {
+        top: 1.75rem;
+    }
 }
 
 
@@ -449,7 +452,11 @@ a, a:visited, a:hover, a:active {
     }
     .nav-li-activate-left::after, .nav-li-deactivate-left::after,
     .nav-li-activate-right::after, .nav-li-deactivate-right::after {
-        top: 1.25rem;
+        top: 1.5rem;
+    }
+
+    .nav-li-initial::after {
+        top: 1.5rem;
     }
 }
 

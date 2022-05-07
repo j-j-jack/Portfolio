@@ -39,11 +39,13 @@ const App = (props) => {
     const fadeInRefNine = useRef();
     const fadeInRefTen = useRef();
     const fadeInRefEleven = useRef();
+    const fadeInRefTwelve = useRef();
 
 
     const fadeObserver = useRef();
 
-    
+
+
 
     useLayoutEffect(()=> {
         // window always refreshes at top
@@ -119,7 +121,7 @@ const App = (props) => {
             const fadeInRefs = [fadeInRefOne.current, fadeInRefTwo.current, fadeInRefThree.current,
                 fadeInRefFour.current,fadeInRefFive.current, fadeInRefSix.current, 
                 fadeInRefSeven.current, fadeInRefNine.current, fadeInRefTen.current,
-                fadeInRefEleven.current];
+                fadeInRefEleven.current, fadeInRefTwelve.current];
 
             const fadeDict = {
                 "s2h": "fadeIn",
@@ -133,7 +135,8 @@ const App = (props) => {
                 "s3": "fadeIn", 
                 "n": "fadeInDown",
                 "s4h": "fadeIn",
-                "s4": "fadeInUp"
+                "s4": "fadeInUp",
+                "bgl": "fadeIn"
             };
 
             function delay(n){
@@ -146,7 +149,7 @@ const App = (props) => {
             fadeObserver.current = new IntersectionObserver((entries) => {
                 entries.forEach(async (entry) => {
                     if (entry.isIntersecting) {
-                        await delay(.25);
+                        await delay(.5);
                         entry.target.className += ` animate__animated animate__slow animate__${fadeDict[entry.target.id]}`;
                         fadeObserver.current.unobserve(entry.target);
                         setTimeout(() => {
@@ -205,8 +208,17 @@ const App = (props) => {
                     <Landing />
                 </section>
                 <section id="2" ref={navRefTwo}>
-                    <h2 className="faded-out" ref={fadeInRefOne} id="s2h">My Work</h2>
-                    <p id="s2sh" className="faded-out" ref={fadeInRefNine}>
+                    <h2 
+                        className="faded-out section-heading" 
+                        ref={fadeInRefOne}  
+                        id="s2h">
+                            My Work
+                        </h2>
+                    <p 
+                        id="s2sh" 
+                        className="faded-out section-sibling" 
+                        ref={fadeInRefNine}
+                    >
                         As of the start of 2021, I had no basically no knowledge of web development whatsoever.
                         I have displayed a small selection of projects that I have completed since then to showcase
                         my progress. Feel free to visit my <a 
@@ -216,7 +228,11 @@ const App = (props) => {
                                 Github
                             </a> page.
                     </p>
-                    <div ref={fadeInRefTwo} id="pc1" className="project-card-container-m-left faded-out">
+                    <div 
+                        ref={fadeInRefTwo} 
+                        id="pc1" 
+                        className="project-card-container-m-left faded-out section-sibling"
+                    >
                         <ProjectCard 
                             uniqueKey="1"
                             githubLink="https://github.com"
@@ -226,7 +242,11 @@ const App = (props) => {
                             technologies = {["Django", "Stripe Api", "S3", "jQuery", "Javascript"]}
                         />
                     </div>
-                    <div ref={fadeInRefThree} id="pc2" className="project-card-container-m-right faded-out">
+                    <div 
+                        ref={fadeInRefThree} 
+                        id="pc2" 
+                        className="project-card-container-m-right faded-out section-sibling"
+                    >
                         <ProjectCard 
                             uniqueKey="2"
                             githubLink="https://github.com"
@@ -236,7 +256,11 @@ const App = (props) => {
                             technologies = {["Django", "Stripe Api", "S3", "jQuery", "Javascript"]}
                         />
                     </div>
-                    <div ref={fadeInRefFour} id="pc3" className="project-card-container-m-left faded-out">
+                    <div 
+                        ref={fadeInRefFour} 
+                        id="pc3" 
+                        className="project-card-container-m-left faded-out section-sibling"
+                        >
                         <ProjectCard 
                             uniqueKey="3"
                             githubLink="https://github.com"
@@ -248,8 +272,16 @@ const App = (props) => {
                         </div>
                 </section>
                 <section id="3" ref={navRefThree}>
-                    <h2 className="faded-out" ref={fadeInRefSix} id="s3h">About Me</h2>
-                    <p className="faded-out" ref={fadeInRefFive} id="s3sh">
+                    <h2 
+                        className="faded-out section-heading" 
+                        ref={fadeInRefSix} 
+                        id="s3h">
+                            About Me
+                    </h2>
+                    <p 
+                        className=" section-sibling faded-out" 
+                        ref={fadeInRefFive} 
+                        id="s3sh">
                         Hi, my name is Jack and I'm passionate about web development. 
                         I really enjoy the process of bringing a project from the early stages to completion. 
                         I have an appreciation for many aspects of web dev from UI/UX design stages
@@ -266,15 +298,24 @@ const App = (props) => {
                     </div>
                 </section>
                 <section id="4" ref={navRefFour}>
-                    <h2 className="faded-out" id="s4h" ref={fadeInRefTen}>
+                    <h2 
+                        className="section-heading faded-out" 
+                        id="s4h" 
+                        ref={fadeInRefTen}>
                         Why not contact me?...
                     </h2>
                     <div className="faded-out" id="s4" ref={fadeInRefEleven}>
                         <ContactForm />
                     </div>
                 </section>
-                <div className="bottom-github-link-container">
-                    <h4>This project was created using React, D3.js and Animate.css.</h4>
+                <div 
+                    id="bgl"
+                    ref={fadeInRefTwelve}
+                    className="faded-out bottom-github-link-container"
+                >
+                    <h4 className="bottom-github-link-heading">
+                        This project was created using React, D3.js and Animate.css.
+                    </h4>
                     <h5>View the Github repo<span> </span>
                         <a 
                             className="bottom-github-link"

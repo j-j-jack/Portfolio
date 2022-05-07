@@ -48,12 +48,27 @@ body {
 p {
     line-height: 1.7em;
     font-size: 1.4rem;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
 }
+
+.section-heading {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+
+.section-sibling {
+    margin-bottom: 2.5rem;
+}
+
+.bottom-github-link-heading {
+    margin-top: 5rem;
+}
+
 
 #s2sh {
     display: inline-block;
     max-width: 30ch;
-    margin-bottom: 1.5em;
 }
 
 #s3h {
@@ -170,11 +185,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-card-container-m-right {
     margin-right: 45%;
-}
-
-.project-card-container, .project-card-container-m-right > div {
-    margin-bottom: 2em;
-    
 }
 
 .content {
