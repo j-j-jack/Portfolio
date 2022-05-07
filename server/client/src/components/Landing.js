@@ -14,10 +14,24 @@ const Landing = () => {
   const mainSvgRef = useRef();
   let jAnimationEnabled = true;
   let sAnimationEnabled = true;
+  const animateCSSAnimationsArray = useRef();
 
   useEffect(() => {
+    animateCSSAnimationsArray.current = [
+        "animate__bounce",
+        "animate__flash",
+        'animate__pulse',
+        'animate__shakeX',
+        'animate__shakeY',
+        'animate__headShake',
+        'animate__jello',
+    ]
+
     const turnOnAnimation = (ref) => {
-        d3.select(ref.current).attr('class', 'j animate__animated animate__bounce logo-letter');
+        let animation = 
+          animateCSSAnimationsArray.current[parseInt(Math.random() * 7)];
+        console.log(animation);
+        d3.select(ref.current).attr('class', `j animate__animated ${animation} logo-letter`);
     }
 
     const turnOffAnimation = (ref) => {
