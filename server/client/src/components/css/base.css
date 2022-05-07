@@ -86,12 +86,12 @@ p {
 }
 
 .github-work-link, .github-work-link:visited, 
-    .-work-link:hover, .github-work-link:active {
+    .-work-link, .github-work-link:active {
   color: var(--glitch-pink);
 }
 
 .contact-scroll-link, .contact-scroll-link:visited, 
-    .contact-scroll-link:hover, .contact-scroll-link:active {
+    .contact-scroll-link, .contact-scroll-link:active {
   color: var(--glitch-pink);
 }
 .github-work-link:hover {

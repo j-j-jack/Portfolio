@@ -30,7 +30,6 @@ const Landing = () => {
     const turnOnAnimation = (ref) => {
         let animation = 
           animateCSSAnimationsArray.current[parseInt(Math.random() * 7)];
-        console.log(animation);
         d3.select(ref.current).attr('class', `j animate__animated ${animation} logo-letter`);
     }
 

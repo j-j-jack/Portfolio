@@ -65,8 +65,10 @@ const App = (props) => {
         navRefs.forEach((ref) => {
             navRefsClientHeights.push(ref.current.offsetHeight);
         });
-        
-        let moreThanHalfWindow = (windowSize.current)*.44;
+        // the code below calculates the threshold for each section to be intersecting
+        // because the threshold is set to 51 (ie. 51%). Each section in the project 
+        // should take at least 51% min of the viewport height on all screen sizes
+        let moreThanHalfWindow = (windowSize.current)*.51;
         navRefsClientHeights.forEach((height) => {
             
             intersectionThresholds.current.push(
@@ -89,7 +91,9 @@ const App = (props) => {
                 }
             }
             observers.current[i] = new IntersectionObserver(entry => {
+                    console.log(entry);
                     if (entry[0].isIntersecting) {
+                    
                     changeTab.current(entry[0].target.id);
                     }
                 }, options);
@@ -152,7 +156,6 @@ const App = (props) => {
                         await delay(.5);
                         let className = entry.target.className;
                         className = className.replace("faded-out", "");
-                        console.log(className);
                         entry.target.className = className + ` animate__animated animate__slow animate__${fadeDict[entry.target.id]}`;
                         fadeObserver.current.unobserve(entry.target);
                         setTimeout(() => {
