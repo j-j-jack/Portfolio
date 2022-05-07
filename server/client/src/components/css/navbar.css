@@ -56,7 +56,17 @@
 }
 
 ul {
-    list-style: disc;
+    list-style: decimal;
+    list-style-position: inside;
+}
+
+li::marker {
+    letter-spacing: .5em;
+    font-size: 90%;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    color: var(--glitch-dark-shadow);
 }
 
 .nav-li {
@@ -110,7 +120,6 @@ ul {
 .nav-li-deactivate-right::after {
     position: absolute;
     content: "";
-    top: 1.25rem;
     left: 0;
     width: 0%;
     height: 20%;
@@ -121,7 +130,6 @@ ul {
 .nav-li-slide-right::after {
     position: absolute;
     content: "";
-    top: 1.25rem;
     right: 0;
     width: 100%;
     height: 20%;
@@ -315,17 +323,47 @@ a, a:visited, a:hover, a:active {
     }
 
     .navbar {
+        padding: 0;
         flex-direction: column;
         inset: 0 0 0 30%;
-        padding: min(30vh, 10rem);
+        width: 70%;
+        padding-top: min(30vh, 10rem);
         height: 100vh;
         transform: translateX(100%);
         transition: transform 350ms ease-out;
-        background-image: linear-gradient(.25turn, var(--glitch-light-shadow), 10%, var(--glitch-white));
+        background-image: linear-gradient(.25turn, var(--glitch-light-shadow), 10%, var(--glitch-white)); 
+        font-size: 130%;
+    }
+
+
+    .nav-container-outer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+        padding-left: 10%;
+        padding-right: 10%;
+        width: 70%;
+        border-left: 1px solid var(--glitch-dark-shadow);
+        border-right: 1px solid var(--glitch-dark-shadow);
+        height: 400px;
+        margin-left: auto;
+    }
+
+    .nav-container {
+        height: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .navbar[data-visible="true"] {
         transform: translateX(0%);
+    }
+
+    .navbar-logo {
+        top: 10rem;
+        left: 2rem;
+        font-size: 170% !important;
     }
     
     ul {
@@ -392,6 +430,10 @@ a, a:visited, a:hover, a:active {
         background-repeat: no-repeat;
         background-size: cover;
     }
+    .nav-li-activate-left::after, .nav-li-deactivate-left::after,
+    .nav-li-activate-right::after, .nav-li-deactivate-right::after {
+        top: 1.75rem;
+    }
 }
 
 
@@ -402,12 +444,18 @@ a, a:visited, a:hover, a:active {
     .mobile-nav-toggle-light {
         display: none;
     }
+    .navbar-logo {
+        top: .85rem;
+        left: 2rem;
+    }
+    .nav-li-activate-left::after, .nav-li-deactivate-left::after,
+    .nav-li-activate-right::after, .nav-li-deactivate-right::after {
+        top: 1.25rem;
+    }
 }
 
 .navbar-logo {
     position: absolute;
-    top: .85rem;
-    left: 2rem;
     font-size: 150%;
     font-weight: 900;
 }
