@@ -16,15 +16,30 @@ class Navbar extends Component {
         this.previousTab = React.createRef(null);
         this.visibleRef = React.createRef();
         this.navBlurRef = React.createRef();
+        this.screenSizeLarge = React.createRef();
      }
     
     componentDidMount () {
         //disable transition for navbar when window is resized
-        window.addEventListener('resize', ()=> {
+        if (window.innerWidth > 767) {
+            this.props.openMobileNav(false);
+        }
+
+        window.addEventListener('resize', (e)=> {
             this.navRef.current.classList.add('no-transition');
             setTimeout(()=> {
             this.navRef.current.classList.remove('no-transition');
             }, 350);
+            if(e.target.innerWidth > 767) {
+                this.props.openMobileNav(false);
+                const visibility = this.navRef.current.getAttribute('data-visible');
+                if (visibility==="true") {
+                    document.getElementsByClassName('content')[0].style.filter = "none";
+                    this.navBlurRef.current.style.display = "none";
+                    this.visibleRef.current = "false";
+                    this.toggleRef.current.setAttribute('aria-expanded', 'false')
+            }
+            }
         })
 
         this.visibleRef.current = false;
@@ -53,7 +68,6 @@ class Navbar extends Component {
     }
 
     mobileNavToggle (fromNavLinks) {
-            this.props.openMobileNav(!this.props.mobileNavOpen);
             const visibility = this.navRef.current.getAttribute('data-visible');
             if (fromNavLinks) {
                 if (visibility==="false") {
@@ -72,6 +86,7 @@ class Navbar extends Component {
                 this.visibleRef.current = "false";
                 this.toggleRef.current.setAttribute('aria-expanded', 'false')
             }
+            this.props.openMobileNav(!this.props.mobileNavOpen);
     }
 
     
