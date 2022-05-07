@@ -72,11 +72,7 @@
         filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
 }
 
-.point:hover
-  {
-    r: 1.6%;
-    
-  }
+
 .logo-letter {
     -webkit-filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
         filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
