@@ -204,7 +204,7 @@ const App = (props) => {
                 </div>
                 <Parralax>
                 <div className="content">
-                <section id="1" ref={navRefOne}>
+                <section className="section-one" id="1" ref={navRefOne}>
                     <Landing />
                 </section>
                 <section id="2" ref={navRefTwo}>
