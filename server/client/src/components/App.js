@@ -124,19 +124,19 @@ const App = (props) => {
                 fadeInRefEleven.current, fadeInRefTwelve.current];
 
             const fadeDict = {
-                "s2h": "fadeIn",
-                "s2sh": "fadeIn",
+                "s2h": "bounceIn",
+                "s2sh": "bounceIn",
                 "pc1": "fadeInLeft",
                 "pc2": "fadeInRight", 
                 "pc3": "fadeInLeft",
                 "pc4": "fadeInRight",
-                "s3h": "bounceIn", 
-                "s3sh": "fadeIn",
+                "s3h": "zoomIn", 
+                "s3sh": "zoomIn",
                 "s3": "fadeIn", 
                 "n": "fadeInDown",
-                "s4h": "fadeIn",
-                "s4": "fadeInUp",
-                "bgl": "fadeIn"
+                "s4h": "backInLeft",
+                "s4": "backInRight",
+                "bgl": "fadeInUp"
             };
 
             function delay(n){
@@ -150,7 +150,10 @@ const App = (props) => {
                 entries.forEach(async (entry) => {
                     if (entry.isIntersecting) {
                         await delay(.5);
-                        entry.target.className += ` animate__animated animate__slow animate__${fadeDict[entry.target.id]}`;
+                        let className = entry.target.className;
+                        className = className.replace("faded-out", "");
+                        console.log(className);
+                        entry.target.className = className + ` animate__animated animate__slow animate__${fadeDict[entry.target.id]}`;
                         fadeObserver.current.unobserve(entry.target);
                         setTimeout(() => {
                             entry.target.style.pointerEvents = 'auto';
