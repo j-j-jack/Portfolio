@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect} from 'react';
 import * as d3 from "d3";
 import "./css/project-card.css";
-import projectImage from '../assets/images/e-book-club.PNG';
 import Button from './Button';
 
 
 const ProjectCard = (props) => {
     // component takes props of a project title and description, live and githublinks
     // as well as an array of technologies used
+    // description tested to be responsive at 139 characters.
     const [hover, setHover] = useState(false);
     const detailsRef = useRef();
 
@@ -78,7 +78,7 @@ const ProjectCard = (props) => {
                     </div>
                         {technologiesUsed()}
                     <div className="project-card-buttons">
-                        <div>
+                        <div className="project-card-github-button-container">
                             <Button 
                                 buttonClass="project-github-button" 
                                 link={props.githubLink}
@@ -106,7 +106,10 @@ const ProjectCard = (props) => {
                         </div>
                     </div>
                     <div className="project-image-container">
-                        <img alt="screenshot of the project" className="project-image" src={projectImage}></img>
+                        <img 
+                            alt="screenshot of the project" 
+                            className="project-image" 
+                            src={props.projectImage}></img>
                     </div>
                     <div className="tv-static"></div>
                 </div>
@@ -118,7 +121,7 @@ const ProjectCard = (props) => {
     <React.Fragment>  
         <div 
             className="project-card-container"
-            onMouseEnter={() => setHover(false)}
+            onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
         >
             {renderContent()}

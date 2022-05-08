@@ -41,8 +41,7 @@
     height: min(var(--project-card-height)/1.5, 40vw);
     margin: 0;
     padding: 0;
-    filter: blur(1px);
-    filter: saturate(150%);
+    filter: blur(.5px);
 }
 
  /*  user17382064 on Stack Overflow */
@@ -89,7 +88,6 @@
   color: var(--glitch-white);
   display: inline-block;
   width: 55%;
-  font-size: 1.2rem;
 }
 
 .technologies-used {
@@ -101,7 +99,6 @@
   width: 15%;
   margin-left: 10%;
   margin-right: 5%;
-  font-size: 1.2rem;
   text-decoration: underline var(--glitch-yellow) solid;
 }
 
@@ -109,18 +106,22 @@
   position: absolute;
   top: 80%;
   left: 0;
-  width: 90%;
+  width: 100%;
   margin-left: 5%;
   height: 20%;
-  font-size: 1.2rem;
   z-index: 3000;
-  display: flex;
 }
 
 .project-card-buttons > div {
-  flex: 1;
-  gap: 20%;
+  display: inline-block;
+  width: 47.5%;
+  height: 100%;
 }
+
+.project-card-github-button-container {
+  margin-right: 5%;
+}
+
 
 .technologies-used > div {
   flex: 1;
@@ -177,8 +178,8 @@
         padding: 0;
         position: relative;
         color: var(--glitch-white);
-        font-size: 2.5em;
-        letter-spacing: .25em;
+        font-size: 2.5rem;
+        letter-spacing: .25rem;
         animation: glitch-skew 0.5s infinite linear alternate-reverse;
       }
       .glitch::after {
@@ -418,5 +419,17 @@
 @media (min-width: 457px) {
   .project-image-container {
     padding-top: 60px;
+  }
+}
+
+@media (max-width: 380px) {
+  .project-card-container {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 350px) {
+  .project-card-container {
+    font-size: 75%;
   }
 }

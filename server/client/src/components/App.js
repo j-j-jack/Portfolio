@@ -14,6 +14,9 @@ import LinkButton from './LinkButton';
 
 import github from "../assets/images/github.svg";
 import linkedin from "../assets/images/linkedin.svg";
+import eBookClubImage from "../assets/images/e-book-club.PNG";
+import ghostPostImage from "../assets/images/ghost-post.PNG";
+import munsterWavesImage from "../assets/images/munster-waves.PNG";
 
 
 const App = (props) => {
@@ -244,7 +247,8 @@ const App = (props) => {
                             githubLink="https://github.com"
                             liveLink="https://www.youtube.com"
                             projectTitle="E-book Club"
-                            projectDescription="E commerce site created using Django and Stripe. The users of the site can purchase e-books as well as subscribe to the monthly book-clubs"
+                            projectImage={eBookClubImage}
+                            projectDescription="E-commerce site created using Django and Stripe. The users of the site can purchase e-books as well as subscribe to the monthly book-clubs."
                             technologies = {["Django", "Stripe","GIMP", "AWS", "jQuery", "Javascript"]}
                         />
                     </div>
@@ -257,9 +261,10 @@ const App = (props) => {
                             uniqueKey="2"
                             githubLink="https://github.com"
                             liveLink="https://www.youtube.com"
-                            projectTitle="Ebook"
-                            projectDescription="This is the project description. It is a very good project"
-                            technologies = {["Django", "Stripe Api", "S3", "jQuery", "Javascript"]}
+                            projectTitle="Ghost Post"
+                            projectImage={ghostPostImage}
+                            projectDescription="Social media website for those interested in paranormal Activity. Users Can create profiles and share their encounters with the paranormal."
+                            technologies = {["Flask", "Python", "MongoDB", "jQuery", "Javascript"]}
                         />
                     </div>
                     <div 
@@ -272,8 +277,9 @@ const App = (props) => {
                             githubLink="https://github.com"
                             liveLink="https://www.youtube.com"
                             projectTitle="E-book Club"
-                            projectDescription="This is the project description. It is a very good project"
-                            technologies = {["Django", "Stripe Api", "S3", "jQuery", "Javascript"]}
+                            projectImage={munsterWavesImage}
+                            projectDescription="Surf forecast website for the province of Muster. Users of the site can check out the forecast for the week ahead for the best beaches in the area."
+                            technologies = {["Stormglass", "Leaflet", "JQuery", "EmailJS", "Javascript"]}
                         />
                         </div>
                 </section>
