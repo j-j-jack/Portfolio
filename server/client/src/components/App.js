@@ -218,7 +218,7 @@ const App = (props) => {
                 </section>
                 <section id="2" ref={navRefTwo}>
                     <h2 
-                        className="faded-out section-heading box-shadow" 
+                        className="faded-out section-one-heading box-shadow" 
                         ref={fadeInRefOne}  
                         id="s2h">
                             My Work

@@ -57,7 +57,11 @@ p {
 }
 
 .section-heading {
-    padding-top: 5rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3rem;
+}
+
+.section-one-heading {
     padding-bottom: 3rem;
 }
 
@@ -94,13 +98,13 @@ p {
 }
 
 #s3h {
-    margin-left: min(100% - 256px, 45%);
+    margin-left: min(100% - 179px, 45%);
 }
 
 #s3sh {
     display: inline-block;
     max-width:30ch;
-    margin-left: min(100% - 256px, 45%);
+    margin-left: min(100% - 179px, 45%);
 }
 
 .github-work-link, .github-work-link:visited, 
@@ -269,5 +273,35 @@ h1, h2, h3, h4, h5, h6 {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--glitch-aqua);
+}
+
+@media (max-width: 767px) {
+    .section-heading {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+}
+
+.section-one-heading {
+    padding-bottom: 2rem;
+}
+
+.section-sibling {
+    padding-bottom: 1.5rem;
+}
+}
+
+@media (max-width: 767px) {
+    .section-heading {
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+.section-one-heading {
+    padding-bottom: 1.5rem;
+}
+
+.section-sibling {
+    padding-bottom: 1.0rem;
+}
 }
 

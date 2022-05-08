@@ -29,9 +29,8 @@
   
 
 .landing-text-one {
-  display: inline-block;
-  margin-left: 2.5vw;
-  width: 92.5vw;
+  padding-left: 2.5vw;
+  max-width: 87.5vw;
   font-size: min(200%, 5vh);
   -webkit-filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
         filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
@@ -40,8 +39,8 @@
 .landing-text-two {
   margin-top: 1.5em;
   width: 100px;
-  margin-left: 5vw;
-  width: 90vw;
+  padding-left: 5vw;
+  max-width: 85vw;
   font-size: min(220%, 5.5vh);
   -webkit-filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
         filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
@@ -49,8 +48,8 @@
 
 .landing-text-three {
   margin-top: 1.5em;
-  margin-left: 7.5vw;
-  width: 87.5vw;
+  padding-left: 7.5vw;
+  max-width: 82.5vw;
   font-size: min(240%, 6vh);
   -webkit-filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
         filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
