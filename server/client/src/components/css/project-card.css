@@ -70,6 +70,10 @@
   text-decoration: underline var(--glitch-aqua) solid;
 }
 
+.des-span:hover {
+  color: var(--glitch-aqua);
+}
+
 .project-description {
   color: var(--glitch-white);
   position: absolute;
