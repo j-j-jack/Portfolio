@@ -336,15 +336,15 @@ a, a:visited, a:hover, a:active {
 
     .nav-container-outer {
         position: absolute;
-        top: 50%;
+        top: 30%;
         left: 50%;
-        transform: translate(-50%, -40%);
+        transform: translateX(-50%);
         padding-left: 10%;
         padding-right: 10%;
         width: 70%;
         border-left: 1px solid var(--glitch-dark-shadow);
         border-right: 1px solid var(--glitch-dark-shadow);
-        height: 400px;
+        height: max(40vh, 200px); 
         margin-left: auto;
     }
 
@@ -359,9 +359,9 @@ a, a:visited, a:hover, a:active {
     }
 
     .navbar-logo {
-        top: 10rem;
+        top: 20vh;
         left: 2rem;
-        font-size: 170% !important;
+        font-size: 6vw !important;
     }
     
     ul {
@@ -430,11 +430,11 @@ a, a:visited, a:hover, a:active {
     }
     .nav-li-activate-left::after, .nav-li-deactivate-left::after,
     .nav-li-activate-right::after, .nav-li-deactivate-right::after {
-        top: 1.75rem;
+        top: 4.5vw;
     }
 
     .nav-li-initial::after {
-        top: 1.75rem;
+        top: 4.5vw;
     }
 }
 
@@ -481,3 +481,25 @@ a, a:visited, a:hover, a:active {
 .navbar-logo:hover > .logo-upper{
     color: var(--glitch-aqua);
 }
+
+@media (min-width: 500px) and (max-width: 767px) {
+    .navbar {
+        font-size: 4.2vw;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 499px) {
+    .navbar {
+        font-size: 3.8vw;
+    }
+}
+
+@media (max-width: 399px) {
+    .navbar {
+        font-size: 3.3vw;
+    }
+}
+
+
+
+
