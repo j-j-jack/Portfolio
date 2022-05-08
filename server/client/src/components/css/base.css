@@ -53,7 +53,7 @@ p {
 }
 
 .section-one {
-    padding-top: 10vh;
+    padding-top: max(10vh, 64px);
 }
 
 .section-heading {
