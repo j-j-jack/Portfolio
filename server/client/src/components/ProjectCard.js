@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect} from 'react';
 import * as d3 from "d3";
 import "./css/project-card.css";
 import projectImage from '../assets/images/e-book-club.PNG';
@@ -45,6 +45,7 @@ const ProjectCard = (props) => {
             </div>
         )
     };
+
 
     useEffect(() => {
         if (detailsRef.current !== null) {
@@ -117,7 +118,7 @@ const ProjectCard = (props) => {
     <React.Fragment>  
         <div 
             className="project-card-container"
-            onMouseEnter={() => setHover(true)}
+            onMouseEnter={() => setHover(false)}
             onMouseLeave={() => setHover(false)}
         >
             {renderContent()}

@@ -244,8 +244,8 @@ const App = (props) => {
                             githubLink="https://github.com"
                             liveLink="https://www.youtube.com"
                             projectTitle="E-book Club"
-                            projectDescription="This is the project description. It is a very good project"
-                            technologies = {["Django", "Stripe Api", "S3", "jQuery", "Javascript"]}
+                            projectDescription="E commerce site created using Django and Stripe. The users of the site can purchase e-books as well as subscribe to the monthly book-clubs"
+                            technologies = {["Django", "Stripe","GIMP", "AWS", "jQuery", "Javascript"]}
                         />
                     </div>
                     <div 
