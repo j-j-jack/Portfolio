@@ -215,14 +215,14 @@ const App = (props) => {
                 </section>
                 <section id="2" ref={navRefTwo}>
                     <h2 
-                        className="faded-out section-heading" 
+                        className="faded-out section-heading box-shadow" 
                         ref={fadeInRefOne}  
                         id="s2h">
                             My Work
                         </h2>
                     <p 
                         id="s2sh" 
-                        className="faded-out section-sibling" 
+                        className="faded-out section-sibling box-shadow-two" 
                         ref={fadeInRefNine}
                     >
                         As of the start of 2021, I had no basically no knowledge of web development whatsoever.
@@ -237,7 +237,7 @@ const App = (props) => {
                     <div 
                         ref={fadeInRefTwo} 
                         id="pc1" 
-                        className="project-card-container-m-left faded-out section-sibling"
+                        className="project-card-container-m-left faded-out section-sibling box-shadow-two"
                     >
                         <ProjectCard 
                             uniqueKey="1"
@@ -251,7 +251,7 @@ const App = (props) => {
                     <div 
                         ref={fadeInRefThree} 
                         id="pc2" 
-                        className="project-card-container-m-right faded-out section-sibling"
+                        className="project-card-container-m-right faded-out section-sibling box-shadow-two"
                     >
                         <ProjectCard 
                             uniqueKey="2"
@@ -265,7 +265,7 @@ const App = (props) => {
                     <div 
                         ref={fadeInRefFour} 
                         id="pc3" 
-                        className="project-card-container-m-left faded-out section-sibling"
+                        className="project-card-container-m-left faded-out section-sibling box-shadow-two"
                         >
                         <ProjectCard 
                             uniqueKey="3"
@@ -279,13 +279,13 @@ const App = (props) => {
                 </section>
                 <section id="3" ref={navRefThree}>
                     <h2 
-                        className="faded-out section-heading" 
+                        className="faded-out section-heading box-shadow" 
                         ref={fadeInRefSix} 
                         id="s3h">
                             About Me
                     </h2>
                     <p 
-                        className=" section-sibling faded-out" 
+                        className=" section-sibling faded-out box-shadow-two" 
                         ref={fadeInRefFive} 
                         id="s3sh">
                         Hi, my name is Jack and I'm passionate about web development. 
@@ -299,18 +299,18 @@ const App = (props) => {
                                 Scroll down
                             </a> to contact me.
                     </p>  
-                    <div className="faded-out" id="s3" ref={fadeInRefSeven}>
+                    <div className="faded-out box-shadow" id="s3" ref={fadeInRefSeven}>
                         <AboutSection />
                     </div>
                 </section>
                 <section id="4" ref={navRefFour}>
                     <h2 
-                        className="section-heading faded-out" 
+                        className="section-heading faded-out box-shadow" 
                         id="s4h" 
                         ref={fadeInRefTen}>
                         Why not contact me?...
                     </h2>
-                    <div className="faded-out" id="s4" ref={fadeInRefEleven}>
+                    <div className="faded-out box-shadow-two" id="s4" ref={fadeInRefEleven}>
                         <ContactForm />
                     </div>
                 </section>
@@ -319,10 +319,10 @@ const App = (props) => {
                     ref={fadeInRefTwelve}
                     className="faded-out bottom-github-link-container"
                 >
-                    <h4 className="bottom-github-link-heading">
+                    <h4 className="bottom-github-link-heading box-shadow-two">
                         This project was created using React, D3.js and Animate.css.
                     </h4>
-                    <h5>View the Github repo<span> </span>
+                    <h5 className="box-shadow-two">View the Github repo<span> </span>
                         <a 
                             className="bottom-github-link"
                             target="_blank"

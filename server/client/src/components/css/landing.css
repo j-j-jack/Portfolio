@@ -32,9 +32,9 @@
   display: inline-block;
   margin-left: calc(var(--multiplier-one) * ((100% - var(--magic-number))/10));
   width: calc(100% - (var(--multiplier-one) * ((100% - var(--magic-number))/10)));
-  font-size: 200%;
+  font-size: 180%;
   -webkit-filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
-  filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
+        filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
 }
 
 .landing-text-two {
@@ -42,18 +42,18 @@
   width: 100px;
   margin-left: calc(var(--multiplier-two) * ((100% - var(--magic-number))/10));
   width: calc(100% - (var(--multiplier-two) * ((100% - var(--magic-number))/10)));
-  font-size: 150%;
+  font-size: 230%;
   -webkit-filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
-  filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
+        filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
 }
 
 .landing-text-three {
   margin-top: 1.5em;
   margin-left: calc(var(--multiplier-three) * ((100% - var(--magic-number))/10));
   width: calc(100% - (var(--multiplier-three) * ((100% - var(--magic-number))/10)));
-  font-size: 150%;
+  font-size: 200%;
   -webkit-filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
-  filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
+        filter: drop-shadow( 4px 4px 3px var(--glitch-dark-shadow));
 }
 
 .logo-svg {

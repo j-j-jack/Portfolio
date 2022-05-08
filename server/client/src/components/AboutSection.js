@@ -6,10 +6,10 @@ import "./css/about-section.css";
 const AboutSection = () => {
     return (
         <div className="about-section-container">
-            <div id="technologies-intro">
+            <div id="technologies-intro" className="container-intro">
                 These are some of the technologies I've used recently...
             </div>
-            <div id="technologies-outro">
+            <div id="technologies-outro" className="container-outro">
                 There aren't millions. Thats just an illusion...
             </div>
             <div>
@@ -51,7 +51,6 @@ const AboutSection = () => {
                         animate__fadeInOutDown
                         animate__slow"
             />
-            <div><h4>There's not millions. That's just an illusion hehe...</h4></div>
             </div>
         </div>
     );

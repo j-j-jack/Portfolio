@@ -293,7 +293,7 @@ const ContactForm = (props) => {
         if (props.contacted==='not_contacted') {
             return (
             <React.Fragment>
-            <div id="form-instructions">Fill out the form below</div>
+            <div id="form-instructions" className="container-intro">Fill out the form below</div>
             <form  
                 onSubmit={handleSubmit}
                 noValidate
