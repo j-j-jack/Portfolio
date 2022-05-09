@@ -243,8 +243,8 @@ const App = (props) => {
                     >
                         <ProjectCard 
                             uniqueKey="1"
-                            githubLink="https://github.com"
-                            liveLink="https://www.youtube.com"
+                            githubLink="https://github.com/j-j-jack/ms4-e-book-club"
+                            liveLink="https://e-book-club.herokuapp.com/"
                             projectTitle="E-book Club"
                             projectImage={eBookClubImage}
                             projectDescription="E-commerce site created using Django and Stripe. The users of the site can purchase e-books as well as subscribe to the monthly book-clubs."
@@ -258,8 +258,8 @@ const App = (props) => {
                     >
                         <ProjectCard 
                             uniqueKey="2"
-                            githubLink="https://github.com"
-                            liveLink="https://www.youtube.com"
+                            githubLink="https://github.com/j-j-jack/ms3-ghost-post"
+                            liveLink="http://ghost-post.herokuapp.com/"
                             projectTitle="Ghost Post"
                             projectImage={ghostPostImage}
                             projectDescription="Social media website for those interested in paranormal Activity. Users Can create profiles and share their encounters with the paranormal."
@@ -273,8 +273,8 @@ const App = (props) => {
                         >
                         <ProjectCard 
                             uniqueKey="3"
-                            githubLink="https://github.com"
-                            liveLink="https://www.youtube.com"
+                            githubLink="https://github.com/j-j-jack/Milestone-project-2-Munster-Waves"
+                            liveLink="https://j-j-jack.github.io/Milestone-project-2-Munster-Waves/"
                             projectTitle="Munster Waves"
                             projectImage={munsterWavesImage}
                             projectDescription="Surf forecast website for the province of Muster. Users of the site can check out the forecast for the week ahead for the best beaches in the area."

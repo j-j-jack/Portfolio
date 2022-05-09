@@ -47,7 +47,7 @@ const ScrollAnimation = (props) => {
             speed = .0065;
         }
 
-        const numberOfLines = parseInt(gaussian(speed + 3, (speed*700)+8));
+        const numberOfLines = parseInt(gaussian(speed + 3, (speed*630)+8));
         const colors = ['glitch-white', 'glitch-red', 'glitch-yellow',
             'glitch-blue', 'glitch-pink', 'glitch-black', 'glitch-aqua', 'glitch-green'];
         if (top) {
@@ -58,7 +58,7 @@ const ScrollAnimation = (props) => {
                 let length = yOne + gaussian(0, 2);
                 length = length.toString() + '%';
                 yOne = yOne.toString() + '%';
-                let duration = gaussian(speed + 100, (speed*2500) + 100);
+                let duration = gaussian(speed + 100, (speed*2500) + 400);
                 let randomColor = colors[Math.floor(Math.random() * 8)];
                 d3.select(topSvg.current).append('line')
                     .attr("class", randomColor).style("stroke-width", 2).attr("x1", x)
