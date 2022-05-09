@@ -4,8 +4,9 @@ const app = express();
 require('dotenv').config();
 const sendEmail = require('./services/sendInBlue');
 
-app.use(bodyParser.json());
 
+
+app.use(bodyParser.json());
 
 app.post('/api/send_email', async (req, res) => {
     const { senderName, senderEmail, subject, body } = req.body;
@@ -14,12 +15,20 @@ app.post('/api/send_email', async (req, res) => {
     res.send(response);
 });
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
-    const path = require('path');
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build',  'index.html'))
-    });
-}
+// if (process.env.NODE_ENV === 'production') {
+//     app.use(express.static('client/build'));
+//     const path = require('path');
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+//     });
+// }
 
-app.listen(5000);
+app.get('/', (req, res) => {
+    res.send('hello');
+})
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`App listening at ${PORT}`)
+})
