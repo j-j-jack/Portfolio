@@ -9,13 +9,16 @@
   overflow: hidden;
   color: var(--glitch-white);
   background-color: var(--glitch-black);
-  height: 36.5em;
-  padding-top: 4.0em;
+  height: 37.5em;
   border: 1px solid black;
   border-radius: 1em;
+  padding-top: 2em;
+  position: relative;
+}
+
+.form-container-inner {
   padding-left: 20%;
   padding-right: 20%;
-  position: relative;
 }
 
 .form-group {
@@ -173,9 +176,9 @@ textarea {
 }
 
 #form-instructions {
-  position: absolute;
-  top: 0.5em;
-  left: 3.5em;
+  padding-left: 2em;
+  padding-right: 3.5em;
+  padding-bottom: 1em;
 }
 
 .form-completion-heading {
@@ -195,7 +198,7 @@ textarea {
   
   border-radius: 2em;
   position: absolute;
-  top: 4em;
+  top: 5em;
   left: 50%;
   width: 75%;
   transform: translateX(-50%);
@@ -277,5 +280,65 @@ textarea {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  #form-instructions {
+    padding-right: 1.5em;
+  }
+  .form-container-inner {
+    padding-right: 4em;
+    padding-left: 4em;
+  }
+}
+
+@media (max-width: 576px) {
+  #form-instructions {
+    padding-right: 1.5em;
+  }
+  .form-container-inner {
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+  }
+  .form-completion-text-container {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  .form-completion-text-container {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 460px) {
+  .form-completion-text-container {
+    font-size: 3.5vw;
+  }
+  .email-link {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 13ch;
+  }
+}
+
+@media (max-width: 330px) {
+  .email-link {
+    max-width: 9ch;
+  }
+}
+
+
+
+@media (max-width: 420px) {
+  #form-instructions {
+    padding-right: 0;
+  }
+  .form-container-inner {
+    padding-right: .5em;
+    padding-left: .5em;
   }
 }

@@ -38,7 +38,6 @@
 
 .landing-text-two {
   margin-top: 1.5em;
-  width: 100px;
   padding-left: 5vw;
   max-width: 85vw;
   font-size: min(220%, 5.5vh);
@@ -98,4 +97,11 @@
     width: 70vw;
   }
 }
+
+@media(max-width: 400px) {
+  .landing-svg-container {
+    padding-left: 2em;
+  }
+}
+
 

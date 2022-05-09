@@ -94,7 +94,6 @@ const App = (props) => {
                 }
             }
             observers.current[i] = new IntersectionObserver(entry => {
-                    console.log(entry);
                     if (entry[0].isIntersecting) {
                     
                     changeTab.current(entry[0].target.id);
@@ -218,7 +217,7 @@ const App = (props) => {
                 </section>
                 <section id="2" ref={navRefTwo}>
                     <h2 
-                        className="faded-out section-one-heading box-shadow" 
+                        className="faded-out section-onefconsol-heading box-shadow" 
                         ref={fadeInRefOne}  
                         id="s2h">
                             My Work
@@ -276,7 +275,7 @@ const App = (props) => {
                             uniqueKey="3"
                             githubLink="https://github.com"
                             liveLink="https://www.youtube.com"
-                            projectTitle="E-book Club"
+                            projectTitle="Munster Waves"
                             projectImage={munsterWavesImage}
                             projectDescription="Surf forecast website for the province of Muster. Users of the site can check out the forecast for the week ahead for the best beaches in the area."
                             technologies = {["Stormglass", "Leaflet", "JQuery", "EmailJS", "Javascript"]}
@@ -314,7 +313,7 @@ const App = (props) => {
                         className="section-heading faded-out box-shadow" 
                         id="s4h" 
                         ref={fadeInRefTen}>
-                        Why not contact me?...
+                        Contact me...
                     </h2>
                     <div className="faded-out box-shadow" id="s4" ref={fadeInRefEleven}>
                         <ContactForm />

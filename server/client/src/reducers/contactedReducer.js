@@ -1,7 +1,7 @@
 import { CHANGE_CONTACTED_STATUS } from "../actions/types";
 
 const INITIAL_STATE = {
-        contacted: "not_contacted", 
+        contacted: "contacted", 
 }
 
 const contactedReducer = (state = INITIAL_STATE, action) => {

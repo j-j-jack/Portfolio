@@ -9,9 +9,6 @@ const AboutSection = () => {
             <div id="technologies-intro" className="container-intro">
                 These are some of the technologies I've used recently...
             </div>
-            <div id="technologies-outro" className="container-outro">
-                There aren't millions. Thats just an illusion...
-            </div>
             <div>
             <TechnologyContainer
                 technologies={['HTML', 'CSS', 'Bootstrap', 'Git', 'VSCode', 'ReactJS', 
@@ -51,6 +48,9 @@ const AboutSection = () => {
                         animate__fadeInOutDown
                         animate__slow"
             />
+            </div>
+            <div id="technologies-outro" className="container-outro">
+                There aren't millions. Thats just an illusion...
             </div>
         </div>
     );

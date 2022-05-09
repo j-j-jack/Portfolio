@@ -58,15 +58,15 @@ p {
 
 .section-heading {
     padding-top: 3.5rem;
-    padding-bottom: 3rem;
+    padding-bottom: 2.5rem;
 }
 
 .section-one-heading {
-    padding-bottom: 3rem;
+    padding-bottom: 2.5rem;
 }
 
 .section-sibling {
-    padding-bottom: 2.5rem;
+    padding-bottom: 2rem;
 }
 
 .bottom-github-link-heading {
@@ -244,6 +244,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media(max-width: 576px) {
+
+    .container-intro {
+    font-size: 120%;
+    }
     .project-card-container-m-left {
         margin-left: 0;
     }
@@ -296,6 +300,10 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 1.5rem;
 }
 
+h2 {
+    font-size: 220%;
+}
+
 .section-one-heading {
     padding-bottom: 1.5rem;
 }
@@ -303,5 +311,18 @@ h1, h2, h3, h4, h5, h6 {
 .section-sibling {
     padding-bottom: 1.0rem;
 }
+.content {
+    margin-left: 1em;
+    margin-right: 1em;
 }
+}
+
+@media (max-width: 400px) {
+    .content {
+        margin-left: .5em;
+        margin-right: .5em;
+    }
+}
+
+
 

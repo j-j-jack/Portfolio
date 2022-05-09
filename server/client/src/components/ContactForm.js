@@ -143,10 +143,8 @@ const ContactForm = (props) => {
                         else {
                             x2 = x - (Math.random() * 200);
                         }
-                        let y = 1000;
-                        let y2 = y - 550 - (Math.random() * 250);
-                        console.log((y - y2)/2 );
-
+                        let y = 2000;
+                        let y2 = 100 + (Math.random() * 250);
                         const points = 
                             [
                                 [x, y], 
@@ -293,7 +291,8 @@ const ContactForm = (props) => {
         if (props.contacted==='not_contacted') {
             return (
             <React.Fragment>
-            <div id="form-instructions" className="container-intro">Fill out the form below</div>
+            <div id="form-instructions" className="container-intro">Fill out the form below...</div>
+            <div className="form-container-inner">
             <form  
                 onSubmit={handleSubmit}
                 noValidate
@@ -364,6 +363,7 @@ const ContactForm = (props) => {
                     />
                 </div>
             </form>
+            </div>
             </React.Fragment>
             );
         } else if (props.contacted==='loading') {
@@ -397,7 +397,8 @@ const ContactForm = (props) => {
                     <p className="form-completion-p">
                         Sorry that didn't work. 
                         You can try contacting me at<span> </span> 
-                        <a class="email-link" 
+                        <br></br>
+                        <a className="email-link" 
                             href="mailto: jackosullivan541@gmail.com" 
                             rel="noopener noreferrer" 
                             target="_blank" >

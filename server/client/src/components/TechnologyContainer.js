@@ -84,6 +84,12 @@ const TechnologyContainer = (props) => {
             if (row > 14) {
                 displayClass = 'fifteen-plus';
             }
+            if (row > 9) {
+                displayClass += ' ten-plus';
+            }
+            if (row > 4) {
+                displayClass += ' five-plus';
+            }
             return (
             <div
                 onClick={() => sendToWeb(row)}
