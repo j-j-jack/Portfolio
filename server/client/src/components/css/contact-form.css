@@ -295,7 +295,7 @@ textarea {
 
 @media (max-width: 576px) {
   #form-instructions {
-    padding-right: 1.5em;
+    padding-left: 1.5em;
   }
   .form-container-inner {
     padding-right: 1.5em;
@@ -335,10 +335,11 @@ textarea {
 
 @media (max-width: 420px) {
   #form-instructions {
-    padding-right: 0;
+    padding-left: 0.5em;
   }
   .form-container-inner {
     padding-right: .5em;
     padding-left: .5em;
   }
 }
+

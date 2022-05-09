@@ -132,7 +132,6 @@ const ContactForm = (props) => {
             const svg = d3.select(succeededSvgRef.current).append("svg")
                         .attr("viewBox", `0 0 1000 1000`).attr("class", "contact-succeeded-svg");
                     setInterval(() => {
-                        console.log(svg);
                         const curve = d3.line().curve(d3.curveNatural);
                         let x = 125 + (Math.random() * 750);
                         let x2 = null;
@@ -143,7 +142,7 @@ const ContactForm = (props) => {
                         else {
                             x2 = x - (Math.random() * 200);
                         }
-                        let y = 2000;
+                        let y = 2200;
                         let y2 = 100 + (Math.random() * 250);
                         const points = 
                             [

@@ -242,12 +242,23 @@
   }
 }
 
+@media (max-width: 576px) {
+  .about-section-container {
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+  }
+}
+
 @media (max-width: 420px) {
+  .about-section-container {
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+  }
   #technologies-intro {
-    padding-right: 0;
+    padding-right: 0.5em;
   }
   #technologies-outro {
-    padding-left: 0;
+    padding-left: 0.5em;
   }
 }
 

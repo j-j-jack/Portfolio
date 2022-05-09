@@ -217,7 +217,7 @@ const App = (props) => {
                 </section>
                 <section id="2" ref={navRefTwo}>
                     <h2 
-                        className="faded-out section-onefconsol-heading box-shadow" 
+                        className="faded-out section-one-heading box-shadow" 
                         ref={fadeInRefOne}  
                         id="s2h">
                             My Work
@@ -269,7 +269,7 @@ const App = (props) => {
                     <div 
                         ref={fadeInRefFour} 
                         id="pc3" 
-                        className="project-card-container-m-left faded-out section-sibling box-shadow"
+                        className="project-card-container-m-left faded-out box-shadow"
                         >
                         <ProjectCard 
                             uniqueKey="3"
