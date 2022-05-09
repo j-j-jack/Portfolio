@@ -50,7 +50,7 @@ textarea:focus {
   transform: translate(2.0em, -3.0em);
   transition: transform .25s;
   transform-origin: 11.0em 0;
-  width: 50%;
+  width: min(180px, 65%);
   border-radius: .5em;
 }
 
@@ -65,7 +65,7 @@ textarea:focus {
   transform: translate(2.0em, -12.0em);
   transition: transform .25s;
   transform-origin: 11.0em 0;
-  width: 50%;
+  width: min(200px, 65%);
   border-radius: .5em;
 }
 
@@ -164,10 +164,10 @@ textarea {
 }
 
 .error-container {
-  font-size: .8em;
+  font-size: min(4.5vw, .8em);
   text-align: right;
   padding-right: 1.25em;
-  padding-top: .05em;
+  padding-top: .065em;
   width: 100%;
   height: 1.5em;
   color: var(--glitch-red);
@@ -186,6 +186,7 @@ textarea {
   z-index: 5000;
   font-size: 175%;
   text-align: center;
+  margin-bottom: 0.25em;
 }
 
 .form-completion-p {
