@@ -10,9 +10,10 @@ import LoadingSpinner from './LoadingSpinner';
 
 
 const ContactForm = (props) => {
+    const baseURL = window.location.origin + "/api";
     const api = axios.create(
-        {baseURL: "http://localhost:3000/api"}
-    )
+        {baseURL: baseURL}
+    );
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');

@@ -78,7 +78,7 @@ const DarkLightButton = (props) => {
     return (
         <div ref={containerRef} onClick={() => {changeRotation()}} className="dark-light-container-outer">
             <div className="blocking-div">
-                <span>Change</span>
+                <span>Toggle</span>
             </div>
             {renderHelper()}
         </div>

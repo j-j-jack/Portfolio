@@ -227,7 +227,7 @@ const App = (props) => {
                         className="faded-out section-sibling" 
                         ref={fadeInRefNine}
                     >
-                        As of the start of 2021, I had no basically no knowledge of web development whatsoever.
+                        As of the start of 2021, I had basically no knowledge of web development whatsoever.
                         I have displayed a small selection of projects that I have completed since then to showcase
                         my progress. Feel free to visit my <a 
                             target="_blank" rel="noreferrer" 

@@ -15,8 +15,6 @@ const TechnologyContainer = (props) => {
 
     const sendToWeb = (box) => {
         const linkKey = document.getElementById(`ttc${box}`).textContent;
-        console.log(linkKey);
-        console.log(typeof(linkKey));
         if (linkKey === '' || linkKey === undefined || linkKey === null) {
             return;
         }

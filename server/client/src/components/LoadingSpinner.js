@@ -24,8 +24,6 @@ const LoadingSpinner = (props) => {
             } else {
                 dimension = width;
             }
-            console.log(width);
-            console.log(height);
             outerRef.current.style.height = `${dimension}px`;
             outerRef.current.style.height = `${dimension}px`;
         }
