@@ -15,8 +15,8 @@ app.post('/api/send_email', async (req, res) => {
     res.send(response);
 });
 
-app.get('/port', (req, res) => {
-    res.send(PORT);
+app.get('/api/get', (req, res) => {
+    res.send("PORT");
 });
 
 if (process.env.NODE_ENV === 'production') {
