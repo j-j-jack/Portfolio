@@ -19,7 +19,7 @@ app.get('/api/get', (req, res) => {
     res.send("PORT");
 });
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.PRODUCTION === 'true') {
     app.use(express.static('client/build'));
     const path = require('path');
     app.get('*', (req, res) => {
