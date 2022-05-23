@@ -6,6 +6,7 @@ const FormButton = (props) => {
     // button takes a className for extra styling, the button text and icon as props
     const [hover, setHover] = useState(false);
     let lineCount = useRef(0);
+    const formButtonRef = useRef();
     const buttonRef = useRef();
     const timeouts = useRef([]);
     // Michael Berkowski Stack Overflow - https://stackoverflow.com/questions/8860188/javascript-clear-all-timeouts
@@ -67,15 +68,24 @@ const FormButton = (props) => {
         }
         setHover(false);
     }
+
+    const changeFontColorWhite = () => {
+        formButtonRef.current.style.color="var(--glitch-white)";
+    }
+
+    const changeFontColorBlack = () => {
+        formButtonRef.current.style.color="var(--glitch-black)";
+    }
     
 
     hoverEffect();
 
     return (
         <button
+            ref={formButtonRef}
             type="submit"
-            onMouseEnter={() => {setHover(true)}}
-            onMouseLeave={()=> {handleMouseLeave()}}
+            onMouseEnter={() => {setHover(true); changeFontColorWhite();}}
+            onMouseLeave={()=> {handleMouseLeave(); changeFontColorBlack();}}
             className={props.buttonClass}
         >
             <div className="form-button-content">

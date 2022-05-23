@@ -7,6 +7,7 @@ const Button = (props) => {
     const [hover, setHover] = useState(false);
     let lineCount = useRef(0);
     const buttonRef = useRef();
+    const buttonText = useRef();
     const timeouts = useRef([]);
     // Michael Berkowski Stack Overflow - https://stackoverflow.com/questions/8860188/javascript-clear-all-timeouts
     
@@ -68,20 +69,30 @@ const Button = (props) => {
         setHover(false);
     }
     
+    const changeFontColorWhite = () => {
+        buttonText.current.style.color="var(--glitch-white)";
+    }
+
+    const changeFontColorBlack = () => {
+        buttonText.current.style.color="var(--glitch-black)";
+    }
+
+
+    
 
     hoverEffect();
 
     return (
         <button
-            onMouseEnter={() => {setHover(true)}}
-            onMouseLeave={()=> {handleMouseLeave()}}
+            onMouseEnter={() => {setHover(true); changeFontColorWhite()}}
+            onMouseLeave={()=> {handleMouseLeave(); changeFontColorBlack()}}
             className={props.buttonClass} 
         >
             <div className="button-content">
             <a href={props.link} target={props.target} rel="noreferrer">
             <div className="button-link-content">
                 <div className={`${props.buttonClass}-image button-image`}></div>
-                <div className="button-text"><span>{props.buttonText}</span></div>
+                <div className="button-text"><span ref={buttonText}>{props.buttonText}</span></div>
             </div>
             </a>
             </div>

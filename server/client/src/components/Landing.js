@@ -117,7 +117,7 @@ const Landing = () => {
             I'm Jack O'Sullivan,
           </div>
           <div className="landing-text-three animate__animated animate__fadeIn animate__delay-2s">
-            I'm a Web Developer
+            I'm a Fullstack Developer
           </div>
           </div>
           <div className="landing-svg-container">

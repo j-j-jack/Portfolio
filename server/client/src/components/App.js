@@ -140,8 +140,8 @@ const App = (props) => {
                 "s3sh": "zoomIn",
                 "s3": "fadeIn", 
                 "n": "fadeInDown",
-                "s4h": "backInLeft",
-                "s4": "backInRight",
+                "s4h": "bounceInRight",
+                "s4": "bounceInLeft",
                 "bgl": "fadeInUp"
             };
 
@@ -227,7 +227,8 @@ const App = (props) => {
                         className="faded-out section-sibling" 
                         ref={fadeInRefNine}
                     >
-                        As of the start of 2021, I had basically no knowledge of web development whatsoever.
+                        I started learning web development at the beginning of 2021. Since then, I have enjoyed
+                        improving my knowledge in the field through the use of many different technologies.
                         I have displayed a small selection of projects that I have completed since then to showcase
                         my progress. Feel free to visit my <a 
                             target="_blank" rel="noreferrer" 
@@ -297,8 +298,8 @@ const App = (props) => {
                         I really enjoy the process of bringing a project from the early stages to completion. 
                         I have an appreciation for many aspects of web dev from UI/UX design stages
                         to writing complex logic to manipulate data. 
-                        I love working with enthusiastic and ambitious people so if that's you 
-                        - contact me below! I am based in Gorey, Ireland. <a 
+                        I love working with enthusiastic and ambitious people so if that's you, 
+                        contact me below! I am based in Gorey, Ireland. <a 
                             className="contact-scroll-link" 
                             href="#4">
                                 Scroll down
