@@ -14,11 +14,7 @@ app.post('/api/send_email', async (req, res) => {
     console.log("hello", response);
     res.send(response);
 });
-
-app.get('/api/get', (req, res) => {
-    res.send("PORT");
-});
-
+// PRODUCTION environment variable should be set to true where the app is hosted live
 if (process.env.PRODUCTION === 'true') {
     app.use(express.static('client/build'));
     const path = require('path');

@@ -7,6 +7,8 @@ import "animate.css";
 // https://www.google.com/search?q=inside+a+spaceship&rlz=1C1SQJL_enIE895IE895&sxsrf=APq-WBtI82L4Fk-6id-BPb9cfY7YaqwC9A:1647617572800&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiEz5vh_c_2AhVGh1wKHeAcCKIQ_AUoAXoECAEQAw&biw=1280&bih=919&dpr=1#imgrc=5RvfVup02zMKCM
 
 const Landing = () => {
+  // component works in conjuction with landing.css
+  // the JOS is a play on the javascript logo in case you didn't realise
   const jRef = useRef();
   const sRef = useRef();
   const sContainerRef = useRef();

@@ -5,6 +5,7 @@ import ScrollAnimation from './ScrollAnimation';
 // https://keithclark.co.uk/articles/pure-css-parallax-websites/
 
 const Parralax = (props) => {
+    // component works in conjuction with parrallax.css
     const backgroundRef = useRef();
     const parralaxRef = useRef();
 

@@ -10,6 +10,7 @@ import LoadingSpinner from './LoadingSpinner';
 
 
 const ContactForm = (props) => {
+    // component to be used in conjunction with contact-form.css
     const baseURL = window.location.origin + "/api";
     const api = axios.create(
         {baseURL: baseURL}

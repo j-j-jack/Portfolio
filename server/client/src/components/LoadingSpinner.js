@@ -3,6 +3,7 @@ import * as d3 from 'd3';
 import "./css/loading-spinner.css";
 
 const LoadingSpinner = (props) => {
+    // component works in conjuction with loading-spinner.css
     const svgRefOne = useRef();
     const svgRefTwo = useRef();
     const svgRefThree = useRef();
@@ -10,9 +11,7 @@ const LoadingSpinner = (props) => {
     const outerRef = useRef();
 
 
-    
     useEffect(() => {
-
         const setOuterDimensions = () => {
             // height of form in pxs
             let height = 642.39;

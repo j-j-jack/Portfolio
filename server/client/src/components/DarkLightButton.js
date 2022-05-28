@@ -6,6 +6,7 @@ import sun from "../assets/images/sun.svg";
 import "./css/dark-light-button.css";
 
 const DarkLightButton = (props) => {
+    // works in conjunction with dark-light-button.css
     const containerRef = useRef();
     const sunMoonContainer = useRef();
 

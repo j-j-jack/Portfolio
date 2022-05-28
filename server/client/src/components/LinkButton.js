@@ -2,6 +2,7 @@ import React, {useState, useRef} from 'react';
 import "./css/link-button.css";
 
 const LinkButton = (props) => {
+    // component works in conjuction with link-button.css
     const [color, setColor] = useState("logo-color");
     const backgroundColorRef = useRef();
     const colorBehindLogoRef = useRef();

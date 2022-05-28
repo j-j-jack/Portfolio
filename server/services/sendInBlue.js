@@ -1,4 +1,5 @@
-//project_directory/emailBuilder.js
+// you must create an account at https://www.sendinblue.com/ 
+// create an api key and store it in a .env file to use this feature
 module.exports = async (senderName, senderEmail, subject, body) => {
   var SibApiV3Sdk = require('sib-api-v3-sdk');
   SibApiV3Sdk.ApiClient.instance.authentications['api-key'].apiKey = process.env.SIB_API_KEY;

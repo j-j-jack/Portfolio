@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 import "./css/scroll-animation.css";
 
 const ScrollAnimation = (props) => {
-    
+    // component works in conjuction with scroll-animation.css
     const topSvg = useRef();
     const bottomSvg = useRef();
     

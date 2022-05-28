@@ -3,6 +3,7 @@ import * as d3 from 'd3';
 import "./css/button.css";
 
 const FormButton = (props) => {
+    // button works in conjunction with button.css
     // button takes a className for extra styling, the button text and icon as props
     const [hover, setHover] = useState(false);
     let lineCount = useRef(0);

@@ -4,6 +4,7 @@ import "./css/button.css";
 
 const Button = (props) => {
     // button takes a className for extra styling, the button text and icon as props
+    // works witht the button.css stylesheet
     const [hover, setHover] = useState(false);
     let lineCount = useRef(0);
     const buttonRef = useRef();
@@ -12,6 +13,7 @@ const Button = (props) => {
     // Michael Berkowski Stack Overflow - https://stackoverflow.com/questions/8860188/javascript-clear-all-timeouts
     
     const buttonGlitch = () => {
+        // colors from the glitch-colors.css stylesheet in the public directory
         const colors = ['glitch-white', 'glitch-red', 'glitch-yellow',
                 'glitch-blue', 'glitch-pink', 'glitch-black', 'glitch-aqua', 'glitch-green'];
         let cx = Math.random() * 100;
@@ -77,8 +79,6 @@ const Button = (props) => {
         buttonText.current.style.color="var(--glitch-black)";
     }
 
-
-    
 
     hoverEffect();
 

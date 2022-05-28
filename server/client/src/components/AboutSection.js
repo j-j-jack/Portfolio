@@ -4,12 +4,14 @@ import "animate.css";
 import "./css/about-section.css";
 
 const AboutSection = () => {
+    // component works in conjunction with the about-section.css stylesheet
     return (
         <div className="about-section-container">
             <div id="technologies-intro" className="container-intro">
                 These are some of the technologies I've used recently...
             </div>
             <div>
+            {/* The technologies and the dictionary keys in links much match exactly */}
             <TechnologyContainer
                 technologies={['HTML', 'CSS', 'Bootstrap', 'Git', 'VSCode', 'ReactJS', 
                     'JavaScript', 'D3JS', 'Django', 'Python','Github', 'Heroku', 'REST', 

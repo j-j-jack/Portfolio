@@ -5,6 +5,7 @@ import Button from './Button';
 
 
 const ProjectCard = (props) => {
+    // component works in conjuction with project-card.css
     // component takes props of a project title and description, live and githublinks
     // as well as an array of technologies used
     // description tested to be responsive at 139 characters.

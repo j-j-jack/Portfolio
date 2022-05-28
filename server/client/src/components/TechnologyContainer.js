@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import "animate.css";
 
 const TechnologyContainer = (props) => {
-
+    // component works in conjuction with about-section.css
    // each of the keys in the links dictionary should match exactly the values contained
    // in the technologies array. ie 'HTML' in the technologies array to 'HTML' : 'egValue.com'
    // in the links dictionary.
