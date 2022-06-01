@@ -227,10 +227,16 @@ const App = (props) => {
                         className="faded-out section-sibling" 
                         ref={fadeInRefNine}
                     >
-                        I started learning web development at the beginning of 2021. Since then, I have enjoyed
-                        improving my knowledge in the field through the use of many different technologies.
-                        I have displayed a small selection of projects that I have completed since then to showcase
-                        my progress. Feel free to visit my <a 
+                        I have had a lifelong love of being creative (I have a musical background)... 
+                        I also have a strong ability in logical thinking... 
+                        For a long time I have searched for a field wherein I can combine these passions. 
+                        Now, I have finally come to understand that... 
+                        Web development is the perfect choice! 
+                        Since making the decision to pursue this career, 
+                        I have enjoyed improving my knowledge in the area 
+                        through the use of many different technologies. 
+                        I have displayed a small selection of projects that I have completed to date 
+                        to showcase my progress. Feel free to visit my <a 
                             target="_blank" rel="noreferrer" 
                             className="github-work-link" 
                             href="http://github.com">
@@ -296,7 +302,7 @@ const App = (props) => {
                         id="s3sh">
                         Hi, my name is Jack and I'm passionate about web development. 
                         I really enjoy the process of bringing a project from the early stages to completion. 
-                        I have an appreciation for many aspects of web dev from UI/UX design stages
+                        I have an appreciation for many aspects of web dev from the UI/UX design stages
                         to writing complex logic to manipulate data. 
                         I love working with enthusiastic and ambitious people so if that's you, 
                         contact me below! I am based in Gorey, Ireland. <a 
