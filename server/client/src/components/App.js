@@ -17,6 +17,7 @@ import linkedin from "../assets/images/linkedin.svg";
 import eBookClubImage from "../assets/images/e-book-club.PNG";
 import ghostPostImage from "../assets/images/ghost-post.PNG";
 import munsterWavesImage from "../assets/images/munster-waves.PNG";
+import emojiPlaygroundImage from "../assets/images/emoji-playground.PNG";
 
 
 const App = (props) => {
@@ -43,6 +44,7 @@ const App = (props) => {
     const fadeInRefTen = useRef();
     const fadeInRefEleven = useRef();
     const fadeInRefTwelve = useRef();
+    const fadeInRefThirteen = useRef();
 
 
     const fadeObserver = useRef();
@@ -127,7 +129,7 @@ const App = (props) => {
             const fadeInRefs = [fadeInRefOne.current, fadeInRefTwo.current, fadeInRefThree.current,
                 fadeInRefFour.current,fadeInRefFive.current, fadeInRefSix.current, 
                 fadeInRefSeven.current, fadeInRefNine.current, fadeInRefTen.current,
-                fadeInRefEleven.current, fadeInRefTwelve.current];
+                fadeInRefEleven.current, fadeInRefTwelve.current, fadeInRefThirteen.current];
 
             const fadeDict = {
                 "s2h": "bounceIn",
@@ -229,14 +231,14 @@ const App = (props) => {
                     >
                         I have had a lifelong love of being creative (I have a musical background)... 
                         I also have a strong ability in logical thinking... 
-                        For a long time I have searched for a field wherein I can combine these passions. 
+                        For a long time I have searched for a field where I can combine these passions. 
                         Now, I have finally come to understand that... 
-                        Web development is the perfect choice! 
-                        Since making the decision to pursue this career, 
+                        Web development is the perfect choice! Since making the decision to pursue this career, 
                         I have enjoyed improving my knowledge in the area 
                         through the use of many different technologies. 
                         I have displayed a small selection of projects that I have completed to date 
-                        to showcase my progress. Feel free to visit my <a 
+                        to showcase my progress. 
+                        Feel free to visit my <a 
                             target="_blank" rel="noreferrer" 
                             className="github-work-link" 
                             href="http://github.com">
@@ -276,7 +278,7 @@ const App = (props) => {
                     <div 
                         ref={fadeInRefFour} 
                         id="pc3" 
-                        className="project-card-container-m-left faded-out box-shadow"
+                        className="project-card-container-m-left faded-out section-sibling box-shadow"
                         >
                         <ProjectCard 
                             uniqueKey="3"
@@ -286,6 +288,21 @@ const App = (props) => {
                             projectImage={munsterWavesImage}
                             projectDescription="Surf forecast website for the province of Muster. Users of the site can check out the forecast for the week ahead for the best beaches in the area."
                             technologies = {["Stormglass", "Leaflet", "JQuery", "EmailJS", "Javascript"]}
+                        />
+                        </div>
+                        <div 
+                        ref={fadeInRefThirteen} 
+                        id="pc4" 
+                        className="project-card-container-m-right faded-out box-shadow"
+                        >
+                        <ProjectCard 
+                            uniqueKey="4"
+                            githubLink="https://github.com/j-j-jack/emojiplayground"
+                            liveLink="https://emojiplayground.herokuapp.com/"
+                            projectTitle="Emoji Playground"
+                            projectImage={emojiPlaygroundImage}
+                            projectDescription="Emoji game built as part of a hackathon team using Flask and MongoDB. Users can create and solve emoji riddles. It's really fun check it out!"
+                            technologies = {["Flask", "vanillaEmojiPicker.js", "Bootstrap", "Flask", "MongoDB"]}
                         />
                         </div>
                 </section>
@@ -304,7 +321,7 @@ const App = (props) => {
                         I really enjoy the process of bringing a project from the early stages to completion. 
                         I have an appreciation for many aspects of web dev from the UI/UX design stages
                         to writing complex logic to manipulate data. 
-                        I love working with enthusiastic and ambitious people so if that's you, 
+                        I love working withK enthusiastic and ambitious people so if that's you, 
                         contact me below! I am based in Gorey, Ireland. <a 
                             className="contact-scroll-link" 
                             href="#4">
