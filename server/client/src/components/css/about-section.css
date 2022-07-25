@@ -7,7 +7,7 @@
   background: var(--glitch-black);
   color: var(--glitch-white);
   padding: 2em;
-  border-radius: 2em;
+  border-radius: 5px;
   position: relative;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .technology-container-outer {
-  border-radius: 2em;
+  border-radius: 5px;
   color: var(--glitch-white);
   position: relative;
   width: 100%;
